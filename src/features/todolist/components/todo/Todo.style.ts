@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Todo = styled.div`
-  width: 90%;
+  width: 200px;
   height: 40px;
   display: flex;
   align-items: center;
