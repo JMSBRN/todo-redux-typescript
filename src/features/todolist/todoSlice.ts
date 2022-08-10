@@ -12,24 +12,22 @@ export interface IStateTodo {
     task: string;
     status: boolean;
 }
-const mockTodos = [
-    {id: '1', text: 'test-1', status: false},
-    {id: '2', text: 'test-2', status: false},
-    {id: '3', text: 'test-3', status: false},
-];
 const initialState: IStateTodo = {
-    todos: mockTodos,
+    todos: [],
     todo: {} as ITodo,
     task: '',
     status: false,
 };
-
 export const todoSlice = createSlice({
     name: 'todo',
     initialState,
     reducers: {
-      addTodo: (state, action) => {
-       state.todos = action.payload;
+      addTodo: (state) => {
+       const id =  JSON.stringify(Math.floor(Math.random() * 100))
+       const task = {id: id, text: state.task, status: state.status};
+       state.todos = [...state.todos, task ]
+       console.log(state.todos);
+       
       },
       removeTodo: (state, action) => {
        state.todos = action.payload;
@@ -40,7 +38,6 @@ export const todoSlice = createSlice({
        setStatus: (state, action) => {
        state.status = action.payload;
       }
-        
     },
 })
 export const { addTodo, setTask, setStatus } = todoSlice.actions;

@@ -2,18 +2,19 @@ import React from 'react'
 import * as Styled from './Todo.style';
 
 export interface ITodo {
- todo: { id: string;
-   text: string;
-   status: boolean;
-  }
+ todo: { 
+    id: string;
+    text: string;
+    status: boolean;
+  };
+  onClick: () => void;
 }
-const Todo = ({ todo }: ITodo) => {
-  const { id, text, status } = todo;
+const Todo = ({ todo, onClick }: ITodo) => {
+  const { text, status } = todo;
   return (
-    <Styled.Todo>
-      <div className="id">{id}</div>
+    <Styled.Todo onClick={onClick}>
       <div className="text">{text}</div>
-      <div className="id">{status}</div>
+      <div className="status">{status}</div>
     </Styled.Todo>
   )
 }

@@ -8,7 +8,7 @@ const TododList = () => {
   const dispatch = useAppDispatch();
   return (
     <Styled.TodoList>
-        <FormTodo onChange={(e) => dispatch(setTask(e.target.value)) } onClick={() => dispatch(addTodo) }/>
+        <FormTodo onChange={(e) => dispatch(setTask(e.target.value)) } onClick={() => dispatch(addTodo()) }/>
         <Todos/>
     </Styled.TodoList>
   )
