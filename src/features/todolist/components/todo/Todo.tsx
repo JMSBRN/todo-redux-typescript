@@ -1,20 +1,15 @@
 import React from 'react'
+import { useAppDispatch } from '../../../../app/hooks';
+import { getId, ITodo } from '../../todoSlice';
 import * as Styled from './Todo.style';
 
-export interface ITodo {
- todo: { 
-    id: string;
-    text: string;
-    status: boolean;
-  };
-  onClick: () => void;
-}
-const Todo = ({ todo, onClick }: ITodo) => {
-  const { text, status } = todo;
+
+const Todo = (todo : ITodo) => {
+  const {id, text, complited } = todo;
+  const dispatch = useAppDispatch();
   return (
-    <Styled.Todo onClick={onClick}>
+    <Styled.Todo complited={complited} id={id} onClick={(e) => dispatch(getId(e.currentTarget.id))}>
       <div className="text">{text}</div>
-      <div className="status">{status}</div>
     </Styled.Todo>
   )
 }
