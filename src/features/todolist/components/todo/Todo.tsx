@@ -9,11 +9,12 @@ const Todo = ( todo : ITodo) => {
   const dispatch = useAppDispatch();
 
   return (
-    <><Styled.Todo complited={complited} id={id} onClick={(e) => dispatch(getId(e.currentTarget.id))}>
+    <Styled.TodoWrapper>
+      <Styled.Todo complited={complited} id={id} onClick={(e) => dispatch(getId(e.currentTarget.id))}>
       <div className="text">{text}</div>
     </Styled.Todo>
     <button onClick={() => dispatch(removeTodo(id))}>delete</button>
-    </>
+    </Styled.TodoWrapper>
   )
 }
 
