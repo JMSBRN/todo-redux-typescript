@@ -24,6 +24,9 @@ export const todoSlice = createSlice({
     name: 'todo',
     initialState,
     reducers: {
+      setTodos: (state, action) => {
+      state.todos = action.payload
+      },
       addTodo: (state) => {
         if (state.task) {
             const id =  JSON.stringify(Math.floor(Math.random() * 100))
@@ -62,6 +65,6 @@ export const todoSlice = createSlice({
       }
     },
 })
-export const { addTodo, setTask, getId , removeTodo} = todoSlice.actions;
+export const { addTodo, setTask, getId , removeTodo, setTodos} = todoSlice.actions;
 export const selectTodo = (state:RootState ) => state.todo;
 export default todoSlice.reducer;
