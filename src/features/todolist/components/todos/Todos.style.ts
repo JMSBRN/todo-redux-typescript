@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Todos = styled.div`
-width: 300px;
+width: 600px;
 height: 300px;
 padding: 10px 0;
 display: flex;

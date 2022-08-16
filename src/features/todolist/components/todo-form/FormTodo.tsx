@@ -1,20 +1,29 @@
-import React, { ChangeEvent } from 'react'
-import { useAppSelector } from '../../../../app/hooks';
-import { selectTodo } from '../../todoSlice';
-import * as Styled from './FormTodo.style';
+import React from "react";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
+import { addTodo, selectTodo, setEditedTsk, setTask } from "../../todoSlice";
+import * as Styled from "./FormTodo.style";
 
-interface FormTodoProps {
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  onClick: () => void;
-}
-const FormTodo = ({ onChange, onClick }: FormTodoProps) => {
-  const {task } = useAppSelector(selectTodo)
+const FormTodo = () => {
+  const { task, isEdit, id } = useAppSelector(selectTodo);
+  const dispatch = useAppDispatch();
+  const refInput = React.useRef<HTMLInputElement>(null);
+  isEdit && refInput.current?.focus();
   return (
     <Styled.Form>
-        <input onChange={onChange} value={task} type="text" />
-        <button onClick={onClick}>submit</button>
+      <Styled.Inputform
+        isEdit={isEdit}
+        ref={refInput}
+        onChange={(e) => dispatch(setTask(e.target.value))}
+        value={task}
+        type="text"
+      />
+      {isEdit ? (
+        <Styled.FormBtn onClick={() => dispatch(setEditedTsk(id))}>submit edit</Styled.FormBtn>
+        ) : (
+          <Styled.FormBtn onClick={() => dispatch(addTodo())} >submit</Styled.FormBtn>
+      )}
     </Styled.Form>
-  )
-}
+  );
+};
 
 export default FormTodo;
