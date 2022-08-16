@@ -10,7 +10,7 @@ import {
 import * as Styled from "./Todo.style";
 
 const Todo = (todo: ITodo) => {
-  const { id, text, complited } = todo;
+  const { time, id, text, complited } = todo;
   const dispatch = useAppDispatch();
   const handlGetTextAndId = () => {
     dispatch(getText(text));
@@ -23,6 +23,7 @@ const Todo = (todo: ITodo) => {
         id={id}
         onClick={(e) => dispatch(getId(e.currentTarget.id))}
       >
+        <div className="">{time}</div>
         <Styled.TodoText onClick={() => dispatch(setComplited())}>
           {text}
         </Styled.TodoText>
