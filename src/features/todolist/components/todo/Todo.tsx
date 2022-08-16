@@ -23,9 +23,9 @@ const Todo = (todo: ITodo) => {
         id={id}
         onClick={(e) => dispatch(getId(e.currentTarget.id))}
       >
-        <div onClick={() => dispatch(setComplited())} className="text">
+        <Styled.TodoText onClick={() => dispatch(setComplited())}>
           {text}
-        </div>
+        </Styled.TodoText>
       </Styled.Todo>
       <Styled.TodoBtn onClick={() => dispatch(removeTodo(id))}>
         delete

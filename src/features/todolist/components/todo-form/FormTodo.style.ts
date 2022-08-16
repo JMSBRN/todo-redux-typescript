@@ -3,7 +3,7 @@ interface IForm{
   isEdit: boolean;
 }
 export const Form = styled.div`
-  width: 600px;
+  width: 400px;
   height: 50px;
   display: flex;
   align-items: center;
