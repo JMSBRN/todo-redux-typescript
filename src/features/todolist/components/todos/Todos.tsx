@@ -11,6 +11,7 @@ const Todos = () => {
 
   return (
     <Reorder.Group
+      as="div"
       axis="y"
       onReorder={(todos) => {
         dispatch(setTodos(todos));
@@ -19,9 +20,15 @@ const Todos = () => {
     >
       <Styled.Todos>
         {todos.map((el) => (
-            <Reorder.Item  key={el.id} value={el}>
-              <Todo id={el.id} text={el.text} complited={el.complited} />
-            </Reorder.Item>
+          <Reorder.Item
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            key={el.id}
+            value={el}
+          >
+            <Todo id={el.id} text={el.text} complited={el.complited} />
+          </Reorder.Item>
         ))}
       </Styled.Todos>
     </Reorder.Group>

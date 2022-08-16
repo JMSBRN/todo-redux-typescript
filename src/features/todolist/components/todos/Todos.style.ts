@@ -10,4 +10,5 @@ align-items: center;
 justify-content: flex-start;
 gap: 10px;
 border: 1px solid grey;
+list-style: none;
 `
