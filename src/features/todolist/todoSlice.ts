@@ -105,6 +105,7 @@ export const todoSlice = createSlice({
         }
         return el;
       });
+      setTodosToLocal(state.todos);
     },
     getId: (state, action) => {
       state.id = action.payload;
