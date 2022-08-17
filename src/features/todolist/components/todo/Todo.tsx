@@ -28,10 +28,12 @@ const Todo = (todo: ITodo) => {
           {text}
         </Styled.TodoText>
       </Styled.Todo>
-      <Styled.TodoBtn onClick={() => dispatch(removeTodo(id))}>
-        delete
-      </Styled.TodoBtn>
-      <Styled.TodoBtn onClick={handlGetTextAndId}>edit</Styled.TodoBtn>
+      <Styled.BtnsWrapper>
+        <Styled.TodoBtn onClick={() => dispatch(removeTodo(id))}>
+        🗑️
+        </Styled.TodoBtn>
+        <Styled.TodoBtn onClick={handlGetTextAndId}>🖊️</Styled.TodoBtn>
+      </Styled.BtnsWrapper>
     </Styled.TodoWrapper>
   );
 };
