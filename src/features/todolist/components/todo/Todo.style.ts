@@ -3,7 +3,8 @@ interface ITodo {
   complited: boolean;
 }
 export const TodoWrapper = styled.div`
-  max-width: 300px;
+  position: relative;
+  width: 400px;
   height: auto;
   padding: 10px;
   display: flex;
@@ -12,6 +13,13 @@ export const TodoWrapper = styled.div`
   gap: 10px;
   border: 1px solid grey;
 `;
+export const TimeTodo = styled.div`
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  font-size: 10px;
+  color: gray;
+`
 export const Todo = styled.div<ITodo>`
   height: auto;
   text-decoration: ${({ complited }) => (complited ? "line-through red" : "")};

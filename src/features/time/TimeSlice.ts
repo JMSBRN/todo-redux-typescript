@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 
-interface IOption {
+ export interface IOption {
     weekday: "long" | "short" | "narrow" | undefined;
     year: "numeric" | "2-digit" | undefined;
     month: "long" | "short" | "narrow" | "numeric" | "2-digit" | undefined;

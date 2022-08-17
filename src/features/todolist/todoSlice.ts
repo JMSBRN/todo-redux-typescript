@@ -1,28 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-const days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-const months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+
 const arrFromLocal = JSON.parse(localStorage.getItem("todos")!) || [];
 
 export interface ITodo {
@@ -64,11 +42,7 @@ export const todoSlice = createSlice({
     addTodo: (state) => {
       if (state.task) {
         const id = JSON.stringify(Math.floor(Math.random() * 100));
-        const month = months[new Date().getMonth()];
-        const day = days[new Date().getDay()];
-        const hours = new Date().getHours();
-        const minutes = new Date().getMinutes();
-        const time = `${month}-${day}-${hours}:${minutes}`;
+        const time = new Date().toLocaleString();
         const todo = {
           time: time,
           id: id,

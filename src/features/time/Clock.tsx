@@ -10,16 +10,19 @@ const Clock = () => {
       dispatch(timeChange(new Date().toTimeString().split(" ")[0]));
     }, 1000);
   }, [dispatch]);
-  setInterval(() => {
+  useEffect(() => {
     const curHrs = parseInt(JSON.stringify(new Date().getHours() / 24 * 4));
-    const  greet = [
-        'What are you doing that early?',
-        'Good Morning',
-        'Good Afternoon',
-        'Good Evening'
-    ][curHrs];
-    dispatch(greetingsChange(greet))  
-}, 1000)  
+    setInterval(() => {
+      const  greet = [
+          'What are you doing that early?',
+          'Good Morning',
+          'Good Afternoon',
+          'Good Evening'
+      ][curHrs];
+      dispatch(greetingsChange(greet))  
+  }, 1000)  
+  },[dispatch])
+  
   return (
     <>
     <div>{ greeting }</div>

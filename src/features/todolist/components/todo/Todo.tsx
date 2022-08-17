@@ -18,12 +18,12 @@ const Todo = (todo: ITodo) => {
   };
   return (
     <Styled.TodoWrapper>
+      <Styled.TimeTodo>{time}</Styled.TimeTodo>
       <Styled.Todo
         complited={complited}
         id={id}
         onClick={(e) => dispatch(getId(e.currentTarget.id))}
       >
-        <div className="">{time}</div>
         <Styled.TodoText onClick={() => dispatch(setComplited())}>
           {text}
         </Styled.TodoText>
