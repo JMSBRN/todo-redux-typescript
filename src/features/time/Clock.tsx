@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { getAsyncApiWeather } from "../api-weather/apiWeatherSlice";
 import { greetingsChange, selectTime, timeChange } from "./TimeSlice";
 
 const Clock = () => {
+  useEffect(() => {
+   
+  }, [])
   const { time, date, greeting } = useAppSelector(selectTime);
   const dispatch = useAppDispatch();
   useEffect(() => {
+    dispatch(getAsyncApiWeather());
     setInterval(() => {
       dispatch(timeChange(new Date().toTimeString().split(" ")[0]));
     }, 1000);
