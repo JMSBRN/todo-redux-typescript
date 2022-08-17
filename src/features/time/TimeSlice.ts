@@ -8,11 +8,12 @@ interface IOption {
     day: "numeric" | "2-digit" | undefined;
 }
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-const date = new Date().toLocaleDateString('en-US', options as IOption)
+const date = new Date().toLocaleDateString('en-US', options as IOption);
 
 const initialState = {
     time: new Date().toTimeString().split(" ")[0],
     date: date,
+    greeting: '',                                                                                             
 }
 export const timeSlice = createSlice({
     name: 'time',
@@ -23,10 +24,13 @@ export const timeSlice = createSlice({
         },
         dateChange: (state, action) => {
             state.date = action.payload
+        },
+        greetingsChange: (state, action) => {
+          state.greeting = action.payload;
         }
     }
 });
 
-export const { timeChange, dateChange } = timeSlice.actions;
+export const { timeChange, dateChange, greetingsChange } = timeSlice.actions;
 export const selectTime = (state: RootState) => state.time;
 export default timeSlice.reducer;
