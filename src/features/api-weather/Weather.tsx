@@ -15,7 +15,13 @@ const Weather = () => {
     humidity,
     seaLevel,
     grndLevel,
+    description,
+    main,
+    windDeg,
+    windGust,
+    windSpeed,
   } = weatherValues;
+
   return (
     <Styled.WeatherWrapper>
       <div> city: {city}</div>
@@ -27,6 +33,13 @@ const Weather = () => {
       <div> humidity : {humidity}</div>
       <div> seaLevel: {seaLevel}</div>
       <div> grndLevel :{grndLevel}</div>
+      <div> description :{description}</div>
+      <div> main :{main}</div>
+      <ul>
+        <li>wind-degr : {windDeg}</li>
+        <li>wind gust :{windGust}</li>
+        <li>wind speed :{windSpeed}</li>
+      </ul>
     </Styled.WeatherWrapper>
   );
 };

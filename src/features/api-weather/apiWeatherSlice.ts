@@ -3,14 +3,19 @@ import { RootState } from "../../app/store";
 
 export interface IWeatherValues {
   city: string;
-  temp: string;
-  feelsLike: string;
-  tempMin: string;
-  tempMax: string;
-  pressure: string;
-  humidity: string;
-  seaLevel: string;
-  grndLevel: string;
+  temp: number;
+  feelsLike: number;
+  tempMin: number;
+  tempMax: number;
+  pressure: number;
+  humidity: number;
+  seaLevel: number;
+  grndLevel: number;
+  description: string;
+  main: string;
+  windDeg: string;
+  windGust: string;
+  windSpeed: string;
 }
 const initialState = {
   apiData: "",
@@ -39,11 +44,18 @@ export const getAsyncApiWeather = createAsyncThunk(
     const feelsLike = temperatureConverter(weatherVal[1] as string);
     const tempMin = temperatureConverter(weatherVal[2] as string);
     const tempMax = temperatureConverter(weatherVal[3] as string);
-    const pressure = weatherVal[4];
-    const humidity = weatherVal[5];
-    const seaLevel = weatherVal[6];
-    const grndLevel = weatherVal[7];
-    const weatherValues = {
+    const pressure = Number(weatherVal[4]);
+    const humidity = Number(weatherVal[5]);
+    const seaLevel = Number(weatherVal[6]);
+    const grndLevel = Number(weatherVal[7]);
+    const descriptionWeather = json.weather[0];
+    const description = descriptionWeather.description;
+    const main = descriptionWeather.main;
+    const wind = json.wind;
+    const windDeg = wind.deg;
+    const windGust = wind.gust;
+    const windSpeed= wind.speed;
+    const weatherValues: IWeatherValues = {
       city: city,
       temp: temp,
       feelsLike: feelsLike,
@@ -53,6 +65,12 @@ export const getAsyncApiWeather = createAsyncThunk(
       humidity: humidity,
       seaLevel: seaLevel,
       grndLevel: grndLevel,
+      description: description,
+      main: main,
+      windDeg: windDeg,
+      windGust: windGust,
+      windSpeed: windSpeed,
+      
     };
     dispatch(setWeherValues(weatherValues));
   }
@@ -72,7 +90,6 @@ export const apiWeatherSlice = createSlice({
   extraReducers(builder) {
     builder.addCase(getAsyncApiWeather.pending, () => {});
     builder.addCase(getAsyncApiWeather.fulfilled, () => {
-      console.log();
     });
   },
 });
