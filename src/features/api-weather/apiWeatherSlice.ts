@@ -47,17 +47,19 @@ export const getAsyncApiWeather = createAsyncThunk(
         `http://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${API_KEY}`
       );
       const json = await response.json();
-      console.log(json);
       const weatherVal = Object.values(json.main);
       const city = json.name;
       const temp = temperatureConverter(weatherVal[0] as string);
       const pressure = pressureConverter(Number(weatherVal[4]));
       const humidity = Number(weatherVal[5]);
-      const clouds = json.clouds.all;
+      const cloudsValue = json.clouds.all;    
+      const cloudsImages = ["sun", "cloud-sun", "cloud-sun", "cloud-sun", "cloud-sun", "cloud"];
+      const cloudsState = Math.floor((parseInt(cloudsValue) / 100) * 5.99);
+      const clouds = cloudsImages[cloudsState];
       const wind = json.wind;
       const windDeg = wind.deg;
       const windSpeed = Math.round(parseInt(wind.speed) * 3.257918552036199);
-      const speedIndexDirection = Math.round((parseInt(windDeg) / 360) * 16);
+      const speedIndexDirection = Math.floor((parseInt(windDeg) / 360) * 15.99);
       const windDirections = [
         "N",
         "NNE",

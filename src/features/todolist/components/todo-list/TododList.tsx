@@ -7,7 +7,7 @@ import * as Styled from "./TodoList.style";
 const TododList = () => {
   return (
     <Styled.TodoList>
-        <Weather />
+      <Weather />
       <Styled.ToListWrapper>
         <Clock />
         <FormTodo />
