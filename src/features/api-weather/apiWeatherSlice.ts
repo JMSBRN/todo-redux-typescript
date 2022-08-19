@@ -6,8 +6,7 @@ export interface IWeatherValues {
   temp: number;
   pressure: number;
   humidity: number;
-  description: string;
-  main: string;
+  clouds: string;
   windDeg: string;
   windSpeed: number;
 }
@@ -15,11 +14,13 @@ interface IState {
   apiData: string;
   weatherValues: IWeatherValues;
   valueCity: string;
+  error: string;
 }
 const initialState: IState = {
   apiData: "",
   weatherValues: {} as IWeatherValues,
   valueCity: "",
+  error: "",
 };
 
 function temperatureConverter(valNum: string) {
@@ -46,14 +47,13 @@ export const getAsyncApiWeather = createAsyncThunk(
         `http://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${API_KEY}`
       );
       const json = await response.json();
+      console.log(json);
       const weatherVal = Object.values(json.main);
       const city = json.name;
       const temp = temperatureConverter(weatherVal[0] as string);
       const pressure = pressureConverter(Number(weatherVal[4]));
       const humidity = Number(weatherVal[5]);
-      const descriptionWeather = json.weather[0];
-      const description = descriptionWeather.description;
-      const main = descriptionWeather.main;
+      const clouds = json.clouds.all;
       const wind = json.wind;
       const windDeg = wind.deg;
       const windSpeed = Math.round(parseInt(wind.speed) * 3.257918552036199);
@@ -83,12 +83,13 @@ export const getAsyncApiWeather = createAsyncThunk(
         temp: temp,
         pressure: pressure,
         humidity: humidity,
-        description: description,
-        main: main,
+        clouds: clouds,
         windDeg: winDir,
         windSpeed: windSpeed,
       };
       dispatch(setWetherValues(weatherValues));
+    } else {
+      dispatch(setError("please enter city name"));
     }
   }
 );
@@ -106,13 +107,16 @@ export const apiWeatherSlice = createSlice({
       state.valueCity = action.payload;
       localStorage.setItem("city", JSON.stringify(state.valueCity));
     },
+    setError: (state, action) => {
+      state.error = action.payload;
+    },
   },
   extraReducers(builder) {
     builder.addCase(getAsyncApiWeather.pending, () => {});
     builder.addCase(getAsyncApiWeather.fulfilled, () => {});
   },
 });
-export const { getApiData, setWetherValues, getCityName } =
+export const { getApiData, setWetherValues, getCityName, setError } =
   apiWeatherSlice.actions;
 export const selectWether = (state: RootState) => state.weather;
 export default apiWeatherSlice.reducer;
