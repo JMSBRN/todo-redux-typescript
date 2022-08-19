@@ -1,10 +1,15 @@
 import React from "react";
-import { useAppSelector } from "../../app/hooks";
-import { selectWether } from "./apiWeatherSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import {
+  getAsyncApiWeather,
+  getCityName,
+  selectWether,
+} from "./apiWeatherSlice";
 import * as Styled from "./Weather.Style";
 
 const Weather = () => {
-  const { weatherValues } = useAppSelector(selectWether);
+  const { weatherValues, valueCity } = useAppSelector(selectWether);
+  const dispatch = useAppDispatch();
   const {
     city,
     temp,
@@ -15,11 +20,19 @@ const Weather = () => {
     windDeg,
     windSpeed,
   } = weatherValues;
-
+  const handlerSetCity = () => {
+    valueCity && localStorage.setItem("city", JSON.stringify(valueCity));
+    dispatch(getAsyncApiWeather());
+  };
   return (
     <Styled.WeatherWrapper>
+      <input
+        type="text"
+        onChange={(e) => dispatch(getCityName(e.target.value))}
+      />
+      <button onClick={handlerSetCity}>set new city</button>
       <div> city: {city}</div>
-      <div> temp: {temp}</div>
+      <div> temp: {temp} °C</div>
       <div> pressure(mmHg) : {pressure}</div>
       <div> humidity : {humidity}%</div>
       <div> description :{description}</div>
