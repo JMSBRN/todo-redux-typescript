@@ -24,13 +24,14 @@ const Clock = () => {
           'Good Afternoon',
           'Good Evening'
       ][curHrs];
-      dispatch(greetingsChange(greet))  
+      dispatch(greetingsChange(greet));
+      localStorage.setItem('greeting', JSON.stringify(greet))
   }, 1000)  
-  },[dispatch])
-  
+  },[dispatch, greeting])
+  const greetingFromLocal = JSON.parse(localStorage.getItem('greeting') || '');
   return (
     <>
-    <div>{ greeting }</div>
+    <div>{ greetingFromLocal }</div>
       <div>{time}</div>
       <div className="">{date}</div>
     </>

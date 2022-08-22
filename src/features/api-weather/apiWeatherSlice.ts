@@ -16,6 +16,8 @@ interface IState {
   valueCity: string;
   error: string;
   isLoaded: boolean;
+  curCity: string;
+  weatherCities: { city: string}[]
 }
 const initialState: IState = {
   apiData: "",
@@ -23,6 +25,8 @@ const initialState: IState = {
   valueCity: "",
   error: "",
   isLoaded: false,
+  weatherCities: [{ city: 'city'}],
+  curCity: ''
 };
 
 function temperatureConverter(valNum: string) {
@@ -114,19 +118,26 @@ export const apiWeatherSlice = createSlice({
     setError: (state, action) => {
       state.error = action.payload;
     },
+    setNewWetherCity: (state) => {
+      if (state.weatherCities.length < 4) {
+        state.weatherCities = [...state.weatherCities, { city: '888'}];
+      }
+    }
   },
   extraReducers(builder) {
     builder.addCase(getAsyncApiWeather.pending, (state) => {
-      state.isLoaded = false;
-      
+      state.isLoaded = true;
     });
     builder.addCase(getAsyncApiWeather.fulfilled, (state) => {
       state.isLoaded = true;
-      
     });
+    builder.addCase(getAsyncApiWeather.rejected, (state) => {
+      console.log('failed');
+      state.isLoaded = true;
+    })
   },
 });
-export const { getApiData, setWetherValues, getCityName, setError } =
+export const { getApiData, setWetherValues, getCityName, setError, setNewWetherCity  } =
   apiWeatherSlice.actions;
 export const selectWether = (state: RootState) => state.weather;
 export default apiWeatherSlice.reducer;

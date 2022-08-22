@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 export const WeatherWrapper = styled.div`
-  position: absolute;
-  top: 10px;
-  left: 20px;
   width: 200px;
-  height: 300px;
+  height: 100px;
+  font-size: 10px;
   border: 1px solid grey;
 `;
