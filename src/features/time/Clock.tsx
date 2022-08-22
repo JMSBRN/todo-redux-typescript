@@ -28,7 +28,7 @@ const Clock = () => {
       localStorage.setItem('greeting', JSON.stringify(greet))
   }, 1000)  
   },[dispatch, greeting])
-  const greetingFromLocal = JSON.parse(localStorage.getItem('greeting') || '');
+  const greetingFromLocal = localStorage.getItem('greeting');
   return (
     <>
     <div>{ greetingFromLocal }</div>

@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 
 export interface IWeatherValues {
+  id: string;
   city: string;
   temp: number;
   pressure: number;
@@ -17,7 +18,8 @@ interface IState {
   error: string;
   isLoaded: boolean;
   curCity: string;
-  weatherCities: { city: string}[]
+  weatherCities: IWeatherValues[];
+  id: string;
 }
 const initialState: IState = {
   apiData: "",
@@ -25,10 +27,10 @@ const initialState: IState = {
   valueCity: "",
   error: "",
   isLoaded: false,
-  weatherCities: [{ city: 'city'}],
-  curCity: ''
+  weatherCities: [],
+  curCity: "",
+  id: "",
 };
-
 function temperatureConverter(valNum: string) {
   let val = parseFloat(valNum);
   val = Math.round(val - 273.15);
@@ -52,14 +54,22 @@ export const getAsyncApiWeather = createAsyncThunk(
       const response = await fetch(
         `http://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${API_KEY}`
       );
+
       const json = await response.json();
       const weatherVal = Object.values(json.main);
       const city = json.name;
       const temp = temperatureConverter(weatherVal[0] as string);
       const pressure = pressureConverter(Number(weatherVal[4]));
       const humidity = Number(weatherVal[5]);
-      const cloudsValue = json.clouds.all;    
-      const cloudsImages = ["sun", "cloud-sun", "cloud-sun", "cloud-sun", "cloud-sun", "cloud"];
+      const cloudsValue = json.clouds.all;
+      const cloudsImages = [
+        "sun",
+        "cloud-sun",
+        "cloud-sun",
+        "cloud-sun",
+        "cloud-sun",
+        "cloud",
+      ];
       const cloudsState = Math.floor((parseInt(cloudsValue) / 100) * 5.99);
       const clouds = cloudsImages[cloudsState];
       const wind = json.wind;
@@ -85,8 +95,9 @@ export const getAsyncApiWeather = createAsyncThunk(
         "WNN",
       ];
       const winDir = windDirections[speedIndexDirection];
-
+      const id = JSON.stringify(Math.floor(Math.random() * 100));
       const weatherValues: IWeatherValues = {
+        id: id,
         city: city,
         temp: temp,
         pressure: pressure,
@@ -120,9 +131,12 @@ export const apiWeatherSlice = createSlice({
     },
     setNewWetherCity: (state) => {
       if (state.weatherCities.length < 4) {
-        state.weatherCities = [...state.weatherCities, { city: '888'}];
+        state.weatherCities = [...state.weatherCities, state.weatherValues];
       }
-    }
+    },
+    getId: (state, action) => {
+      state.id = action.payload;
+    },
   },
   extraReducers(builder) {
     builder.addCase(getAsyncApiWeather.pending, (state) => {
@@ -132,12 +146,17 @@ export const apiWeatherSlice = createSlice({
       state.isLoaded = true;
     });
     builder.addCase(getAsyncApiWeather.rejected, (state) => {
-      console.log('failed');
       state.isLoaded = true;
-    })
+    });
   },
 });
-export const { getApiData, setWetherValues, getCityName, setError, setNewWetherCity  } =
-  apiWeatherSlice.actions;
+export const {
+  getApiData,
+  setWetherValues,
+  getCityName,
+  setError,
+  setNewWetherCity,
+  getId,
+} = apiWeatherSlice.actions;
 export const selectWether = (state: RootState) => state.weather;
 export default apiWeatherSlice.reducer;

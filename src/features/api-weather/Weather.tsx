@@ -3,19 +3,27 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
   getAsyncApiWeather,
   getCityName,
+  getId,
+  IWeatherValues,
   selectWether,
 } from "./apiWeatherSlice";
 import * as Styled from "./Weather.Style";
 import cloudImg from "../api-weather/assets/wether/cloud.png";
 import cloudSunImg from "../api-weather/assets/wether/sun_clouds.png";
 import sunImg from "../api-weather/assets/wether/sun.png";
-
-const Weather = () => {
-  const { weatherValues, valueCity, error } = useAppSelector(selectWether);
+interface IWeatherProps {
+  weatherValues: IWeatherValues;
+  valueCity: string;
+}
+const Weather = ({ weatherValues, valueCity }: IWeatherProps) => {
+  const { error } = useAppSelector(selectWether);
   const dispatch = useAppDispatch();
-  const { city, temp, pressure, humidity, clouds, windDeg, windSpeed } =
+  const { id, city, temp, pressure, humidity, clouds, windDeg, windSpeed } =
     weatherValues;
-  const handlerSetCity = () => {
+  const handlerSetCity = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    dispatch(getId(e.currentTarget.id));
     valueCity && localStorage.setItem("city", JSON.stringify(valueCity));
     dispatch(getAsyncApiWeather());
   };
@@ -42,7 +50,9 @@ const Weather = () => {
         placeholder={error}
         onChange={(e) => dispatch(getCityName(e.target.value))}
       />
-      <button onClick={handlerSetCity}>set new city</button>
+      <button id={id} onClick={(e) => handlerSetCity(e)}>
+        set new city
+      </button>
       <div> city: {city}</div>
       <div> temp: {temp} °C</div>
       <div> pressure(mmHg) : {pressure}</div>
