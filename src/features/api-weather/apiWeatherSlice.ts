@@ -15,12 +15,14 @@ interface IState {
   weatherValues: IWeatherValues;
   valueCity: string;
   error: string;
+  isLoaded: boolean;
 }
 const initialState: IState = {
   apiData: "",
   weatherValues: {} as IWeatherValues,
   valueCity: "",
   error: "",
+  isLoaded: false,
 };
 
 function temperatureConverter(valNum: string) {
@@ -114,8 +116,14 @@ export const apiWeatherSlice = createSlice({
     },
   },
   extraReducers(builder) {
-    builder.addCase(getAsyncApiWeather.pending, () => {});
-    builder.addCase(getAsyncApiWeather.fulfilled, () => {});
+    builder.addCase(getAsyncApiWeather.pending, (state) => {
+      state.isLoaded = false;
+      
+    });
+    builder.addCase(getAsyncApiWeather.fulfilled, (state) => {
+      state.isLoaded = true;
+      
+    });
   },
 });
 export const { getApiData, setWetherValues, getCityName, setError } =
