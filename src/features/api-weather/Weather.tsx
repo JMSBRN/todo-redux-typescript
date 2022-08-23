@@ -24,8 +24,7 @@ const Weather = ({ weatherValues, valueCity }: IWeatherProps) => {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     dispatch(getId(e.currentTarget.id));
-    valueCity && localStorage.setItem("city", JSON.stringify(valueCity));
-    dispatch(getAsyncApiWeather());
+    dispatch(getAsyncApiWeather(valueCity));
   };
   let img = "";
   const setCloudImg = (clouds: string) => {

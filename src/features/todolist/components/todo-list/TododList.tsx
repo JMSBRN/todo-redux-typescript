@@ -10,7 +10,7 @@ import Todos from "../todos/Todos";
 import * as Styled from "./TodoList.style";
 
 const TododList = () => {
-  const { isLoaded, weatherCities } = useAppSelector(selectWether);
+  const { weatherCities } = useAppSelector(selectWether);
   const { valueCity, weatherValues } = useAppSelector(selectWether);
   const dispatch = useAppDispatch();
   return (
@@ -21,9 +21,7 @@ const TododList = () => {
         </button>
         {weatherCities.map((el) => (
           <div key={el.id + el.city}>
-            {isLoaded && (
-              <Weather weatherValues={weatherValues} valueCity={valueCity} />
-            )}
+            <Weather weatherValues={weatherValues} valueCity={valueCity} />
           </div>
         ))}
       </Styled.WeatherCityes>
@@ -37,6 +35,3 @@ const TododList = () => {
 };
 
 export default TododList;
-function setNewWether(): any {
-  throw new Error("Function not implemented.");
-}

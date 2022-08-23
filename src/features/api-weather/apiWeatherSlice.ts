@@ -22,14 +22,14 @@ interface IState {
   id: string;
 }
 const initialState: IState = {
-  apiData: "",
+  apiData: '',
   weatherValues: {} as IWeatherValues,
-  valueCity: "",
-  error: "",
+  valueCity: '',
+  error: '',
   isLoaded: false,
   weatherCities: [],
-  curCity: "",
-  id: "",
+  curCity: '',
+  id: '',
 };
 function temperatureConverter(valNum: string) {
   let val = parseFloat(valNum);
@@ -46,8 +46,8 @@ const isEmptyOrSpaces = (str: string) => {
 };
 export const getAsyncApiWeather = createAsyncThunk(
   "weather",
-  async (_, { dispatch }) => {
-    const CITY_NAME: string = JSON.parse(localStorage.getItem("city") || "");
+  async (city: string, { dispatch }) => {
+    const CITY_NAME: string = city;
     const isNotEmtyOrSpaces = !isEmptyOrSpaces(CITY_NAME);
     if (isNotEmtyOrSpaces) {
       const API_KEY = "516fa3e2ca0738cc84373fe362d7f8b6";
@@ -130,8 +130,18 @@ export const apiWeatherSlice = createSlice({
       state.error = action.payload;
     },
     setNewWetherCity: (state) => {
+      const id = JSON.stringify(Math.floor(Math.random() * 100));
       if (state.weatherCities.length < 4) {
-        state.weatherCities = [...state.weatherCities, state.weatherValues];
+        state.weatherCities = [...state.weatherCities, {
+          id: id,
+          city: '',
+          temp: 0,
+          pressure: 0,
+          humidity: 0,
+          clouds: '',
+          windDeg: '',
+          windSpeed: 0,
+        }];
       }
     },
     getId: (state, action) => {
@@ -140,13 +150,10 @@ export const apiWeatherSlice = createSlice({
   },
   extraReducers(builder) {
     builder.addCase(getAsyncApiWeather.pending, (state) => {
-      state.isLoaded = true;
     });
     builder.addCase(getAsyncApiWeather.fulfilled, (state) => {
-      state.isLoaded = true;
     });
     builder.addCase(getAsyncApiWeather.rejected, (state) => {
-      state.isLoaded = true;
     });
   },
 });
