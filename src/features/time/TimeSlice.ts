@@ -24,9 +24,9 @@ interface IState {
 const initialState: IState = {
   time: new Date().toTimeString().split(" ")[0],
   date: date,
-  greeting: "",
-  name: "",
-  isName: true,
+  greeting: '',
+  name: '',
+  isName: false,
 };
 export const timeSlice = createSlice({
   name: "time",
@@ -45,13 +45,10 @@ export const timeSlice = createSlice({
       state.name = action.payload;
       localStorage.setItem("name", JSON.stringify(state.name));
     },
-    setIsName: (state, action) => {
-      state.isName = action.payload;
-    },
   },
 });
 
-export const { timeChange, dateChange, greetingsChange, setName, setIsName } =
+export const { timeChange, dateChange, greetingsChange, setName } =
   timeSlice.actions;
 export const selectTime = (state: RootState) => state.time;
 export default timeSlice.reducer;
