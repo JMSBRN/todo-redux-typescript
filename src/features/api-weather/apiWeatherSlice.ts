@@ -48,7 +48,7 @@ export const apiWeatherSlice = createSlice({
     setError: (state, action) => {
       state.error = action.payload;
     },
-    setNewWetherCity: (state, action) => {
+    setNewWeatherCity: (state, action) => {
       state.weatherCities = action.payload;
       const id = JSON.stringify(Math.floor(Math.random() * 100));
       if (state.weatherCities.length < 4) {
@@ -72,6 +72,9 @@ export const apiWeatherSlice = createSlice({
     getId: (state, action) => {
       state.id = action.payload;
     },
+    setWeatherCities: (state, action) => {
+      state.weatherCities = action.payload;
+    },
   },
 });
 export const {
@@ -79,8 +82,9 @@ export const {
   setWetherValues,
   getCityName,
   setError,
-  setNewWetherCity,
+  setNewWeatherCity,
   getId,
+  setWeatherCities,
 } = apiWeatherSlice.actions;
 export const selectWether = (state: RootState) => state.weather;
 export default apiWeatherSlice.reducer;
