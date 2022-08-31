@@ -26,7 +26,7 @@ const Weather = () => {
     if (isNotEmtyOrSpaces) {
       const API_KEY = "516fa3e2ca0738cc84373fe362d7f8b6";
       const response = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${cityData}&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityData}&appid=${API_KEY}`
       );
       const json = await response.json();
       const weatherVal = Object.values(json.main);
