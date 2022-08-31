@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 
 export interface IWeatherValues {
@@ -22,96 +22,15 @@ interface IState {
   id: string;
 }
 const initialState: IState = {
-  apiData: '',
+  apiData: "",
   weatherValues: {} as IWeatherValues,
-  valueCity: '',
-  error: '',
+  valueCity: "",
+  error: "",
   isLoaded: false,
   weatherCities: [],
-  curCity: '',
-  id: '',
+  curCity: "",
+  id: "",
 };
-function temperatureConverter(valNum: string) {
-  let val = parseFloat(valNum);
-  val = Math.round(val - 273.15);
-  return val;
-}
-function pressureConverter(valNum: number) {
-  let val = valNum;
-  val = Math.round((val * 750.0616827) / 1000);
-  return val;
-}
-const isEmptyOrSpaces = (str: string) => {
-  return str === null || str.match(/^ *$/) !== null;
-};
-export const getAsyncApiWeather = createAsyncThunk(
-  "weather",
-  async (city: string, { dispatch }) => {
-    const CITY_NAME: string = city;
-    const isNotEmtyOrSpaces = !isEmptyOrSpaces(CITY_NAME);
-    if (isNotEmtyOrSpaces) {
-      const API_KEY = "516fa3e2ca0738cc84373fe362d7f8b6";
-      const response = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${API_KEY}`
-      );
-
-      const json = await response.json();
-      const weatherVal = Object.values(json.main);
-      const city = json.name;
-      const temp = temperatureConverter(weatherVal[0] as string);
-      const pressure = pressureConverter(Number(weatherVal[4]));
-      const humidity = Number(weatherVal[5]);
-      const cloudsValue = json.clouds.all;
-      const cloudsImages = [
-        "sun",
-        "cloud-sun",
-        "cloud-sun",
-        "cloud-sun",
-        "cloud-sun",
-        "cloud",
-      ];
-      const cloudsState = Math.floor((parseInt(cloudsValue) / 100) * 5.99);
-      const clouds = cloudsImages[cloudsState];
-      const wind = json.wind;
-      const windDeg = wind.deg;
-      const windSpeed = Math.round(parseInt(wind.speed) * 3.257918552036199);
-      const speedIndexDirection = Math.floor((parseInt(windDeg) / 360) * 15.99);
-      const windDirections = [
-        "N",
-        "NNE",
-        "NE",
-        "NEE",
-        "E",
-        "EES",
-        "ES",
-        "ESS",
-        "S",
-        "SSW",
-        "SW",
-        "SWW",
-        "W",
-        "WWN",
-        "WN",
-        "WNN",
-      ];
-      const winDir = windDirections[speedIndexDirection];
-      const id = JSON.stringify(Math.floor(Math.random() * 100));
-      const weatherValues: IWeatherValues = {
-        id: id,
-        city: city,
-        temp: temp,
-        pressure: pressure,
-        humidity: humidity,
-        clouds: clouds,
-        windDeg: winDir,
-        windSpeed: windSpeed,
-      };
-      dispatch(setWetherValues(weatherValues));
-    } else {
-      dispatch(setError("please enter city name"));
-    }
-  }
-);
 export const apiWeatherSlice = createSlice({
   name: "weather",
   initialState,
@@ -132,29 +51,26 @@ export const apiWeatherSlice = createSlice({
     setNewWetherCity: (state) => {
       const id = JSON.stringify(Math.floor(Math.random() * 100));
       if (state.weatherCities.length < 4) {
-        state.weatherCities = [...state.weatherCities, {
-          id: id,
-          city: '',
-          temp: 0,
-          pressure: 0,
-          humidity: 0,
-          clouds: '',
-          windDeg: '',
-          windSpeed: 0,
-        }];
+        state.weatherCities = [
+          ...state.weatherCities,
+          {
+            id: id,
+            city: "",
+            temp: 0,
+            pressure: 0,
+            humidity: 0,
+            clouds: "",
+            windDeg: "",
+            windSpeed: 0,
+          },
+        ];
       }
+      state.weatherValues = {} as IWeatherValues;
+      state.valueCity = "";
     },
     getId: (state, action) => {
       state.id = action.payload;
     },
-  },
-  extraReducers(builder) {
-    builder.addCase(getAsyncApiWeather.pending, (state) => {
-    });
-    builder.addCase(getAsyncApiWeather.fulfilled, (state) => {
-    });
-    builder.addCase(getAsyncApiWeather.rejected, (state) => {
-    });
   },
 });
 export const {

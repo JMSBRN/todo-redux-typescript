@@ -11,7 +11,6 @@ import * as Styled from "./TodoList.style";
 
 const TododList = () => {
   const { weatherCities } = useAppSelector(selectWether);
-  const { valueCity, weatherValues } = useAppSelector(selectWether);
   const dispatch = useAppDispatch();
   return (
     <Styled.TodoList>
@@ -21,7 +20,7 @@ const TododList = () => {
         </button>
         {weatherCities.map((el) => (
           <div key={el.id + el.city}>
-            <Weather weatherValues={weatherValues} valueCity={valueCity} />
+            <Weather />
           </div>
         ))}
       </Styled.WeatherCityes>

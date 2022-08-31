@@ -1,30 +1,92 @@
-import React from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import {
-  getAsyncApiWeather,
-  getCityName,
-  getId,
-  IWeatherValues,
-  selectWether,
-} from "./apiWeatherSlice";
+import React, { useState } from "react";
+import { IWeatherValues } from "./apiWeatherSlice";
 import * as Styled from "./Weather.Style";
 import cloudImg from "../api-weather/assets/wether/cloud.png";
 import cloudSunImg from "../api-weather/assets/wether/sun_clouds.png";
 import sunImg from "../api-weather/assets/wether/sun.png";
-interface IWeatherProps {
-  weatherValues: IWeatherValues;
-  valueCity: string;
-}
-const Weather = ({ weatherValues, valueCity }: IWeatherProps) => {
-  const { error } = useAppSelector(selectWether);
-  const dispatch = useAppDispatch();
-  const { id, city, temp, pressure, humidity, clouds, windDeg, windSpeed } =
-    weatherValues;
+
+const Weather = () => {
+  const [cityFromInput, setCityFromInput] = useState("");
+  const [weatherValues, setWeatherValues] = useState({} as IWeatherValues);
+  const temperatureConverter = (valNum: string) => {
+    let val = parseFloat(valNum);
+    val = Math.round(val - 273.15);
+    return val;
+  };
+  const pressureConverter = (valNum: number) => {
+    let val = valNum;
+    val = Math.round((val * 750.0616827) / 1000);
+    return val;
+  };
+  const isEmptyOrSpaces = (str: string) => {
+    return str === null || str.match(/^ *$/) !== null;
+  };
+  const getWeather = async (cityData: string) => {
+    const isNotEmtyOrSpaces = !isEmptyOrSpaces(cityData);
+    if (isNotEmtyOrSpaces) {
+      const API_KEY = "516fa3e2ca0738cc84373fe362d7f8b6";
+      const response = await fetch(
+        `http://api.openweathermap.org/data/2.5/weather?q=${cityData}&appid=${API_KEY}`
+      );
+      const json = await response.json();
+      const weatherVal = Object.values(json.main);
+      const city = json.name;
+      const temp = temperatureConverter(weatherVal[0] as string);
+      const pressure = pressureConverter(Number(weatherVal[4]));
+      const humidity = Number(weatherVal[5]);
+      const cloudsValue = json.clouds.all;
+      const cloudsImages = [
+        "sun",
+        "cloud-sun",
+        "cloud-sun",
+        "cloud-sun",
+        "cloud-sun",
+        "cloud",
+      ];
+      const cloudsState = Math.floor((parseInt(cloudsValue) / 100) * 5.99);
+      const clouds = cloudsImages[cloudsState];
+      const wind = json.wind;
+      const windDeg = wind.deg;
+      const windSpeed = Math.round(parseInt(wind.speed) * 3.257918552036199);
+      const speedIndexDirection = Math.floor((parseInt(windDeg) / 360) * 15.99);
+      const windDirections = [
+        "N",
+        "NNE",
+        "NE",
+        "NEE",
+        "E",
+        "EES",
+        "ES",
+        "ESS",
+        "S",
+        "SSW",
+        "SW",
+        "SWW",
+        "W",
+        "WWN",
+        "WN",
+        "WNN",
+      ];
+      const winDir = windDirections[speedIndexDirection];
+      const id = JSON.stringify(Math.floor(Math.random() * 100));
+      const curWetheValues: IWeatherValues = {
+        id: id,
+        city: city,
+        temp: temp,
+        pressure: pressure,
+        humidity: humidity,
+        clouds: clouds,
+        windDeg: winDir,
+        windSpeed: windSpeed,
+      };
+      setWeatherValues(curWetheValues);
+      return weatherValues;
+    }
+  };
   const handlerSetCity = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    dispatch(getId(e.currentTarget.id));
-    dispatch(getAsyncApiWeather(valueCity));
+    getWeather(cityFromInput);
   };
   let img = "";
   const setCloudImg = (clouds: string) => {
@@ -41,17 +103,17 @@ const Weather = ({ weatherValues, valueCity }: IWeatherProps) => {
     }
     return img;
   };
+  const { city, temp, pressure, humidity, clouds, windDeg, windSpeed } =
+    weatherValues;
   setCloudImg(clouds);
   return (
     <Styled.WeatherWrapper>
       <input
         type="text"
-        placeholder={error}
-        onChange={(e) => dispatch(getCityName(e.target.value))}
+        placeholder={""}
+        onChange={(e) => setCityFromInput(e.target.value)}
       />
-      <button id={id} onClick={(e) => handlerSetCity(e)}>
-        set new city
-      </button>
+      <button onClick={(e) => handlerSetCity(e)}>set new city</button>
       <div> city: {city}</div>
       <div> temp: {temp} °C</div>
       <div> pressure(mmHg) : {pressure}</div>
