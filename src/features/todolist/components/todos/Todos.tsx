@@ -27,7 +27,12 @@ const Todos = () => {
             key={el.id}
             value={el}
           >
-            <Todo time={el.time} id={el.id} text={el.text} complited={el.complited} />
+            <Todo
+              time={el.time}
+              id={el.id}
+              text={el.text}
+              complited={el.complited}
+            />
           </Reorder.Item>
         ))}
       </Styled.Todos>

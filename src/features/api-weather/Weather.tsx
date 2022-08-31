@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { IWeatherValues } from "./apiWeatherSlice";
-import * as Styled from "./Weather.Style";
-import cloudImg from "../api-weather/assets/wether/cloud.png";
-import cloudSunImg from "../api-weather/assets/wether/sun_clouds.png";
-import sunImg from "../api-weather/assets/wether/sun.png";
+import * as Styled from "./Weather.style";
+import cloudImg from "../api-weather/assets/weather/cloud.png";
+import cloudSunImg from "../api-weather/assets/weather/sun_clouds.png";
+import sunImg from "../api-weather/assets/weather/sun.png";
 
 const Weather = () => {
   const [cityFromInput, setCityFromInput] = useState("");
