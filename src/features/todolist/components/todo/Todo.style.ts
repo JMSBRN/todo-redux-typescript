@@ -51,6 +51,7 @@ export const TodoText = styled.div`
   text-overflow: ellipsis;
   display: -webkit-box;
   font-size: 20px;
+  color: var(--text-color);
   line-height: 16px; /* fallback */
   max-height: auto; /* fallback */
   -webkit-line-clamp: 10; /* number of lines to show */

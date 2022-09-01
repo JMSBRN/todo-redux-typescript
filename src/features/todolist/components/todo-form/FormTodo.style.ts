@@ -14,7 +14,12 @@ export const Inputform = styled.input<IForm>`
   width: 350px;
   height: 30px;
   font-size: 20px;
+  text-align: center;
+  padding-bottom: 7px;
   color: var(--text-color);
+  outline: none;
+  border: 1px solid var(--text-color);
+  border-radius: 3px;
 `;
 export const FormBtn = styled.button`
   width: 90px;
