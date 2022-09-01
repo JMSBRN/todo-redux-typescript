@@ -24,7 +24,7 @@ const Weather = () => {
   const getWeather = async (cityData: string) => {
     const isNotEmtyOrSpaces = !isEmptyOrSpaces(cityData);
     if (isNotEmtyOrSpaces) {
-      const API_KEY = "516fa3e2ca0738cc84373fe362d7f8b6";
+      const API_KEY = "cd563261e259e5de15c30202491f1e37";
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${cityData}&appid=${API_KEY}`
       );
@@ -83,14 +83,11 @@ const Weather = () => {
       return weatherValues;
     }
   };
-  useEffect(() => {
-   // getWeather('Minsk');
-  }, [])
-  
   const handlerSetCity = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     getWeather(cityFromInput);
+    setCityFromInput('');
   };
   let img = "";
   const setCloudImg = (clouds: string) => {
@@ -118,16 +115,16 @@ const Weather = () => {
         onChange={(e) => setCityFromInput(e.target.value)}
       />
       <Styled.SetCityBtn onClick={(e) => handlerSetCity(e)}>set city</Styled.SetCityBtn >
-      <Styled.City> city: {city}</Styled.City>
-      <Styled.Temp> temp: {temp} °C</Styled.Temp>
-      <Styled.Pressure> pressure(mmHg) : {pressure}</Styled.Pressure>
-      <Styled.Humidity> humidity : {humidity}%</Styled.Humidity>
-      <Styled.Clouds>
-        <img src={img} alt={clouds} width="20" />
-      </Styled.Clouds>
+      <Styled.City>{city}</Styled.City>
+      <Styled.TempWrapper>
+      <Styled.Temp>{temp} °C</Styled.Temp>
+        <Styled.Clouds src={img} alt={clouds} width="20" />
+      </Styled.TempWrapper>
+      <Styled.Pressure>⬇️ {pressure} <Styled.HmHg>mmHg</Styled.HmHg></Styled.Pressure>
+      <Styled.Humidity>💧 {humidity}%</Styled.Humidity>
       <Styled.Wind>
-        <Styled.WindDirection>wind-direction : {windDeg}</Styled.WindDirection>
-        <Styled.WindSpeed>wind speed (km/h) :{windSpeed}</Styled.WindSpeed>
+        <Styled.WindDirection>{windDeg}</Styled.WindDirection>
+        <Styled.WindSpeed>{windSpeed} km/h</Styled.WindSpeed>
       </Styled.Wind>
     </Styled.WeatherWrapper>
   );

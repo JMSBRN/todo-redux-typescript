@@ -22,8 +22,16 @@ font-size: 16px;
 export const City = styled.div`
 font-size: 16px;
 `;
+export const TempWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`;
 export const Temp = styled.div`
- font-size: 16px;
+ font-size: 30px;
+`;
+export const Clouds = styled.img`
+ width: 50px;
 `;
 export const Pressure = styled.div`
  font-size: 16px;
@@ -31,10 +39,15 @@ export const Pressure = styled.div`
 export const Humidity = styled.div`
  font-size: 16px;
 `;
-export const Clouds = styled.div`
- font-size: 16px;
+export const HmHg = styled.span`
+ font-size: 10px;
 `;
 export const Wind = styled.div`
+ padding: 3px;
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 10px;
  font-size: 16px;
 `;
 export const WindDirection = styled.div`
