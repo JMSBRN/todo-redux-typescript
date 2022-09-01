@@ -1,4 +1,5 @@
 import WeatherCities from "../../../api-weather/assets/weather/WeatherCities";
+import Calendar from "../../../calendar/Calendar";
 import Clock from "../../../time/Clock";
 import FormTodo from "../todo-form/FormTodo";
 import Todos from "../todos/Todos";
@@ -8,6 +9,7 @@ const TododList = () => {
   return (
     <Styled.TodoList>
       <WeatherCities />
+      <Calendar />
       <Styled.ToListWrapper>
         <Clock />
         <FormTodo />
