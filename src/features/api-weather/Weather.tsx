@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IWeatherValues } from "./apiWeatherSlice";
 import * as Styled from "./Weather.style";
 import cloudImg from "../api-weather/assets/weather/cloud.png";
@@ -83,6 +83,10 @@ const Weather = () => {
       return weatherValues;
     }
   };
+  useEffect(() => {
+   // getWeather('Minsk');
+  }, [])
+  
   const handlerSetCity = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
@@ -108,23 +112,23 @@ const Weather = () => {
   setCloudImg(clouds);
   return (
     <Styled.WeatherWrapper>
-      <input
+      <Styled.Input
         type="text"
         placeholder={""}
         onChange={(e) => setCityFromInput(e.target.value)}
       />
       <button onClick={(e) => handlerSetCity(e)}>set new city</button>
-      <div> city: {city}</div>
-      <div> temp: {temp} °C</div>
-      <div> pressure(mmHg) : {pressure}</div>
-      <div> humidity : {humidity}%</div>
-      <div className="">
+      <Styled.City> city: {city}</Styled.City>
+      <Styled.Temp> temp: {temp} °C</Styled.Temp>
+      <Styled.Pressure> pressure(mmHg) : {pressure}</Styled.Pressure>
+      <Styled.Humidity> humidity : {humidity}%</Styled.Humidity>
+      <Styled.Clouds>
         <img src={img} alt={clouds} width="20" />
-      </div>
-      <ul>
-        <li>wind-direction : {windDeg}</li>
-        <li>wind speed (km/h) :{windSpeed}</li>
-      </ul>
+      </Styled.Clouds>
+      <Styled.Wind>
+        <Styled.WindDirection>wind-direction : {windDeg}</Styled.WindDirection>
+        <Styled.WindSpeed>wind speed (km/h) :{windSpeed}</Styled.WindSpeed>
+      </Styled.Wind>
     </Styled.WeatherWrapper>
   );
 };

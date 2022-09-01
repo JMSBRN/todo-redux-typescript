@@ -2,14 +2,14 @@ import React from "react";
 import { Reorder } from "framer-motion";
 import { useAppSelector, useAppDispatch } from "../../../../app/hooks";
 import {
-  selectWether,
+  selectWeather,
   setNewWeatherCity,
   setWeatherCities,
 } from "../../apiWeatherSlice";
 import Weather from "../../Weather";
 import * as Styled from "./WeatherCities.style";
 const WeatherCities = () => {
-  const { weatherCities } = useAppSelector(selectWether);
+  const { weatherCities } = useAppSelector(selectWeather);
   const dispatch = useAppDispatch();
   return (
     <Reorder.Group
@@ -20,10 +20,10 @@ const WeatherCities = () => {
       }}
       values={weatherCities}
     >
-      <button onClick={() => dispatch(setNewWeatherCity(weatherCities))}>
-        add sity (max four)
-      </button>
       <Styled.WeatherCityes>
+        <button onClick={() => dispatch(setNewWeatherCity(weatherCities))}>
+          add sity (max four)
+        </button>
         {weatherCities.map((el) => (
           <Reorder.Item
             initial={{ opacity: 0 }}

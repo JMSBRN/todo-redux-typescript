@@ -2,6 +2,7 @@ import styled from "styled-components";
 export const WeatherCityes = styled.div`
   width: 300px;
   height: 700px;
+  margin-top: 20px;
   padding-left: 20px;
   display: flex;
   flex-direction: column;

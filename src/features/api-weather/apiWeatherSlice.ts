@@ -38,7 +38,7 @@ export const apiWeatherSlice = createSlice({
     getApiData: (state, action) => {
       state.apiData = action.payload;
     },
-    setWetherValues: (state, action) => {
+    setWeatherValues: (state, action) => {
       state.weatherValues = action.payload;
     },
     getCityName: (state, action) => {
@@ -79,12 +79,12 @@ export const apiWeatherSlice = createSlice({
 });
 export const {
   getApiData,
-  setWetherValues,
+  setWeatherValues,
   getCityName,
   setError,
   setNewWeatherCity,
   getId,
   setWeatherCities,
 } = apiWeatherSlice.actions;
-export const selectWether = (state: RootState) => state.weather;
+export const selectWeather = (state: RootState) => state.weather;
 export default apiWeatherSlice.reducer;
