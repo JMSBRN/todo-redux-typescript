@@ -5,7 +5,7 @@ export const WeatherWrapper = styled.div`
   height: auto;
   padding: 3px;
   color: var(--text-color);
-  border: 1px solid var(--border-color-grey);
+  border: 1px solid var(--border-color);
   border-radius: 3px;
   cursor: grab;
 `;
@@ -16,7 +16,7 @@ export const Input = styled.input`
   border: none;
   font-size: 16px;
   color: var(--text-color);
-  border-bottom: 1px solid var(--border-color-grey);
+  border-bottom: 1px solid var(--border-color);
 `;
 export const SetCityBtn = styled.button`
   color: var(--text-color);

@@ -18,12 +18,13 @@ export const Inputform = styled.input<IForm>`
   padding-bottom: 7px;
   color: var(--text-color);
   outline: none;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--border-color);
   border-radius: 3px;
 `;
 export const FormBtn = styled.button`
   width: 90px;
   min-height: 34px;
   font-size: 16px;
+  border: 1px solid var(--border-color);
   color: var(--text-color);
 `;

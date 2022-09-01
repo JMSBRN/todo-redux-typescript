@@ -10,7 +10,7 @@ export const TodoWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  border: 1px solid var(--border-color-grey);
+  border: 1px solid var(--border-color);
   border-radius: 3px;
 `;
 export const TimeTodo = styled.div`
