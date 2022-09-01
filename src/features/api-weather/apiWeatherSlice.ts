@@ -20,6 +20,7 @@ interface IState {
   curCity: string;
   weatherCities: IWeatherValues[];
   id: string;
+  isEntered: boolean;
 }
 const initialState: IState = {
   apiData: "",
@@ -30,6 +31,7 @@ const initialState: IState = {
   weatherCities: [],
   curCity: "",
   id: "",
+  isEntered: true,
 };
 export const apiWeatherSlice = createSlice({
   name: "weather",

@@ -8,6 +8,11 @@ import sunImg from "../api-weather/assets/weather/sun.png";
 const Weather = () => {
   const [cityFromInput, setCityFromInput] = useState("");
   const [weatherValues, setWeatherValues] = useState({} as IWeatherValues);
+  const [isEntered, setIsEntered] = useState(true)
+  useEffect(() => {
+   
+  }, [])
+  
   const temperatureConverter = (valNum: string) => {
     let val = parseFloat(valNum);
     val = Math.round(val - 273.15);
@@ -88,6 +93,9 @@ const Weather = () => {
   ) => {
     getWeather(cityFromInput);
     setCityFromInput('');
+    setTimeout(() => {
+      setIsEntered(false);
+    }, 3000);
   };
   let img = "";
   const setCloudImg = (clouds: string) => {
@@ -109,12 +117,17 @@ const Weather = () => {
   setCloudImg(clouds);
   return (
     <Styled.WeatherWrapper>
-      <Styled.Input
-        type="text"
-        placeholder={""}
-        onChange={(e) => setCityFromInput(e.target.value)}
-      />
-      <Styled.SetCityBtn onClick={(e) => handlerSetCity(e)}>set city</Styled.SetCityBtn >
+      { isEntered &&
+      <div className="">
+        <Styled.Input
+          type="text"
+          placeholder={""}
+          value={cityFromInput}
+          onChange={(e) => setCityFromInput(e.target.value)}
+        />
+        <Styled.SetCityBtn onClick={(e) => handlerSetCity(e)}>set city</Styled.SetCityBtn >
+      </div>
+      }
       <Styled.City>{city}</Styled.City>
       <Styled.TempWrapper>
       <Styled.Temp>{temp} °C</Styled.Temp>

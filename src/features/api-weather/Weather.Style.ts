@@ -7,6 +7,7 @@ export const WeatherWrapper = styled.div`
   font-size: 10px;
   border: 1px solid lightblue;
   border-radius: 3px;
+  cursor: grab;
 `;
 export const Input = styled.input`
   width: 100px;
