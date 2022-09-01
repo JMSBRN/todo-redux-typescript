@@ -34,10 +34,11 @@ export const Clouds = styled.img`
  width: 50px;
 `;
 export const Pressure = styled.div`
- font-size: 16px;
+ font-size: 18px;
 `;
 export const Humidity = styled.div`
- font-size: 16px;
+ margin-top: 6px;
+ font-size: 20px;
 `;
 export const HmHg = styled.span`
  font-size: 10px;
