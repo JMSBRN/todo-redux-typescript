@@ -11,3 +11,6 @@ export const WeatherCityes = styled.div`
   gap: 10px;
   list-style: none;
 `;
+export const AddCityBtn = styled.button`
+  font-size: 16px;
+`;

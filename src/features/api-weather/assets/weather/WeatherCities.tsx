@@ -12,6 +12,7 @@ const WeatherCities = () => {
   const { weatherCities } = useAppSelector(selectWeather);
   const dispatch = useAppDispatch();
   return (
+
     <Reorder.Group
       as="div"
       axis="y"
@@ -21,9 +22,9 @@ const WeatherCities = () => {
       values={weatherCities}
     >
       <Styled.WeatherCityes>
-        <button onClick={() => dispatch(setNewWeatherCity(weatherCities))}>
+        <Styled.AddCityBtn onClick={() => dispatch(setNewWeatherCity(weatherCities))}>
           add sity (max four)
-        </button>
+        </Styled.AddCityBtn>
         {weatherCities.map((el) => (
           <Reorder.Item
             initial={{ opacity: 0 }}

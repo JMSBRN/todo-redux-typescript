@@ -117,7 +117,7 @@ const Weather = () => {
         placeholder={""}
         onChange={(e) => setCityFromInput(e.target.value)}
       />
-      <button onClick={(e) => handlerSetCity(e)}>set new city</button>
+      <Styled.SetCityBtn onClick={(e) => handlerSetCity(e)}>set city</Styled.SetCityBtn >
       <Styled.City> city: {city}</Styled.City>
       <Styled.Temp> temp: {temp} °C</Styled.Temp>
       <Styled.Pressure> pressure(mmHg) : {pressure}</Styled.Pressure>

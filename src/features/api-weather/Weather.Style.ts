@@ -16,6 +16,9 @@ export const Input = styled.input`
   font-size: 16px;
   border-bottom: 1px solid grey;
 `;
+export const SetCityBtn  = styled.button`
+font-size: 16px;
+`;
 export const City = styled.div`
 font-size: 16px;
 `;
