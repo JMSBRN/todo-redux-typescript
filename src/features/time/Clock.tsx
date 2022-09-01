@@ -49,7 +49,7 @@ const Clock = () => {
         </Styled.InputGreetingNameWrapper>
       )}
       <Styled.Time>{time}</Styled.Time>
-      <div className="">{date}</div>
+      <Styled.Date className="">{date}</Styled.Date>
     </Styled.ClockWrapper>
   );
 };

@@ -4,19 +4,19 @@ interface ITodo {
 }
 export const TodoWrapper = styled.div`
   position: relative;
-  width: 400px;
-  height: auto;
-  padding: 10px;
+  width: 420px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  border: 1px solid grey;
+  border: 1px solid var(--border-color-grey);
+  border-radius: 3px;
 `;
 export const TimeTodo = styled.div`
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: 2px;
+  left: 2px;
   font-size: 10px;
   color: gray;
 `;
@@ -50,7 +50,7 @@ export const TodoText = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 16px; /* fallback */
   max-height: auto; /* fallback */
   -webkit-line-clamp: 10; /* number of lines to show */

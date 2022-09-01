@@ -9,6 +9,7 @@ export const ClockWrapper = styled.div`
 `;
 export const Greeting = styled.div`
   font-size: 30px;
+  color: var(--text-color);
 `;
 export const  GreetingNameWrapper = styled.div`
   width: 70px;
@@ -19,10 +20,8 @@ export const  GreetingNameWrapper = styled.div`
 `;
 export const GreetingName = styled.span`
   font-size: 30px;
+  color: var(--text-color);
   cursor: default;
-  &:hover {
-    color: red;
-  }
 `;
 export const InputGreetingNameWrapper = styled.div`
   font-size: 30px;
@@ -34,14 +33,19 @@ export const HoverMessage = styled.div`
  color: white;
  font-size: 12px;
   &:hover {
-    color: grey;
+    color: var(--text-color);
     transition-delay: 0.3s;
     transition: 0.3s ease all;
   }
 `;
 export const Time = styled.div`
-  color: grey;
+  color: var(--text-color);
   font-weight: 600;
   font-size: 50px;
   margin-bottom: 20px;
+`;
+export const Date = styled.div`
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 20px;
 `;

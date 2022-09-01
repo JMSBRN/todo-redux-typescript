@@ -16,6 +16,7 @@ const FormTodo = () => {
         onChange={(e) => dispatch(setTask(e.target.value))}
         value={task}
         type="text"
+        placeholder="new task"
       />
       {isEdit ? (
         <Styled.FormBtn onClick={() => dispatch(setEditedTsk(id))}>submit edit</Styled.FormBtn>

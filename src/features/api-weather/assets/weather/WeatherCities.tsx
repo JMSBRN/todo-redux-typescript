@@ -23,7 +23,7 @@ const WeatherCities = () => {
     >
       <Styled.WeatherCityes>
         <Styled.AddCityBtn onClick={() => dispatch(setNewWeatherCity(weatherCities))}>
-          add sity (max four)
+         add new wether city (max four)
         </Styled.AddCityBtn>
         {weatherCities.map((el) => (
           <Reorder.Item

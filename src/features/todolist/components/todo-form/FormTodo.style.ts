@@ -1,5 +1,5 @@
 import styled from "styled-components";
-interface IForm{
+interface IForm {
   isEdit: boolean;
 }
 export const Form = styled.div`
@@ -9,11 +9,16 @@ export const Form = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  border: 1px solid grey;
-`
+`;
 export const Inputform = styled.input<IForm>`
-
-`
+  width: 350px;
+  height: 30px;
+  font-size: 20px;
+  color: var(--text-color);
+`;
 export const FormBtn = styled.button`
-
-`
+  width: 90px;
+  min-height: 34px;
+  font-size: 16px;
+  color: var(--text-color);
+`;
