@@ -15,7 +15,7 @@ export const TodoList = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  background-color: rgba(100,100,100,0.3);
+  background-color: rgba(50, 50, 50, 0.4);
   background-blend-mode: color;
 `;
 export const ToListWrapper = styled.div`

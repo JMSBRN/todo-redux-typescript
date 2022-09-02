@@ -30,9 +30,13 @@ export const Inputform = styled.input<IForm>`
 `;
 export const FormBtn = styled.button`
   width: 90px;
-  min-height: 34px;
+  min-height: 39px;
   font-size: 16px;
+  color: var(--text-color);
   border: 1px solid var(--border-color);
   background-color: transparent;
-  color: var(--text-color);
+  cursor: pointer;
+  &:hover {
+    border: 2px solid var(--border-color);
+  }
 `;

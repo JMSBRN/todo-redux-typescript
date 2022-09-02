@@ -11,9 +11,19 @@ export const WeatherCityes = styled.div`
   gap: 10px;
   list-style: none;
 `;
+export const AddCityBtnWrapper = styled.div`
+  height: 30px;
+`;
 export const AddCityBtn = styled.button`
+  margin-bottom: 20px;
+  width: 235px;
   font-size: 16px;
   color: var(--text-color);
   background-color: transparent;
   border: 1px solid var(--border-color);
+  cursor: pointer;
+  &:hover {
+    padding: 7px;
+    transition: all ease 0.3s;
+  }
 `;
