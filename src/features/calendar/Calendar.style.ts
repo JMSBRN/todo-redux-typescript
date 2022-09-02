@@ -1,14 +1,20 @@
 import styled from "styled-components";
 
 export const Calendar = styled.div`
- & .fc-button.fc-today-button, .fc-button.fc-prev-button, .fc-button.fc-next-button { 
-  background: transparent;
-  color: var(--text-color);
-  &:active {
-    background-color: transparent;
+  & .fc-button.fc-today-button,
+  .fc-button.fc-prev-button,
+  .fc-button.fc-next-button {
+    background: transparent;
+    color: var(--text-color);
+    &:active {
+      background-color: var(--background-color);
+    }
+    &:focus {
+      background-color: red;
+      visibility: hidden;
+      transition-delay: 0.1s;
+    }
   }
-}
-
   margin-top: 20px;
   width: 300px;
   height: 300px;

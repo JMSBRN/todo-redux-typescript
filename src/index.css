@@ -15,4 +15,5 @@ code {
 html {
   --border-color: rgb(194, 194, 194);
   --text-color: rgb(169, 168, 168);
+  --background-color: rgb(169, 168, 168);
 }
