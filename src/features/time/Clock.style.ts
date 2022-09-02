@@ -30,7 +30,7 @@ export const InputGreetingName = styled.input`
   font-size: 20px;
 `;
 export const HoverMessage = styled.div`
- color: white;
+ color: transparent;
  font-size: 12px;
   &:hover {
     color: var(--text-color);

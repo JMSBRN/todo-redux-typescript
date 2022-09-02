@@ -13,7 +13,7 @@ code {
     monospace;
 }
 html {
-  --border-color: rgb(194, 194, 194);
-  --text-color: rgb(169, 168, 168);
-  --background-color: rgb(169, 168, 168);
+  --border-color: rgb(255, 255, 255);
+  --text-color: rgb(255, 255, 255);
+  --background-color: rgb(255, 255, 255);
 }

@@ -6,11 +6,11 @@ export const Calendar = styled.div`
   .fc-button.fc-next-button {
     background: transparent;
     color: var(--text-color);
+    border: 1px solid var(--border-color);
     &:active {
-      background-color: var(--background-color);
+      background-color: transparent;
     }
     &:focus {
-      background-color: red;
       visibility: hidden;
       transition-delay: 0.1s;
     }

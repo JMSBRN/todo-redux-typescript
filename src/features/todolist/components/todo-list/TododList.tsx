@@ -7,15 +7,17 @@ import * as Styled from "./TodoList.style";
 
 const TododList = () => {
   return (
-    <Styled.TodoList>
-      <WeatherCities />
-      <Calendar />
-      <Styled.ToListWrapper>
-        <Clock />
-        <FormTodo />
-        <Todos />
-      </Styled.ToListWrapper>
-    </Styled.TodoList>
+    <Styled.TodoListLayout>
+      <Styled.TodoList>
+        <WeatherCities />
+        <Calendar />
+        <Styled.ToListWrapper>
+          <Clock />
+          <FormTodo />
+          <Todos />
+        </Styled.ToListWrapper>
+      </Styled.TodoList>
+    </Styled.TodoListLayout>
   );
 };
 

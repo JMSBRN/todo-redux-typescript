@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const WeatherWrapper = styled.div`
   width: 225px;
   height: auto;
-  padding: 3px;
+  padding: 5px;
   color: var(--text-color);
   border: 1px solid var(--border-color);
   border-radius: 3px;
@@ -16,11 +16,15 @@ export const Input = styled.input`
   border: none;
   font-size: 16px;
   color: var(--text-color);
+  background-color: transparent;
   border-bottom: 1px solid var(--border-color);
 `;
 export const SetCityBtn = styled.button`
-  color: var(--text-color);
   font-size: 16px;
+  color: var(--text-color);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
 `;
 export const City = styled.div`
   color: var(--text-color);
