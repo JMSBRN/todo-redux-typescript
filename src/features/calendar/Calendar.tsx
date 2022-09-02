@@ -13,6 +13,7 @@ const Calendar = () => {
         weekends={true}
         firstDay={1}
         contentHeight={300}
+        customButtons={{}}
         />
       </Styled.Calendar>
     </div>
