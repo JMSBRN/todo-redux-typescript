@@ -1,26 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IWeatherValues } from "./apiWeatherSlice";
 import * as Styled from "./Weather.style";
 import cloudImg from "../api-weather/assets/weather/cloud.png";
 import cloudSunImg from "../api-weather/assets/weather/sun_clouds.png";
 import sunImg from "../api-weather/assets/weather/sun.png";
 import { getWeather } from "./api";
-interface IWeather{
+interface IWeather {
   cityFromPorps?: string;
+  IsInputWithBtn?: boolean;
 }
-const Weather = ({cityFromPorps}: IWeather) => {
+const Weather = ({ cityFromPorps, IsInputWithBtn = true }: IWeather) => {
   const [cityFromInput, setCityFromInput] = useState("");
   const [weatherValues, setWeatherValues] = useState({} as IWeatherValues);
   const [isEntered, setIsEntered] = useState(true)
   const getAsyncWeather = async () => {
-    const curWeatheValues =  await getWeather(cityFromInput || cityFromPorps!) as IWeatherValues;
+    const curWeatheValues = await getWeather(cityFromInput || cityFromPorps!) as IWeatherValues;
     setWeatherValues(curWeatheValues);
-  }
+  };
+  useEffect(() => {
+    if (cityFromPorps) {
+      getAsyncWeather();
+    }
+  }, [])
+
   const handlerSetCity = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    if(cityFromInput) {
-      getAsyncWeather();
+    getAsyncWeather();
+    if (cityFromInput) {
       setCityFromInput('');
       setTimeout(() => {
         setIsEntered(false);
@@ -47,22 +54,26 @@ const Weather = ({cityFromPorps}: IWeather) => {
   setCloudImg(clouds);
   return (
     <Styled.WeatherWrapper>
-      { isEntered &&
-      <Styled.InputAndBtnWrapper>
-        <Styled.Input
-          type="text"
-          placeholder={""}
-          value={cityFromInput}
-          onChange={(e) => setCityFromInput(e.target.value)}
-        />
-        <Styled.SetCityBtnWrapper>
-          <Styled.SetCityBtn onClick={(e) => handlerSetCity(e)}>set city</Styled.SetCityBtn >
-        </Styled.SetCityBtnWrapper>
-      </Styled.InputAndBtnWrapper>
+      {
+        IsInputWithBtn && <>
+          {isEntered &&
+            <Styled.InputAndBtnWrapper>
+              <Styled.Input
+                type="text"
+                placeholder={""}
+                value={cityFromInput}
+                onChange={(e) => setCityFromInput(e.target.value)}
+              />
+              <Styled.SetCityBtnWrapper>
+                <Styled.SetCityBtn onClick={(e) => handlerSetCity(e)}>set city</Styled.SetCityBtn >
+              </Styled.SetCityBtnWrapper>
+            </Styled.InputAndBtnWrapper>
+          }
+        </>
       }
       <Styled.City>{city}</Styled.City>
       <Styled.TempWrapper>
-      <Styled.Temp>{temp} °C</Styled.Temp>
+        <Styled.Temp>{temp} °C</Styled.Temp>
         <Styled.Clouds src={img} alt={clouds} width="20" />
       </Styled.TempWrapper>
       <Styled.Pressure>⬇️ {pressure} <Styled.HmHg>mmHg</Styled.HmHg></Styled.Pressure>

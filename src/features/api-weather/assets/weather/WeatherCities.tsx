@@ -21,11 +21,12 @@ const WeatherCities = () => {
       values={weatherCities}
     >
       <Styled.WeatherCityes>
+        <Weather cityFromPorps="minsk" IsInputWithBtn={false} />
         <Styled.AddCityBtnWrapper>
           <Styled.AddCityBtn
             onClick={() => dispatch(setNewWeatherCity(weatherCities))}
           >
-            add new wether city (max four)
+            add weather city (max four)
           </Styled.AddCityBtn>
         </Styled.AddCityBtnWrapper>
         {weatherCities.map((el) => (

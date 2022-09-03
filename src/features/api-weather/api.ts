@@ -16,7 +16,7 @@ const isEmptyOrSpaces = (str: string) => {
 export const getWeather = async (cityData: string) => {
 	const isNotEmtyOrSpaces = !isEmptyOrSpaces(cityData);
 	if (isNotEmtyOrSpaces) {
-		const API_KEY = "cd563261e259e5de15c30202491f1e37";
+		const API_KEY = "692558f436b41d827e09484ce4725e62";
 		const response = await fetch(
 			`https://api.openweathermap.org/data/2.5/weather?q=${cityData}&appid=${API_KEY}`
 		);
