@@ -19,12 +19,28 @@ export const Input = styled.input`
   background-color: transparent;
   border-bottom: 1px solid var(--border-color);
 `;
+export const InputAndBtnWrapper = styled.div`
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`;
+export const SetCityBtnWrapper = styled.div`
+  width: 80px;
+  margin-left: 10px;
+  padding-top: 10px;
+`;
 export const SetCityBtn = styled.button`
   font-size: 16px;
   color: var(--text-color);
   background-color: transparent;
   border: 1px solid var(--border-color);
   border-radius: 3px;
+  cursor: pointer;
+  &:active {
+    border: 2px solid var(--border-color);
+  }
 `;
 export const City = styled.div`
   color: var(--text-color);
