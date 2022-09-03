@@ -27,3 +27,10 @@ export const AddCityBtn = styled.button`
     transition: all ease 0.3s;
   }
 `;
+export const NoCityMessage = styled.div`
+  width: 200px ;
+  padding: 3px ;
+  font-size: 14px;
+  color: var(--text-color);
+`;
+

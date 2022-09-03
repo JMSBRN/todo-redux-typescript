@@ -11,6 +11,7 @@ import * as Styled from "./WeatherCities.style";
 const WeatherCities = () => {
   const { weatherCities } = useAppSelector(selectWeather);
   const dispatch = useAppDispatch();
+  const cityFromLocal = JSON.parse(localStorage.getItem('cityByDefault') || '""')
   return (
     <Reorder.Group
       as="div"
@@ -21,7 +22,11 @@ const WeatherCities = () => {
       values={weatherCities}
     >
       <Styled.WeatherCityes>
-        <Weather cityFromPorps="minsk" IsInputWithBtn={false} />
+        {
+          cityFromLocal ? 
+          <Weather cityFromPorps={cityFromLocal} IsInputWithBtn={false} />
+          : <Styled.NoCityMessage> Please enter your city under greeting after double click </Styled.NoCityMessage>
+        }
         <Styled.AddCityBtnWrapper>
           <Styled.AddCityBtn
             onClick={() => dispatch(setNewWeatherCity(weatherCities))}

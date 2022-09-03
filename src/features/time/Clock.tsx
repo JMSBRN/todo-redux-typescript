@@ -25,8 +25,14 @@ const Clock = () => {
       localStorage.setItem("greeting", JSON.stringify(greet));
     }, 1000);
   }, [dispatch, greeting]);
+  const handlDisableInputs = () => {
+    setIsEdit(true);
+  };
   const greetingFromLocal = JSON.parse(localStorage.getItem("greeting") || '""');
   const nameFromLocal = JSON.parse(localStorage.getItem("name") || '""');
+  const handleSetCityToLocal = (e: React.ChangeEvent<HTMLInputElement>) => {
+    localStorage.setItem('cityByDefault', JSON.stringify(e.target.value));
+  };
   return (
     <Styled.ClockWrapper>
       <Styled.Greeting>{greetingFromLocal}</Styled.Greeting>
@@ -34,11 +40,11 @@ const Clock = () => {
         <Styled.GreetingNameWrapper>
           <Styled.GreetingName onDoubleClick={() => setIsEdit(false)}>
             {nameFromLocal}
-          <Styled.HoverMessage> try double click for edit</Styled.HoverMessage>
+            <Styled.HoverMessage> try double click for edit</Styled.HoverMessage>
           </Styled.GreetingName>
         </Styled.GreetingNameWrapper>
       ) : (
-        <Styled.InputGreetingNameWrapper onDoubleClick={() => setIsEdit(true)}>
+        <Styled.InputGreetingNameWrapper onDoubleClick={() => handlDisableInputs()}>
           <Styled.InputGreetingName
             type="text"
             value={name}
@@ -46,6 +52,12 @@ const Clock = () => {
             onChange={(e) => dispatch(setName(e.target.value))}
             title="try double click for confirm"
           />
+          <div>
+            <Styled.InputCityByDefault
+             type="text"
+             onChange={(e) => handleSetCityToLocal(e)}
+             placeholder="please enter your  city for weather" />
+           </div>
         </Styled.InputGreetingNameWrapper>
       )}
       <Styled.Time>{time}</Styled.Time>

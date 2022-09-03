@@ -27,7 +27,24 @@ export const InputGreetingNameWrapper = styled.div`
   font-size: 30px;
 `;
 export const InputGreetingName = styled.input`
+  background-color: transparent ;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
   font-size: 20px;
+  ::placeholder,
+  ::-webkit-input-placeholder {
+    color: var(--text-color);
+  }
+`;
+export const InputCityByDefault = styled.input`
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 20px;
+  ::placeholder,
+  ::-webkit-input-placeholder {
+    color: var(--text-color);
+  }
 `;
 export const HoverMessage = styled.div`
  color: transparent;
