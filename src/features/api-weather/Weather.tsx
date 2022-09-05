@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { IWeatherValues } from "./apiWeatherSlice";
+import { IWeatherValues, selectWeather } from "./apiWeatherSlice";
 import * as Styled from "./Weather.style";
 import cloudImg from "../api-weather/assets/weather/cloud.png";
 import cloudSunImg from "../api-weather/assets/weather/sun_clouds.png";
 import sunImg from "../api-weather/assets/weather/sun.png";
 import { getWeather } from "./api";
+import { useAppSelector } from "../../app/hooks";
 interface IWeather {
   cityFromPorps?: string;
   IsInputWithBtn?: boolean;
 }
 const Weather = ({ cityFromPorps, IsInputWithBtn = true }: IWeather) => {
+const { localCityName } = useAppSelector(selectWeather);
   const [cityFromInput, setCityFromInput] = useState("");
   const [weatherValues, setWeatherValues] = useState({} as IWeatherValues);
   const [isEntered, setIsEntered] = useState(true)
@@ -21,7 +23,7 @@ const Weather = ({ cityFromPorps, IsInputWithBtn = true }: IWeather) => {
     if (cityFromPorps) {
       getAsyncWeather();
     }
-  }, [])
+  }, [localCityName])
 
   const handlerSetCity = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>

@@ -11,7 +11,7 @@ import * as Styled from "./WeatherCities.style";
 const WeatherCities = () => {
   const { weatherCities } = useAppSelector(selectWeather);
   const dispatch = useAppDispatch();
-  const cityFromLocal = JSON.parse(localStorage.getItem('cityByDefault') || '""')
+  const cityFromLocal = JSON.parse(localStorage.getItem('cityByDefault') || '""');
   return (
     <Reorder.Group
       as="div"

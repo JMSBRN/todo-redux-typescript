@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as Styled from "./Clock.style";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { greetingsChange, selectTime, setName, timeChange } from "./TimeSlice";
+import { setLocalCityName } from "../api-weather/apiWeatherSlice";
 
 const Clock = () => {
   const { date, greeting, name } = useAppSelector(selectTime);
@@ -40,6 +41,8 @@ const Clock = () => {
   }, [dispatch, greeting]);
   const handlDisableInputs = () => {
     setIsEdit(true);
+    const cityFromLocal = JSON.parse(localStorage.getItem('cityByDefault') || '""');
+    dispatch(setLocalCityName(cityFromLocal))
   };
   const greetingFromLocal = JSON.parse(localStorage.getItem("greeting") || '""');
   const nameFromLocal = JSON.parse(localStorage.getItem("name") || '""');

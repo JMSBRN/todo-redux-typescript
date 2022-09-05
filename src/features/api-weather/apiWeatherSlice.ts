@@ -17,7 +17,7 @@ interface IState {
   valueCity: string;
   error: string;
   isLoaded: boolean;
-  curCity: string;
+  localCityName: string;
   weatherCities: IWeatherValues[];
   id: string;
   isEntered: boolean;
@@ -29,7 +29,7 @@ const initialState: IState = {
   error: "",
   isLoaded: false,
   weatherCities: [],
-  curCity: "",
+  localCityName: "",
   id: "",
   isEntered: true,
 };
@@ -67,9 +67,12 @@ export const apiWeatherSlice = createSlice({
     setWeatherCities: (state, action) => {
       state.weatherCities = action.payload;
     },
+    setLocalCityName: (state, action) => {
+      state.localCityName = action.payload;
+    },
   },
 });
-export const { setWeatherValues, setNewWeatherCity, getId, setWeatherCities } =
+export const { setWeatherValues, setNewWeatherCity, getId, setWeatherCities, setLocalCityName } =
   apiWeatherSlice.actions;
 export const selectWeather = (state: RootState) => state.weather;
 export default apiWeatherSlice.reducer;
