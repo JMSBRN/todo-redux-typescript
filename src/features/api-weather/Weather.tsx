@@ -29,10 +29,8 @@ const Weather = ({ cityFromPorps, IsInputWithBtn = true }: IWeather) => {
     getAsyncWeather();
     if (cityFromInput) {
       setCityFromInput('');
-      setTimeout(() => {
-        setIsEntered(false);
-      }, 3000);
     }
+    setIsEntered(false);
   };
   let img = "";
   const setCloudImg = (clouds: string) => {
