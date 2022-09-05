@@ -16,15 +16,19 @@ const Todo = (todo: ITodo) => {
     dispatch(getText(text));
     dispatch(getId(id));
   };
+  const handlSetCompletedTask = (e: React.MouseEvent<HTMLDivElement>) => {
+    dispatch(getId(e.currentTarget.id));
+    dispatch(setComplited());
+  };
   return (
     <Styled.TodoWrapper>
       <Styled.TimeTodo>{time}</Styled.TimeTodo>
       <Styled.Todo
         complited={complited}
         id={id}
-        onClick={(e) => dispatch(getId(e.currentTarget.id))}
+        onClick={(e) => handlSetCompletedTask(e)}
       >
-        <Styled.TodoText onClick={() => dispatch(setComplited())}>
+        <Styled.TodoText >
           {text}
         </Styled.TodoText>
       </Styled.Todo>

@@ -83,6 +83,7 @@ export const todoSlice = createSlice({
     },
     getId: (state, action) => {
       state.id = action.payload;
+      
     },
     setTask: (state, action) => {
       state.task = action.payload;
