@@ -97,6 +97,7 @@ export const todoSlice = createSlice({
           return el;
         }
       });
+      setTodosToLocal(state.todos);
       state.isEdit = false;
       state.task = "";
     },
