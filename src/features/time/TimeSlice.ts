@@ -21,8 +21,9 @@ interface IState {
   name: string;
   isName: boolean;
 }
+export const today = new Date().toTimeString().split(" ")[0];
 const initialState: IState = {
-  time: new Date().toTimeString().split(" ")[0],
+  time: today,
   date: date,
   greeting: '',
   name: '',

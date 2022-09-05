@@ -4,14 +4,27 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { greetingsChange, selectTime, setName, timeChange } from "./TimeSlice";
 
 const Clock = () => {
-  const { time, date, greeting, name } = useAppSelector(selectTime);
+  const { date, greeting, name } = useAppSelector(selectTime);
   const dispatch = useAppDispatch();
   const [isEdit, setIsEdit] = useState(true);
+  interface ITime {
+    hours: string | number;
+    minutes: string | number;
+    seconds: string | number;
+  }
+  const hours = new Date().getHours() < 10 ? '0' + new Date().getHours() : new Date().getHours();
+  const minutes = new Date().getMinutes() < 10 ? '0' + new Date().getMinutes() : new Date().getMinutes();
+  const seconds = new Date().getSeconds() < 10 ? '0' + new Date().getSeconds() : new Date().getSeconds();
+  const time: ITime = {
+    hours: hours,
+    minutes: minutes,
+    seconds: seconds,
+  };
   useEffect(() => {
     setInterval(() => {
-      dispatch(timeChange(new Date().toTimeString().split(" ")[0]));
+      dispatch(timeChange(time));
     }, 1000);
-  }, [dispatch]);
+  }, [time]);
   useEffect(() => {
     const curHrs = parseInt(JSON.stringify((new Date().getHours() / 24) * 4));
     setInterval(() => {
@@ -45,7 +58,7 @@ const Clock = () => {
         </Styled.GreetingNameWrapper>
       ) : (
         <Styled.InputGreetingNameWrapper onDoubleClick={() => handlDisableInputs()}>
-          <Styled.InputGreetingName
+          <Styled.InputCityByDefault
             type="text"
             value={name}
             placeholder="please enter your name"
@@ -54,13 +67,17 @@ const Clock = () => {
           />
           <div>
             <Styled.InputCityByDefault
-             type="text"
-             onChange={(e) => handleSetCityToLocal(e)}
-             placeholder="please enter your  city for weather" />
-           </div>
+              type="text"
+              onChange={(e) => handleSetCityToLocal(e)}
+              placeholder="please enter your  city for weather" />
+          </div>
         </Styled.InputGreetingNameWrapper>
       )}
-      <Styled.Time>{time}</Styled.Time>
+      <Styled.TimeWrapper>
+        <Styled.Time>{time.hours} : {time.minutes}
+          <Styled.Seconds>.{time.seconds}</Styled.Seconds>
+        </Styled.Time>
+      </Styled.TimeWrapper>
       <Styled.Date className="">{date}</Styled.Date>
     </Styled.ClockWrapper>
   );

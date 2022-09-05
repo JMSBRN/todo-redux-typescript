@@ -5,7 +5,7 @@ interface ITodo {
 export const TodoWrapper = styled.div`
   position: relative;
   width: 420px;
-  height: 50px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
