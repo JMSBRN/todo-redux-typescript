@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { device } from "../../../utils/mediaUtils";
 import isLandImg from "../todo-list/assets/img/island.jpg";
 
 export const TodoListLayout = styled.div`
