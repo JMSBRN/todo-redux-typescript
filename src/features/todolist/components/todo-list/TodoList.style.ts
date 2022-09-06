@@ -1,15 +1,16 @@
 import styled from "styled-components";
-import isLandImg from '../todo-list/assets/img/island.jpg';
+import { device } from "../../../utils/mediaUtils";
+import isLandImg from "../todo-list/assets/img/island.jpg";
 
 export const TodoListLayout = styled.div`
-   position: fixed;
+  position: fixed;
   width: 100%;
   height: 100%;
   background-image: url(${isLandImg});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  `;
+`;
 export const TodoList = styled.div`
   position: relative;
   width: 100%;
@@ -18,7 +19,7 @@ export const TodoList = styled.div`
   background-color: rgba(50, 50, 50, 0.4);
   background-blend-mode: color;
 `;
-export const ToListWrapper = styled.div`
+export const ToDoListWrapper = styled.div`
   margin: 10px auto;
   width: 100%;
   height: 1500px;

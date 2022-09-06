@@ -60,7 +60,8 @@ export const Time = styled.div`
   padding: 10px ;
   margin-bottom: 20px;
   font-weight: 600;
-  font-size: 50px;
+  font-size: 65px;
+  letter-spacing: 5px ;
   color: var(--text-color);
 `;
 export const Seconds = styled.span`

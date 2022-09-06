@@ -77,7 +77,7 @@ const Clock = () => {
         </Styled.InputGreetingNameWrapper>
       )}
       <Styled.TimeWrapper>
-        <Styled.Time>{time.hours} : {time.minutes}
+        <Styled.Time>{time.hours }:{ time.minutes}
           <Styled.Seconds>.{time.seconds}</Styled.Seconds>
         </Styled.Time>
       </Styled.TimeWrapper>
