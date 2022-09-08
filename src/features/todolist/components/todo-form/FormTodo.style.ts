@@ -20,7 +20,7 @@ export const Form = styled.div`
 export const Inputform = styled.input<IForm>`
   width: 80%;
   padding: 3px 0;
-  font-size: ${deviceSmallFontSize.desktopL};
+  font-size: ${deviceSmallFontSize};
   text-align: center;
   padding-bottom: 7px;
   color: var(--text-color);
@@ -47,6 +47,6 @@ export const FormBtn = styled.button`
     border: 1px solid var(--border-color-grey);
   }
   @media ${device.desktopL} {
-   font-size: ${deviceSmallFontSize.desktopL};
+   font-size: ${deviceSmallFontSize};
   }
 `;

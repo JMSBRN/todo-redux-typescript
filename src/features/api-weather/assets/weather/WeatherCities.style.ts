@@ -31,7 +31,7 @@ export const AddCityBtn = styled.button`
   margin-bottom: 20px;
   width: 100%;
   padding: 5px;
-  font-size: ${deviceDeafaultFontSize.desktopL};
+  font-size: ${deviceDeafaultFontSize};
   color: var(--text-color);
   background-color: transparent;
   border: 1px solid var(--border-color);

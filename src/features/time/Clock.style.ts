@@ -13,7 +13,7 @@ export const ClockWrapper = styled.div`
     position: absolute;
     top: 3%;
     left: 45%;
-    font-size: ${deviceLargeFontSize.desktopL};
+    font-size: ${deviceLargeFontSize};
   }
 `;
 export const Greeting = styled.div`
@@ -21,7 +21,7 @@ export const Greeting = styled.div`
   color: var(--text-color);
   @media ${device.desktopL} {
     text-align: center;
-    font-size: ${deviceLargeFontSize.desktopL};
+    font-size: ${deviceLargeFontSize};
   }
 `;
 export const GreetingNameWrapper = styled.div`
@@ -37,7 +37,7 @@ export const GreetingName = styled.span`
   cursor: default;
   @media ${device.desktopL} {
     text-align: center;
-    font-size: ${deviceLargeFontSize.desktopL};
+    font-size: ${deviceLargeFontSize};
   }
 `;
 export const InputGreetingNameWrapper = styled.div`
@@ -54,14 +54,14 @@ export const InputCityByDefault = styled.input`
     font-size: 12px;
     color: var(--text-color);
     @media ${device.desktopL} {
-   font-size: ${deviceSmallFontSize.desktopL};
+   font-size: ${deviceSmallFontSize};
   }
   }
   :focus {
     outline: none;
   }
   @media ${device.desktopL} {
-   font-size: ${deviceMediumFontSize.desktopL};
+   font-size: ${deviceMediumFontSize};
   }
 `;
 export const SubmitBtn = styled.button`
@@ -77,7 +77,7 @@ export const SubmitBtn = styled.button`
     border: 1px solid var(--border-color-grey);
   }
   @media ${device.desktopL} {
-   font-size: ${deviceSmallFontSize.desktopL};
+   font-size: ${deviceSmallFontSize};
   }
 `;
 export const HoverMessage = styled.div`
@@ -124,6 +124,6 @@ export const Date = styled.div`
   font-size: 20px;
   @media ${device.desktopL} {
     text-align: center;
-    font-size: ${deviceMediumFontSize.desktopL};
+    font-size: ${deviceMediumFontSize};
   }
 `;

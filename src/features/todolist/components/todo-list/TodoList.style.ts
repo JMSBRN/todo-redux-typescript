@@ -18,8 +18,32 @@ export const TodoList = styled.div`
   display: flex;
   background-color: rgba(50, 50, 50, 0.4);
   background-blend-mode: color;
+  @media ${device.mobileExtraS} {
+    background-color: rgba(50, 50, 50, 0.9);
+  }
+  @media ${device.mobileS} {
+    background-color: grey;
+  }
+  @media ${device.mobileM} {
+    background-color: hotpink;
+  }
+  @media ${device.mobileL} {
+    background-color: forestgreen;
+  }
+  @media ${device.tablet} {
+    background-color: black;
+  }
+  @media ${device.laptop} {
+    background-color: yellow;
+  }
+  @media ${device.laptopL} {
+    background-color: green;
+  }
+  @media ${device.desktop} {
+    background-color: blue;
+  }
   @media ${device.desktopL} {
-    position: relative;
+    background-color: red;
   }
 `;
 export const ToDoListWrapper = styled.div`
