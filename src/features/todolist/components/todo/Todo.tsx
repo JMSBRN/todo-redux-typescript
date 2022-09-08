@@ -8,6 +8,8 @@ import {
   setComplited,
 } from "../../todoSlice";
 import * as Styled from "./Todo.style";
+import trashImg from './assets/trash.png';
+import editImg from './assets/pencil.png';
 
 const Todo = (todo: ITodo) => {
   const { time, id, text, complited } = todo;
@@ -32,12 +34,15 @@ const Todo = (todo: ITodo) => {
           {text}
         </Styled.TodoText>
       </Styled.Todo>
+
       <Styled.BtnsWrapper>
         <Styled.TodoBtn onClick={() => dispatch(removeTodo(id))}>
-        🗑️
+        <Styled.TrashImg src={trashImg} alt="trash to delete todo" />
         </Styled.TodoBtn>
-        <Styled.TodoBtn onClick={handlGetTextAndId}>🖊️</Styled.TodoBtn>
-      </Styled.BtnsWrapper>
+        <Styled.TodoBtn onClick={handlGetTextAndId}>
+        <Styled.EditImg src={editImg} alt="pencil to edit todo" />
+        </Styled.TodoBtn>
+ </Styled.BtnsWrapper>
     </Styled.TodoWrapper>
   );
 };

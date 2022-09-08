@@ -41,7 +41,8 @@ export const TodoBtn = styled.button`
   border-radius: 15px;
   cursor: pointer;
   &:active {
-    background-color: whitesmoke;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
   }
 `;
 export const TodoText = styled.div`
@@ -56,4 +57,12 @@ export const TodoText = styled.div`
   max-height: auto; /* fallback */
   -webkit-line-clamp: 10; /* number of lines to show */
   -webkit-box-orient: vertical;
+`;
+export const TrashImg = styled.img`
+  width: 14px;
+  filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg) brightness(102%) contrast(100%);
+`;
+export const EditImg = styled.img`
+  width: 16px;
+  filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg) brightness(102%) contrast(100%);
 `;
