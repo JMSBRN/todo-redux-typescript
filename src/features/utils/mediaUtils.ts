@@ -18,6 +18,18 @@ export const device = {
   desktop: `(min-width: ${size.desktop})`,
   desktopL: `(min-width: ${size.desktop})`,
 };
-export const deviceFontSize = {
-  desktopL: "7rem",
+export const deviceLargeFontSize = {
+  desktopL: "6rem",
+};
+export const deviceMediumFontSize = {
+  desktopL: "3rem",
+};
+export const deviceSmallFontSize = {
+  desktopL: "2rem",
+};
+export const deviceDeafaultFontSize = {
+  desktopL: "1rem",
+};
+export const deviceDeafaultZeroPointFiveFontSize = {
+  desktopL: "0.5rem",
 };

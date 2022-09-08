@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../utils/mediaUtils";
 
 export const Calendar = styled.div`
   & .fc-button.fc-today-button,
@@ -20,4 +21,9 @@ export const Calendar = styled.div`
   height: 300px;
   font-size: 10px;
   color: var(--text-color);
+  @media ${device.desktopL} {
+  position: absolute;
+  top: 1%;
+  left: 15%;
+}
 `;

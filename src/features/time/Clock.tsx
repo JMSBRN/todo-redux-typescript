@@ -54,13 +54,13 @@ const Clock = () => {
       <Styled.Greeting>{greetingFromLocal}</Styled.Greeting>
       {isEdit ? (
         <Styled.GreetingNameWrapper>
-          <Styled.GreetingName onDoubleClick={() => setIsEdit(false)}>
+          <Styled.GreetingName onClick={() => setIsEdit(false)}>
             {nameFromLocal}
             <Styled.HoverMessage> try double click for edit</Styled.HoverMessage>
           </Styled.GreetingName>
         </Styled.GreetingNameWrapper>
       ) : (
-        <Styled.InputGreetingNameWrapper onDoubleClick={() => handlDisableInputs()}>
+        <Styled.InputGreetingNameWrapper>
           <Styled.InputCityByDefault
             type="text"
             value={name}
@@ -74,6 +74,7 @@ const Clock = () => {
               onChange={(e) => handleSetCityToLocal(e)}
               placeholder="please enter your  city for weather" />
           </div>
+          <Styled.SubmitBtn onClick={() => handlDisableInputs()} >submit</Styled.SubmitBtn>
         </Styled.InputGreetingNameWrapper>
       )}
       <Styled.TimeWrapper>

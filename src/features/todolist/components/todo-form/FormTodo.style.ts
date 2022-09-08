@@ -1,19 +1,26 @@
 import styled from "styled-components";
+import { device, deviceSmallFontSize } from '../../../utils/mediaUtils';
+
 interface IForm {
   isEdit: boolean;
 }
 export const Form = styled.div`
-  width: 415px;
+  width: 20%;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  @media ${device.desktopL} {
+    position: absolute;
+    left: 1.3%;
+    top: 500px;
+  }
 `;
 export const Inputform = styled.input<IForm>`
-  width: 350px;
-  height: 30px;
-  font-size: 20px;
+  width: 80%;
+  padding: 3px 0;
+  font-size: ${deviceSmallFontSize.desktopL};
   text-align: center;
   padding-bottom: 7px;
   color: var(--text-color);
@@ -29,14 +36,17 @@ export const Inputform = styled.input<IForm>`
   }
 `;
 export const FormBtn = styled.button`
-  width: 90px;
-  min-height: 39px;
-  font-size: 16px;
+  width: auto;
+  padding: 5px;
+  font-size: 20px;
   color: var(--text-color);
   border: 1px solid var(--border-color);
   background-color: transparent;
   cursor: pointer;
-  &:hover {
-    border: 2px solid var(--border-color);
+  &:active {
+    border: 1px solid var(--border-color-grey);
+  }
+  @media ${device.desktopL} {
+   font-size: ${deviceSmallFontSize.desktopL};
   }
 `;

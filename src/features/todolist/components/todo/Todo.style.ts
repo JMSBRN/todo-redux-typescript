@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { device, deviceDeafaultFontSize, deviceSmallFontSize } from "../../../utils/mediaUtils";
 interface ITodo {
   complited: boolean;
 }
 export const TodoWrapper = styled.div`
   position: relative;
-  width: 420px;
+  margin: 0 auto;
+  width: 100%;
   height: auto;
   display: flex;
   align-items: center;
@@ -18,7 +20,10 @@ export const TimeTodo = styled.div`
   top: 2px;
   left: 2px;
   font-size: 10px;
-  color: gray;
+  color: var(--text-color);
+  @media ${device.desktopL} {
+   font-size: ${deviceDeafaultFontSize.desktopL} ;
+  }
 `;
 export const Todo = styled.div<ITodo>`
   height: auto;
@@ -46,17 +51,20 @@ export const TodoBtn = styled.button`
   }
 `;
 export const TodoText = styled.div`
-  padding: 10px;
+  padding: ${deviceSmallFontSize.desktopL};
   word-break: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   font-size: 20px;
   color: var(--text-color);
-  line-height: 16px; /* fallback */
+  line-height: auto; /* fallback */
   max-height: auto; /* fallback */
   -webkit-line-clamp: 10; /* number of lines to show */
   -webkit-box-orient: vertical;
+  @media ${device.desktopL} {
+   font-size: ${deviceSmallFontSize.desktopL} ;
+  }
 `;
 export const TrashImg = styled.img`
   width: 14px;

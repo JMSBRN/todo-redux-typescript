@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device, deviceFontSize } from "../utils/mediaUtils";
+import { device, deviceDeafaultFontSize, deviceLargeFontSize, deviceMediumFontSize, deviceSmallFontSize } from "../utils/mediaUtils";
 
 export const ClockWrapper = styled.div`
   width: auto;
@@ -10,7 +10,10 @@ export const ClockWrapper = styled.div`
   justify-content: space-around;
   gap: 30px;
   @media ${device.desktopL} {
-    font-size: ${deviceFontSize.desktopL};
+    position: absolute;
+    top: 3%;
+    left: 45%;
+    font-size: ${deviceLargeFontSize.desktopL};
   }
 `;
 export const Greeting = styled.div`
@@ -18,7 +21,7 @@ export const Greeting = styled.div`
   color: var(--text-color);
   @media ${device.desktopL} {
     text-align: center;
-    font-size: ${deviceFontSize.desktopL};
+    font-size: ${deviceLargeFontSize.desktopL};
   }
 `;
 export const GreetingNameWrapper = styled.div`
@@ -34,7 +37,7 @@ export const GreetingName = styled.span`
   cursor: default;
   @media ${device.desktopL} {
     text-align: center;
-    font-size: ${deviceFontSize.desktopL};
+    font-size: ${deviceLargeFontSize.desktopL};
   }
 `;
 export const InputGreetingNameWrapper = styled.div`
@@ -50,9 +53,31 @@ export const InputCityByDefault = styled.input`
   ::-webkit-input-placeholder {
     font-size: 12px;
     color: var(--text-color);
+    @media ${device.desktopL} {
+   font-size: ${deviceSmallFontSize.desktopL};
+  }
   }
   :focus {
     outline: none;
+  }
+  @media ${device.desktopL} {
+   font-size: ${deviceMediumFontSize.desktopL};
+  }
+`;
+export const SubmitBtn = styled.button`
+  margin: 3%;
+  width: auto;
+  padding: 5px;
+  font-size: 20px;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  cursor: pointer;
+  &:active {
+    border: 1px solid var(--border-color-grey);
+  }
+  @media ${device.desktopL} {
+   font-size: ${deviceSmallFontSize.desktopL};
   }
 `;
 export const HoverMessage = styled.div`
@@ -99,6 +124,6 @@ export const Date = styled.div`
   font-size: 20px;
   @media ${device.desktopL} {
     text-align: center;
-    font-size: ${deviceFontSize.desktopL};
+    font-size: ${deviceMediumFontSize.desktopL};
   }
 `;
