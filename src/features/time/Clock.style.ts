@@ -1,15 +1,25 @@
 import styled from "styled-components";
+import{ device, deviceFontSize }from '../utils/mediaUtils';
 
 export const ClockWrapper = styled.div`
   width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  @media ${device.desktopL} {
+    height: 800px;
+    font-size: ${deviceFontSize.desktopL};
+  }
 `;
 export const Greeting = styled.div`
   font-size: 30px;
   color: var(--text-color);
+  @media ${device.desktopL} {
+    width: 600px;
+    text-align: center;
+    font-size: ${deviceFontSize.desktopL};
+  }
 `;
 export const GreetingNameWrapper = styled.div`
   width: 70px;
@@ -22,6 +32,10 @@ export const GreetingName = styled.span`
   font-size: 30px;
   color: var(--text-color);
   cursor: default;
+  @media ${device.desktopL} {
+    text-align: center;
+    font-size: ${deviceFontSize.desktopL};
+  }
 `;
 export const InputGreetingNameWrapper = styled.div`
   font-size: 30px;
@@ -53,16 +67,26 @@ export const HoverMessage = styled.div`
 export const TimeWrapper = styled.div`
   width: 200px;
   height: 100px ;
+  @media ${device.desktopL} {
+    width: 600px;
+    height: 200px;
+    font-size: 12rem;
+  }
 `;
 export const Time = styled.div`
   width: 200px;
   height:  60px;
   padding: 10px ;
-  margin-bottom: 20px;
   font-weight: 600;
   font-size: 65px;
   letter-spacing: 5px ;
   color: var(--text-color);
+  @media ${device.desktopL} {
+    width: auto;
+    height: auto;
+    padding-left: 80px;
+    font-size: 12rem;
+  }
 `;
 export const Seconds = styled.span`
   font-size: 30px;
@@ -73,4 +97,9 @@ export const Date = styled.div`
   color: var(--text-color);
   font-weight: 400;
   font-size: 20px;
+  @media ${device.desktopL} {
+    text-align: center;
+    width: 1200px;
+    font-size: ${deviceFontSize.desktopL};
+  }
 `;

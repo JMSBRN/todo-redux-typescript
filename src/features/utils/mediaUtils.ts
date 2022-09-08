@@ -18,3 +18,6 @@ export const device = {
   desktop: `(min-width: ${size.desktop})`,
   desktopL: `(min-width: ${size.desktop})`
 };
+export const deviceFontSize = {
+  desktopL: '5rem'
+}
