@@ -19,7 +19,7 @@ export const TodoList = styled.div`
   background-color: rgba(50, 50, 50, 0.4);
   background-blend-mode: color;
   @media ${device.desktopL} {
-   position:  relative;
+    position: relative;
   }
 `;
 export const ToDoListWrapper = styled.div`
