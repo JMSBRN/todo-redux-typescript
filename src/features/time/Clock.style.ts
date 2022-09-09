@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {
   device,
   deviceDefaultFontSize,
+  deviceDefaultZeroPointFiveFontSize,
   deviceExtraLargeFontSize,
   deviceLargeFontSize,
   deviceMediumFontSize,
@@ -74,11 +75,11 @@ export const InputCityByDefault = styled.input`
       font-size: ${deviceSmallFontSize.desktopL};
     }
     @media ${device.desktopXL} {
-      font-size: ${deviceDefaultFontSize.desktopXL};
+      font-size: ${deviceSmallFontSize.desktopXL};
     }
   }
   @media ${device.desktopXL} {
-    font-size: ${deviceDefaultFontSize.desktopXL};
+    font-size: ${deviceSmallFontSize.desktopXL};
   }
   :focus {
     outline: none;
@@ -104,7 +105,7 @@ export const SubmitBtn = styled.button`
   }
   @media ${device.desktopXL} {
     padding: 0 20px;
-    font-size: ${deviceDefaultFontSize.desktopXL};
+    font-size: ${deviceSmallFontSize.desktopXL};
   }
 `;
 export const HoverMessage = styled.div`
@@ -147,6 +148,9 @@ export const Time = styled.div`
 export const Seconds = styled.span`
   font-size: 30px;
   color: rgba(250, 250, 250, 0.7);
+  @media ${device.desktopXL} {
+   font-size: ${deviceSmallFontSize.desktopXL};
+  }
 `;
 
 export const Date = styled.div`

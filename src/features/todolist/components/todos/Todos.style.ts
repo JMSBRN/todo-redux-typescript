@@ -19,6 +19,6 @@ export const Todos = styled.div`
   @media ${device.desktopXL} {
     width: 30%;
     left: 185px;
-    top: 1200px;
+    top: 1350px;
   }
 `;

@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { device } from "../utils/mediaUtils";
+import { device, deviceDefaultZeroPointFiveFontSize } from "../utils/mediaUtils";
 
 export const Calendar = styled.div`
+  position: absolute;
   & .fc-button.fc-today-button,
   .fc-button.fc-prev-button,
   .fc-button.fc-next-button {
@@ -22,8 +23,15 @@ export const Calendar = styled.div`
   font-size: 10px;
   color: var(--text-color);
   @media ${device.desktopL} {
-  position: absolute;
-  top: 1%;
-  left: 15%;
-}
+    top: 1%;
+    left: 15%;
+  }
+  @media ${device.desktopXL} {
+    width: 800px;
+    top: 0px;
+    left: 600px;
+    .fc {
+      font-size: ${deviceDefaultZeroPointFiveFontSize.desktopXL};
+    }
+  }
 `;

@@ -61,6 +61,10 @@ export const TodoBtn = styled.button`
     border: 1px solid var(--border-color);
     border-radius: 50%;
   }
+  @media ${device.desktopXL} {
+    width: ${deviceSmallFontSize.desktopXL};
+    height: ${deviceSmallFontSize.desktopXL};
+  }
 `;
 export const TodoText = styled.div`
   padding: ${deviceSmallFontSize.desktopL};

@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { device, deviceDefaultFontSize, deviceSmallFontSize } from "../../../utils/mediaUtils";
+import { device } from "../../../utils/mediaUtils";
 export const WeatherCityes = styled.div`
+  position: absolute;
   width: 300px;
   height: 700px;
   margin-top: 20px;
@@ -18,10 +19,15 @@ export const WeatherCityes = styled.div`
   }
 `;
 export const DefaultWeather = styled.div`
+position: absolute;
+height: 140px;
 @media ${device.desktopL} {
-  position: absolute;
   top: 3%;
   left: 1%;
+}
+@media ${device.desktopXL} {
+  top: 80px;
+  left: 1700px;
 }
 `;
 export const AddCityBtnWrapper = styled.div`
@@ -38,6 +44,9 @@ export const AddCityBtn = styled.button`
   cursor: pointer;
   &:active {
     border: 1px solid var(--border-color-grey);
+  }
+  @media ${device.desktopXL} {
+    display: none;
   }
 `;
 export const NoCityMessage = styled.div`

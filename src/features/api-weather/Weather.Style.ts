@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device, deviceDeafaultZeroPointFiveFontSize, deviceDefaultZeroPointFiveFontSize, deviceMediumFontSize, deviceSmallFontSize } from "../utils/mediaUtils";
 
 export const WeatherWrapper = styled.div`
   width: 225px;
@@ -8,6 +9,12 @@ export const WeatherWrapper = styled.div`
   border: 1px solid var(--border-color);
   border-radius: 3px;
   cursor: grab;
+  @media ${device.desktopXL} {
+    width: 500px;
+    height: auto;
+    font-size: ${deviceDefaultZeroPointFiveFontSize.desktopXL};
+    border: none;
+  }
 `;
 export const Input = styled.input`
   width: 100px;
@@ -44,7 +51,7 @@ export const SetCityBtn = styled.button`
 `;
 export const City = styled.div`
   color: var(--text-color);
-  font-size: 16px;
+  font-size: 2em;
 `;
 export const TempWrapper = styled.div`
   display: flex;
@@ -53,23 +60,23 @@ export const TempWrapper = styled.div`
   color: var(--text-color);
 `;
 export const Temp = styled.div`
-  font-size: 30px;
+  font-size: 4em;
   color: var(--text-color);
 `;
 export const Clouds = styled.img`
   width: 50px;
 `;
 export const Pressure = styled.div`
-  font-size: 18px;
+  font-size: 2em;
   color: var(--text-color);
 `;
 export const Humidity = styled.div`
   margin-top: 6px;
-  font-size: 20px;
+  font-size: 2em;
   color: var(--text-color);
 `;
 export const HmHg = styled.span`
-  font-size: 10px;
+  font-size: 0.6em;
   color: var(--text-color);
 `;
 export const Wind = styled.div`
@@ -78,7 +85,7 @@ export const Wind = styled.div`
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
-  font-size: 16px;
+  font-size: 2em;
   color: var(--text-color);
 `;
 export const WindDirection = styled.div`

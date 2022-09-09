@@ -13,7 +13,7 @@ export const Form = styled.div`
   @media ${device.desktopXL} {
     width: 30%;
     left: 200px;
-    top: 1000px;
+    top: 1150px;
   }
 `;
 export const Inputform = styled.input<IForm>`

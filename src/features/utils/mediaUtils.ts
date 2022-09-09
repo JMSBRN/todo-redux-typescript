@@ -64,6 +64,10 @@ export const deviceDefaultFontSize = {
   laptop: "1rem",
   desktopL: "1rem",
   desktopXL: "3rem"
-
+};
+export const deviceDefaultZeroPointFiveFontSize = {
+  laptop: "1rem",
+  desktopL: "1rem",
+  desktopXL: "2rem"
 };
 export const deviceDeafaultZeroPointFiveFontSize = "0.5rem";
