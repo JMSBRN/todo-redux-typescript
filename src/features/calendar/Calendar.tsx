@@ -12,7 +12,6 @@ const Calendar = () => {
         initialView="dayGridMonth"
         weekends={true}
         firstDay={1}
-        contentHeight={800}
         />
       </Styled.Calendar>
     </div>

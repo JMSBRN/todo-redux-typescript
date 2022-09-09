@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device, deviceDeafaultZeroPointFiveFontSize, deviceDefaultZeroPointFiveFontSize, deviceMediumFontSize, deviceSmallFontSize } from "../utils/mediaUtils";
+import { device, deviceDefaultZeroPointFiveFontSize } from "../utils/mediaUtils";
 
 export const WeatherWrapper = styled.div`
   width: 225px;

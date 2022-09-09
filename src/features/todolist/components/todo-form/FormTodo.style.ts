@@ -7,8 +7,9 @@ interface IForm {
 export const Form = styled.div`
   position: absolute;
   @media ${device.desktopL} {
-    left: 100px;
-    top: 500px;
+    width: 32%;
+    left: 50px;
+    top: 650px;
   }
   @media ${device.desktopXL} {
     width: 30%;

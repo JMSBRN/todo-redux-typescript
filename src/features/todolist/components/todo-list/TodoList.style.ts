@@ -42,6 +42,9 @@ export const TodoList = styled.div`
   @media ${device.desktop} {
     background-color: blue;
   }
+  @media ${device.desktopL} {
+    background-color: #546545;
+  }
 `;
 export const ToDoListWrapper = styled.div`
   margin: 10px auto;

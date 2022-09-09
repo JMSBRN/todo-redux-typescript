@@ -20,10 +20,10 @@ export const WeatherCityes = styled.div`
 `;
 export const DefaultWeather = styled.div`
 position: absolute;
-height: 140px;
+height: auto;
 @media ${device.desktopL} {
-  top: 3%;
-  left: 1%;
+  top: 80px;
+  left: 1150px;
 }
 @media ${device.desktopXL} {
   top: 80px;

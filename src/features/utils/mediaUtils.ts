@@ -47,17 +47,17 @@ export const deviceExtraLargeFontSize = {
 };
 export const deviceLargeFontSize = {
   laptop: "5rem",
-  desktopL: "6rem",
+  desktopL: "12rem",
   desktopXL: "18rem"
 };
 export const deviceMediumFontSize = {
   laptop: "2rem",
-  desktopL: "3rem",
+  desktopL: "8rem",
   desktopXL: "15rem"
 };
 export const deviceSmallFontSize = {
   laptop: "1rem",
-  desktopL: "2rem",
+  desktopL: "4rem",
   desktopXL: "6rem"
 };
 export const deviceDefaultFontSize = {

@@ -56,7 +56,7 @@ const Clock = () => {
         <Styled.GreetingNameWrapper>
           <Styled.GreetingName onClick={() => setIsEdit(false)}>
             {nameFromLocal}
-            <Styled.HoverMessage> try double click for edit</Styled.HoverMessage>
+            <Styled.HoverMessage> try click for edit</Styled.HoverMessage>
           </Styled.GreetingName>
         </Styled.GreetingNameWrapper>
       ) : (
@@ -64,15 +64,15 @@ const Clock = () => {
           <Styled.InputCityByDefault
             type="text"
             value={name}
-            placeholder="please enter your name"
+            placeholder="enter name"
             onChange={(e) => dispatch(setName(e.target.value))}
-            title="try double click for confirm"
+            title="try click for confirm"
           />
           <div>
             <Styled.InputCityByDefault
               type="text"
               onChange={(e) => handleSetCityToLocal(e)}
-              placeholder="please enter your  city for weather" />
+              placeholder="enter weather" />
           </div>
           <Styled.SubmitBtn onClick={() => handlDisableInputs()} >submit</Styled.SubmitBtn>
         </Styled.InputGreetingNameWrapper>
@@ -82,7 +82,7 @@ const Clock = () => {
           <Styled.Seconds>.{time.seconds}</Styled.Seconds>
         </Styled.Time>
       </Styled.TimeWrapper>
-      <Styled.Date className="">{date}</Styled.Date>
+      <Styled.Date>{date}</Styled.Date>
     </Styled.ClockWrapper>
   );
 };
