@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device, deviceDeafaultFontSize } from "../../../utils/mediaUtils";
+import { device, deviceDefaultFontSize, deviceSmallFontSize } from "../../../utils/mediaUtils";
 export const WeatherCityes = styled.div`
   width: 300px;
   height: 700px;
@@ -31,7 +31,7 @@ export const AddCityBtn = styled.button`
   margin-bottom: 20px;
   width: 100%;
   padding: 5px;
-  font-size: ${deviceDeafaultFontSize};
+  font-size: 16px;
   color: var(--text-color);
   background-color: transparent;
   border: 1px solid var(--border-color);

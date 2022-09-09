@@ -1,5 +1,12 @@
 import styled from "styled-components";
-import { device, deviceDeafaultFontSize, deviceLargeFontSize, deviceMediumFontSize, deviceSmallFontSize } from "../utils/mediaUtils";
+import {
+  device,
+  deviceDefaultFontSize,
+  deviceExtraLargeFontSize,
+  deviceLargeFontSize,
+  deviceMediumFontSize,
+  deviceSmallFontSize,
+} from "../utils/mediaUtils";
 
 export const ClockWrapper = styled.div`
   width: auto;
@@ -13,7 +20,11 @@ export const ClockWrapper = styled.div`
     position: absolute;
     top: 3%;
     left: 45%;
-    font-size: ${deviceLargeFontSize};
+  }
+  @media ${device.desktopXL} {
+    position: absolute;
+    top: 3%;
+    left: 45%;
   }
 `;
 export const Greeting = styled.div`
@@ -21,7 +32,11 @@ export const Greeting = styled.div`
   color: var(--text-color);
   @media ${device.desktopL} {
     text-align: center;
-    font-size: ${deviceLargeFontSize};
+    font-size: ${deviceLargeFontSize.desktopL};
+  }
+  @media ${device.desktopXL} {
+    text-align: center;
+    font-size: ${deviceLargeFontSize.desktopXL};
   }
 `;
 export const GreetingNameWrapper = styled.div`
@@ -37,12 +52,14 @@ export const GreetingName = styled.span`
   cursor: default;
   @media ${device.desktopL} {
     text-align: center;
-    font-size: ${deviceLargeFontSize};
+    font-size: ${deviceLargeFontSize.desktopL};
+  }
+  @media ${device.desktopXL} {
+    text-align: center;
+    font-size: ${deviceLargeFontSize.desktopXL};
   }
 `;
-export const InputGreetingNameWrapper = styled.div`
-  font-size: 30px;
-`;
+export const InputGreetingNameWrapper = styled.div``;
 export const InputCityByDefault = styled.input`
   color: var(--text-color);
   background-color: transparent;
@@ -54,14 +71,20 @@ export const InputCityByDefault = styled.input`
     font-size: 12px;
     color: var(--text-color);
     @media ${device.desktopL} {
-   font-size: ${deviceSmallFontSize};
+      font-size: ${deviceSmallFontSize.desktopL};
+    }
+    @media ${device.desktopXL} {
+      font-size: ${deviceDefaultFontSize.desktopXL};
+    }
   }
+  @media ${device.desktopXL} {
+    font-size: ${deviceDefaultFontSize.desktopXL};
   }
   :focus {
     outline: none;
   }
   @media ${device.desktopL} {
-   font-size: ${deviceMediumFontSize};
+    font-size: ${deviceMediumFontSize.desktopL};
   }
 `;
 export const SubmitBtn = styled.button`
@@ -77,7 +100,11 @@ export const SubmitBtn = styled.button`
     border: 1px solid var(--border-color-grey);
   }
   @media ${device.desktopL} {
-   font-size: ${deviceSmallFontSize};
+    font-size: ${deviceSmallFontSize.desktopL};
+  }
+  @media ${device.desktopXL} {
+    padding: 0 20px;
+    font-size: ${deviceDefaultFontSize.desktopXL};
   }
 `;
 export const HoverMessage = styled.div`
@@ -95,13 +122,13 @@ export const TimeWrapper = styled.div`
   @media ${device.desktopL} {
     width: 600px;
     height: 200px;
-    font-size: 12rem;
   }
 `;
 export const Time = styled.div`
-  width: 200px;
-  height: 60px;
+  width: auto;
+  height: auto;
   padding: 10px;
+  margin-bottom: 30px;
   font-weight: 600;
   font-size: 65px;
   letter-spacing: 5px;
@@ -110,7 +137,11 @@ export const Time = styled.div`
     width: auto;
     height: auto;
     padding-left: 80px;
-    font-size: 12rem;
+    font-size: ${deviceExtraLargeFontSize.desktopL};
+  }
+  @media ${device.desktopXL} {
+    text-align: center;
+    font-size: ${deviceExtraLargeFontSize.desktopXL};
   }
 `;
 export const Seconds = styled.span`
@@ -123,7 +154,13 @@ export const Date = styled.div`
   font-weight: 400;
   font-size: 20px;
   @media ${device.desktopL} {
+    margin-top: 100px;
     text-align: center;
-    font-size: ${deviceMediumFontSize};
+    font-size: ${deviceMediumFontSize.desktopL};
+  }
+  @media ${device.desktopXL} {
+    margin-top: 700px;
+    text-align: center;
+    font-size: ${deviceMediumFontSize.desktopXL};
   }
 `;

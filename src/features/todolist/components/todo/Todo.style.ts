@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { device, deviceDeafaultFontSize, deviceDeafaultZeroPointFiveFontSize, deviceSmallFontSize } from "../../../utils/mediaUtils";
+import {
+  device,
+  deviceDefaultFontSize,
+  deviceDeafaultZeroPointFiveFontSize,
+  deviceSmallFontSize,
+} from "../../../utils/mediaUtils";
 interface ITodo {
   complited: boolean;
 }
@@ -22,19 +27,26 @@ export const TimeTodo = styled.div`
   font-size: ${deviceDeafaultZeroPointFiveFontSize};
   color: var(--text-color);
   @media ${device.desktopL} {
-   font-size: ${deviceDeafaultFontSize} ;
+    font-size: ${deviceDefaultFontSize.desktopL};
+  }
+  @media ${device.desktopXL} {
+    font-size: ${deviceDefaultFontSize.desktopXL};
   }
 `;
 export const Todo = styled.div<ITodo>`
   height: auto;
   text-decoration: ${({ complited }) => (complited ? "line-through red" : "")};
+  @media ${device.desktopXL} {
+    width: 80%;
+    padding: 20px;
+  }
 `;
 export const BtnsWrapper = styled.div`
-  width: 70px;
-  height: 70px;
+  width: 250px;
+  height: 200px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 10px;
 `;
 export const TodoBtn = styled.button`
@@ -51,7 +63,7 @@ export const TodoBtn = styled.button`
   }
 `;
 export const TodoText = styled.div`
-  padding: ${deviceSmallFontSize};
+  padding: ${deviceSmallFontSize.desktopL};
   word-break: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -63,14 +75,19 @@ export const TodoText = styled.div`
   -webkit-line-clamp: 10; /* number of lines to show */
   -webkit-box-orient: vertical;
   @media ${device.desktopL} {
-   font-size: ${deviceSmallFontSize} ;
+    font-size: ${deviceSmallFontSize.desktopL};
+  }
+  @media ${device.desktopXL} {
+    font-size: 5rem;
   }
 `;
 export const TrashImg = styled.img`
-  width: 14px;
-  filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg) brightness(102%) contrast(100%);
+  width: ${deviceDefaultFontSize.desktopXL};
+  filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
+    brightness(102%) contrast(100%);
 `;
 export const EditImg = styled.img`
-  width: 16px;
-  filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg) brightness(102%) contrast(100%);
+  width: ${deviceDefaultFontSize.desktopXL};
+  filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
+    brightness(102%) contrast(100%);
 `;

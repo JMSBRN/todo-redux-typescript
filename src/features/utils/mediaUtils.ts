@@ -1,40 +1,69 @@
 const size = {
   mobileExtraS: "279px",
-  mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "480px",
-  tablet: "768px",
-  laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "1960px",
-  desktopL: "2560px",
+  mobileS: 320,
+  mobileM: 375,
+  mobileL: 480,
+  tablet: 768,
+  laptop: 1024,
+  laptopL: 1440,
+  desktop: 1960,
+  desktopL: 2560,
+  desktopXL: 4440,
+  desktopXXL: 8440,
 };
 
 export const device = {
-  mobileExtraS: `(min-width: ${size.mobileExtraS}) and (max-width: ${size.mobileS})`,
-  mobileS: `(min-width: ${size.mobileS}) and (max-width: ${size.mobileM})`,
-  mobileM: `(min-width: ${size.mobileM}) and (max-width: ${size.mobileL})`,
-  mobileL: `(min-width: ${size.mobileL}) and (max-width: ${size.tablet})`,
-  tablet: `(min-width: ${size.tablet}) and (max-width: ${size.laptop})`,
-  laptop: `(min-width: ${size.laptop}) and (max-width: ${size.laptopL})`,
-  laptopL: `(min-width: ${size.laptopL}) and (max-width: ${size.desktop})`,
-  desktop: `(min-width: ${size.desktop})and (max-width: ${size.desktopL})`,
-  desktopL: `(min-width: ${size.desktopL}) and (max-width: 4440px)`,
+  mobileExtraS: `(min-width: ${size.mobileExtraS}px) and (max-width: ${
+    size.mobileS - 1
+  }px)`,
+  mobileS: `(min-width: ${size.mobileS}px) and (max-width: ${
+    size.mobileM - 1
+  }px)`,
+  mobileM: `(min-width: ${size.mobileM}px) and (max-width: ${
+    size.mobileL - 1
+  }px)`,
+  mobileL: `(min-width: ${size.mobileL}px) and (max-width: ${
+    size.tablet - 1
+  }px)`,
+  tablet: `(min-width: ${size.tablet}px) and (max-width: ${size.laptop - 1}px)`,
+  laptop: `(min-width: ${size.laptop}px) and (max-width: ${
+    size.laptopL - 1
+  }px)`,
+  laptopL: `(min-width: ${size.laptopL}px) and (max-width: ${
+    size.desktop - 1
+  }px)`,
+  desktop: `(min-width: ${size.desktop}px)and (max-width: ${
+    size.desktopL - 1
+  }px)`,
+  desktopL: `(min-width: ${size.desktopL}px) and (max-width: ${
+    size.desktopXL - 1
+  }px)`,
+  desktopXL: `(min-width: ${size.desktopXL}px) and (max-width: ${size.desktopXXL}px)`,
+};
+export const deviceExtraLargeFontSize = {
+  laptop: "5rem",
+  desktopL: "15rem",
+  desktopXL: "38rem"
 };
 export const deviceLargeFontSize = {
   laptop: "5rem",
   desktopL: "6rem",
+  desktopXL: "18rem"
 };
 export const deviceMediumFontSize = {
   laptop: "2rem",
   desktopL: "3rem",
+  desktopXL: "15rem"
 };
 export const deviceSmallFontSize = {
   laptop: "1rem",
   desktopL: "2rem",
+  desktopXL: "6rem"
 };
-export const deviceDeafaultFontSize = {
-  laptop: "5rem",
+export const deviceDefaultFontSize = {
+  laptop: "1rem",
   desktopL: "1rem",
+  desktopXL: "3rem"
+
 };
 export const deviceDeafaultZeroPointFiveFontSize = "0.5rem";
