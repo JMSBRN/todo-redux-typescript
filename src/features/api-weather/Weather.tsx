@@ -64,9 +64,9 @@ const { localCityName } = useAppSelector(selectWeather);
                 value={cityFromInput}
                 onChange={(e) => setCityFromInput(e.target.value)}
               />
-              <Styled.SetCityBtnWrapper>
+              <>
                 <Styled.SetCityBtn onClick={(e) => handlerSetCity(e)}>set city</Styled.SetCityBtn >
-              </Styled.SetCityBtnWrapper>
+              </>
             </Styled.InputAndBtnWrapper>
           }
         </>

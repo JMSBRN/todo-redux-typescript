@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device, deviceDefaultZeroPointFiveFontSize } from "../utils/mediaUtils";
+import { device, deviceFontSize } from "../utils/mediaUtils";
 
 export const Calendar = styled.div`
   position: absolute;
@@ -26,22 +26,22 @@ export const Calendar = styled.div`
     top: 1%;
     left: 15%;
   }
-  @media ${device.desktopXL} {
-    width: 1200px;
-    height: 600px;
-    top: 0px;
-    left: 100px;
-    .fc {
-      font-size: ${deviceDefaultZeroPointFiveFontSize.desktopXL};
-    }
-  }
   @media ${device.desktopL} {
     width: 600px;
     height: 600px;
     top: 0px;
     left: 50px;
     .fc {
-      font-size: ${deviceDefaultZeroPointFiveFontSize.desktopL};
+      font-size: 1rem;
+    }
+  }
+  @media ${device.desktopXL} {
+    width: 1200px;
+    height: 600px;
+    top: 0px;
+    left: 100px;
+    .fc {
+      font-size: 2rem;
     }
   }
 `;

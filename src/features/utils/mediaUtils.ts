@@ -1,5 +1,5 @@
 const size = {
-  mobileExtraS: "279px",
+  mobileExtraS: 279,
   mobileS: 320,
   mobileM: 375,
   mobileL: 480,
@@ -40,34 +40,16 @@ export const device = {
   }px)`,
   desktopXL: `(min-width: ${size.desktopXL}px) and (max-width: ${size.desktopXXL}px)`,
 };
-export const deviceExtraLargeFontSize = {
+export const deviceFontSize = {
+  mobileExtraS: "0.5rem",
+  mobileS: "1rem",
+  mobileM: "2rem",
+  mobileL: "3rem",
+  tablet: "4rem",
   laptop: "5rem",
-  desktopL: "15rem",
-  desktopXL: "38rem"
-};
-export const deviceLargeFontSize = {
-  laptop: "5rem",
-  desktopL: "12rem",
-  desktopXL: "18rem"
-};
-export const deviceMediumFontSize = {
-  laptop: "2rem",
+  laptopL: "6rem",
+  desktop: "7rem",
   desktopL: "8rem",
-  desktopXL: "15rem"
+  desktopXL: "9rem"
 };
-export const deviceSmallFontSize = {
-  laptop: "1rem",
-  desktopL: "4rem",
-  desktopXL: "6rem"
-};
-export const deviceDefaultFontSize = {
-  laptop: "1rem",
-  desktopL: "1rem",
-  desktopXL: "3rem"
-};
-export const deviceDefaultZeroPointFiveFontSize = {
-  laptop: "1rem",
-  desktopL: "1rem",
-  desktopXL: "2rem"
-};
-export const deviceDeafaultZeroPointFiveFontSize = "0.5rem";
+

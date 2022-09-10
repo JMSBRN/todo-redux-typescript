@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device, deviceSmallFontSize } from "../../../utils/mediaUtils";
+import { device, deviceFontSize } from "../../../utils/mediaUtils";
 
 interface IForm {
   isEdit: boolean;
@@ -7,20 +7,21 @@ interface IForm {
 export const Form = styled.div`
   position: absolute;
   @media ${device.desktopL} {
-    width: 32%;
+    width: 39%;
     left: 50px;
-    top: 650px;
+    top: 550px;
+    font-size: ${deviceFontSize.desktopL};
   }
   @media ${device.desktopXL} {
-    width: 30%;
+    width: 33.5%;
     left: 200px;
-    top: 1150px;
+    top: 1200px;
+    font-size: ${deviceFontSize.desktopXL};
   }
 `;
 export const Inputform = styled.input<IForm>`
   width: 68%;
-  padding: 3px 0;
-  font-size: 16px;
+  font-size: 0.7em;
   text-align: center;
   padding-bottom: 7px;
   color: var(--text-color);
@@ -31,28 +32,31 @@ export const Inputform = styled.input<IForm>`
   ::-webkit-input-placeholder {
     color: var(--text-color);
     @media ${device.desktopL} {
-      font-size: ${deviceSmallFontSize.desktopL};
+      font-size: 1.1em;
+    }
+    @media ${device.desktopXL} {
+      font-size: 1em;
     }
   }
   :-ms-input-placeholder {
     color: var(--text-color);
     @media ${device.desktopL} {
-      font-size: ${deviceSmallFontSize.desktopL};
+      font-size: 1.1em;
     }
     @media ${device.desktopXL} {
-      font-size: ${deviceSmallFontSize.desktopXL};
+      font-size: 0.7em;
     }
   }
   @media ${device.desktopL} {
-    font-size: ${deviceSmallFontSize.desktopL};
+    font-size: .3em;
   }
   @media ${device.desktopXL} {
-    font-size: ${deviceSmallFontSize.desktopXL};
+    font-size: .6em;
   }
 `;
 export const FormBtn = styled.button`
-  width: 30%;
-  padding: 3px;
+  width: 20%;
+  height: auto;
   margin-left: 20px;
   font-size: 20px;
   color: var(--text-color);
@@ -63,9 +67,9 @@ export const FormBtn = styled.button`
     border: 1px solid var(--border-color-grey);
   }
   @media ${device.desktopL} {
-    font-size: ${deviceSmallFontSize.desktopL};
+    font-size: .3em;
   }
   @media ${device.desktopXL} {
-    font-size: ${deviceSmallFontSize.desktopXL};
+    font-size: 0.6em;
   }
 `;

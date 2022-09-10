@@ -77,11 +77,9 @@ const Clock = () => {
           <Styled.SubmitBtn onClick={() => handlDisableInputs()} >submit</Styled.SubmitBtn>
         </Styled.InputGreetingNameWrapper>
       )}
-      <Styled.TimeWrapper>
         <Styled.Time>{time.hours}:{time.minutes}
           <Styled.Seconds>.{time.seconds}</Styled.Seconds>
         </Styled.Time>
-      </Styled.TimeWrapper>
       <Styled.Date>{date}</Styled.Date>
     </Styled.ClockWrapper>
   );

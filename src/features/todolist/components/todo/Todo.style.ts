@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import {
   device,
-  deviceDefaultFontSize,
-  deviceDeafaultZeroPointFiveFontSize,
-  deviceSmallFontSize,
+  deviceFontSize
 } from "../../../utils/mediaUtils";
 interface ITodo {
   complited: boolean;
@@ -19,35 +17,47 @@ export const TodoWrapper = styled.div`
   gap: 10px;
   border: 1px solid var(--border-color);
   border-radius: 3px;
+  @media ${device.desktopL} {
+    font-size: ${deviceFontSize.desktopL};
+  }
+  @media ${device.desktopXL} {
+    font-size: ${deviceFontSize.desktopXL};
+  }
 `;
 export const TimeTodo = styled.div`
   position: absolute;
   top: 2px;
   left: 2px;
-  font-size: ${deviceDeafaultZeroPointFiveFontSize};
+  font-size: .5em;
   color: var(--text-color);
   @media ${device.desktopL} {
-    font-size: ${deviceDefaultFontSize.desktopL};
+    font-size: .13em;
   }
   @media ${device.desktopXL} {
-    font-size: ${deviceDefaultFontSize.desktopXL};
+    font-size: .35em;
   }
 `;
 export const Todo = styled.div<ITodo>`
-  height: auto;
   text-decoration: ${({ complited }) => (complited ? "line-through red" : "")};
+  @media ${device.desktopL} {
+    width: 80%;
+    padding: .2em;
+  }
   @media ${device.desktopXL} {
     width: 80%;
-    padding: 20px;
+    padding: .5em;
   }
 `;
 export const BtnsWrapper = styled.div`
-  width: 250px;
-  height: 200px;
+  width: 1em;
+  height: .4em;
+  padding-bottom: .15em;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 10px;
+  @media ${device.desktopXL} {
+    width: 1.5em;
+  }
 `;
 export const TodoBtn = styled.button`
   width: 30px;
@@ -61,37 +71,50 @@ export const TodoBtn = styled.button`
     border: 1px solid var(--border-color);
     border-radius: 50%;
   }
+  @media ${device.desktopL} {
+    width: .1em;
+    height: .1em;
+  }
   @media ${device.desktopXL} {
-    width: ${deviceSmallFontSize.desktopXL};
-    height: ${deviceSmallFontSize.desktopXL};
+    width: 96px;
+    height: 96px;
   }
 `;
 export const TodoText = styled.div`
-  padding: ${deviceSmallFontSize.desktopL};
   word-break: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  font-size: 20px;
   color: var(--text-color);
   line-height: auto; /* fallback */
   max-height: auto; /* fallback */
   -webkit-line-clamp: 10; /* number of lines to show */
   -webkit-box-orient: vertical;
   @media ${device.desktopL} {
-    font-size: ${deviceSmallFontSize.desktopL};
+    font-size: .2em;
   }
   @media ${device.desktopXL} {
     font-size: 5rem;
   }
 `;
 export const TrashImg = styled.img`
-  width: ${deviceDefaultFontSize.desktopXL};
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
-    brightness(102%) contrast(100%);
+  brightness(102%) contrast(100%);
+  @media ${device.desktopL} {
+    width: 1.5em;
+  }
+  @media ${device.desktopXL} {
+    width: 3em;
+  }
 `;
 export const EditImg = styled.img`
-  width: ${deviceDefaultFontSize.desktopXL};
+  width: 1.5em;
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
     brightness(102%) contrast(100%);
+    @media ${device.desktopL} {
+    width: 1.5em;
+  }
+  @media ${device.desktopXL} {
+    width: 3em;
+  }
 `;

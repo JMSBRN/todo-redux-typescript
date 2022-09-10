@@ -12,13 +12,13 @@ export const Todos = styled.div`
   gap: 10px;
   list-style: none;
   @media ${device.desktopL} {
-    width: 30%;
-    left: 20px;
-    top: 600px;
+    width: 35%;
+    left: 40px;
+    top: 720px;
   }
   @media ${device.desktopXL} {
     width: 30%;
     left: 185px;
-    top: 1350px;
+    top: 1450px;
   }
 `;

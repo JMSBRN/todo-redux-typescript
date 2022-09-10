@@ -34,7 +34,6 @@ const Todo = (todo: ITodo) => {
           {text}
         </Styled.TodoText>
       </Styled.Todo>
-
       <Styled.BtnsWrapper>
         <Styled.TodoBtn onClick={() => dispatch(removeTodo(id))}>
         <Styled.TrashImg src={trashImg} alt="trash to delete todo" />

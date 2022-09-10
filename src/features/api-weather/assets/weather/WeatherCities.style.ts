@@ -1,43 +1,41 @@
 import styled from "styled-components";
-import { device } from "../../../utils/mediaUtils";
-export const WeatherCityes = styled.div`
-  position: absolute;
-  width: 300px;
-  height: 700px;
-  margin-top: 20px;
-  padding-left: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 10px;
-  list-style: none;
-  @media ${device.desktopL} {
-    position: absolute;
-    top: 3%;
-    right: 1%;
-  }
-`;
+import { device, deviceFontSize } from "../../../utils/mediaUtils";
+
 export const DefaultWeather = styled.div`
 position: absolute;
 height: auto;
 @media ${device.desktopL} {
   top: 80px;
-  left: 1150px;
+  left: 850px;
 }
 @media ${device.desktopXL} {
   top: 80px;
   left: 1700px;
 }
 `;
+export const WeatherCityes = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 1000px;
+  list-style: none;
+  @media ${device.desktopL} {
+    position: absolute;
+    top: 80px;
+    right: 100px;
+    font-size: ${deviceFontSize.desktopL} ;
+  }
+`;
 export const AddCityBtnWrapper = styled.div`
   height: 30px;
+  margin-bottom: 40px ;
 `;
 export const AddCityBtn = styled.button`
-  margin-bottom: 20px;
+  position: absolute;
+  top:0;
   width: 100%;
   padding: 5px;
-  font-size: 16px;
+  font-size: .18em;
   color: var(--text-color);
   background-color: transparent;
   border: 1px solid var(--border-color);
