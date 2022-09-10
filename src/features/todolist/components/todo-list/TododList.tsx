@@ -13,8 +13,10 @@ const TododList = () => {
         <Calendar />
         <Styled.ToDoListWrapper>
           <Clock />
-          <FormTodo />
-          <Todos />
+          <Styled.FormAndTodosWrapper>
+            <FormTodo />
+            <Todos />
+          </Styled.FormAndTodosWrapper>
         </Styled.ToDoListWrapper>
       </Styled.TodoList>
     </Styled.TodoListLayout>

@@ -46,6 +46,19 @@ export const TodoList = styled.div`
     background-color: #546545;
   }
 `;
+export const FormAndTodosWrapper = styled.div`
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  @media ${device.desktopL} {
+    top: 45%;
+    left: 2%;
+  }
+  @media ${device.desktopXL} {
+    top: 40%;
+    left: 2%;
+  }
+`;
 export const ToDoListWrapper = styled.div`
   margin: 10px auto;
   width: 100%;

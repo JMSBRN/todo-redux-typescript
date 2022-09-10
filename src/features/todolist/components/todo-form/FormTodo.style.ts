@@ -5,22 +5,21 @@ interface IForm {
   isEdit: boolean;
 }
 export const Form = styled.div`
-  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin:0;
+  padding:0;
+  margin-bottom: 30px;
   @media ${device.desktopL} {
-    width: 39%;
-    left: 50px;
-    top: 550px;
     font-size: ${deviceFontSize.desktopL};
   }
   @media ${device.desktopXL} {
-    width: 33.5%;
-    left: 200px;
-    top: 1000px;
     font-size: ${deviceFontSize.desktopXL};
   }
 `;
 export const Inputform = styled.input<IForm>`
-  width: 68%;
+  width: 78%;
   font-size: 0.7em;
   text-align: center;
   padding-bottom: 7px;

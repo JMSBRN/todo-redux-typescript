@@ -61,7 +61,7 @@ const Clock = () => {
         </Styled.GreetingNameWrapper>
       ) : (
         <Styled.InputGreetingNameWrapper>
-          <Styled.InputCityByDefault
+          <Styled.InputNameByDefault
             type="text"
             value={name}
             placeholder="enter name"

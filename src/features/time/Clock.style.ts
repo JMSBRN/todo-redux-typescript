@@ -21,14 +21,10 @@ export const ClockWrapper = styled.div`
   }
 `;
 export const Greeting = styled.div`
-  font-size: 30px;
+  font-size: .7em;
+  text-align: center;
   color: var(--text-color);
-  @media ${device.desktopL} {
-    text-align: center;
-    font-size: .7em;
-  }
   @media ${device.desktopXL} {
-    text-align: center;
     font-size: .5em;
   }
 `;
@@ -62,37 +58,52 @@ export const GreetingName = styled.div`
   }
 `;
 export const InputGreetingNameWrapper = styled.div`
+  position: relative;
+  @media ${device.desktopL} {
+    font-size: ${deviceFontSize.desktopL};
+  }
+  @media ${device.desktopXL} {
+    font-size: ${deviceFontSize.desktopXL};
+  }
 `;
-export const InputCityByDefault = styled.input`
+export const InputNameByDefault = styled.input`
+  position: absolute;
+  top: 0;
+  width: 40%;
+  font-size: .2em;
   color: var(--text-color);
   background-color: transparent;
   border: none;
   border-bottom: 1px solid var(--border-color);
-  font-size: 20px;
   ::placeholder,
   ::-webkit-input-placeholder {
-    font-size: 12px;
+    font-size: 1em;
     color: var(--text-color);
-    @media ${device.desktopL} {
-      font-size: .5em;
-    }
-    @media ${device.desktopXL} {
-      font-size: .5em;
-    }
   }
-  @media ${device.desktopL} {
-    font-size: .5em;
+  :focus {
+    outline: none;
   }
-  @media ${device.desktopXL} {
-    font-size: .5em;
+`;
+export const InputCityByDefault = styled.input`
+  position: absolute;
+  top: 30%;
+  width: 40%;
+  font-size: .2em;
+  color: var(--text-color);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  ::placeholder,
+  ::-webkit-input-placeholder {
+    font-size: 1em;
+    color: var(--text-color);
   }
   :focus {
     outline: none;
   }
 `;
 export const SubmitBtn = styled.button`
-  margin: 3%;
-  width: auto;
+  width: 20%;
   padding: 5px;
   font-size: 20px;
   color: var(--text-color);
@@ -103,10 +114,10 @@ export const SubmitBtn = styled.button`
     border: 1px solid var(--border-color-grey);
   }
   @media ${device.desktopL} {
-    font-size: .5em;
+    font-size: .2em;
   }
   @media ${device.desktopXL} {
-    font-size: .5em;
+    font-size: .2em;
   }
 `;
 export const HoverMessage = styled.div`

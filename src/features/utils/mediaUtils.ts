@@ -50,6 +50,6 @@ export const deviceFontSize = {
   laptopL: "6rem",
   desktop: "7rem",
   desktopL: "8rem",
-  desktopXL: "23rem"
+  desktopXL: "24rem"
 };
 
