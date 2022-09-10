@@ -34,7 +34,7 @@ export const TimeTodo = styled.div`
     font-size: .13em;
   }
   @media ${device.desktopXL} {
-    font-size: .35em;
+    font-size: .11em;
   }
 `;
 export const Todo = styled.div<ITodo>`
@@ -45,7 +45,7 @@ export const Todo = styled.div<ITodo>`
   }
   @media ${device.desktopXL} {
     width: 80%;
-    padding: .5em;
+    padding: .2em;
   }
 `;
 export const BtnsWrapper = styled.div`
@@ -56,7 +56,7 @@ export const BtnsWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   @media ${device.desktopXL} {
-    width: 1.5em;
+    width: 1.1em;
   }
 `;
 export const TodoBtn = styled.button`
@@ -76,8 +76,8 @@ export const TodoBtn = styled.button`
     height: .1em;
   }
   @media ${device.desktopXL} {
-    width: 96px;
-    height: 96px;
+    width: 5.5em;
+    height: 5.5em;
   }
 `;
 export const TodoText = styled.div`
@@ -104,7 +104,7 @@ export const TrashImg = styled.img`
     width: 1.5em;
   }
   @media ${device.desktopXL} {
-    width: 3em;
+    width: 3.5em;
   }
 `;
 export const EditImg = styled.img`
@@ -115,6 +115,6 @@ export const EditImg = styled.img`
     width: 1.5em;
   }
   @media ${device.desktopXL} {
-    width: 3em;
+    width: 3.5em;
   }
 `;

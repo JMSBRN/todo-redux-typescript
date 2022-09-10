@@ -15,7 +15,7 @@ export const Form = styled.div`
   @media ${device.desktopXL} {
     width: 33.5%;
     left: 200px;
-    top: 1200px;
+    top: 1000px;
     font-size: ${deviceFontSize.desktopXL};
   }
 `;
@@ -35,7 +35,7 @@ export const Inputform = styled.input<IForm>`
       font-size: 1.1em;
     }
     @media ${device.desktopXL} {
-      font-size: 1em;
+      font-size: 1.1em;
     }
   }
   :-ms-input-placeholder {
@@ -44,14 +44,14 @@ export const Inputform = styled.input<IForm>`
       font-size: 1.1em;
     }
     @media ${device.desktopXL} {
-      font-size: 0.7em;
+      font-size: 0.1em;
     }
   }
   @media ${device.desktopL} {
     font-size: .3em;
   }
   @media ${device.desktopXL} {
-    font-size: .6em;
+    font-size: 0.25em;
   }
 `;
 export const FormBtn = styled.button`
@@ -70,6 +70,6 @@ export const FormBtn = styled.button`
     font-size: .3em;
   }
   @media ${device.desktopXL} {
-    font-size: 0.6em;
+    font-size: 0.25em;
   }
 `;
