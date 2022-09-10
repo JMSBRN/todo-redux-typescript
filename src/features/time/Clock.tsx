@@ -53,12 +53,12 @@ const Clock = () => {
     <Styled.ClockWrapper>
       <Styled.Greeting>{greetingFromLocal}</Styled.Greeting>
       {isEdit ? (
-        <Styled.GreetingNameWrapper>
+        <>
           <Styled.GreetingName onClick={() => setIsEdit(false)}>
             {nameFromLocal}
             <Styled.HoverMessage> try click for edit</Styled.HoverMessage>
           </Styled.GreetingName>
-        </Styled.GreetingNameWrapper>
+        </>
       ) : (
         <Styled.InputGreetingNameWrapper>
           <Styled.InputNameByDefault

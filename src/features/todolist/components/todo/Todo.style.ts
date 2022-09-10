@@ -1,8 +1,5 @@
 import styled from "styled-components";
-import {
-  device,
-  deviceFontSize
-} from "../../../utils/mediaUtils";
+import { device, deviceFontSize } from "../../../utils/mediaUtils";
 interface ITodo {
   complited: boolean;
 }
@@ -17,6 +14,9 @@ export const TodoWrapper = styled.div`
   gap: 10px;
   border: 1px solid var(--border-color);
   border-radius: 3px;
+  @media ${device.desktop} {
+    font-size: ${deviceFontSize.desktop};
+  }
   @media ${device.desktopL} {
     font-size: ${deviceFontSize.desktopL};
   }
@@ -28,30 +28,30 @@ export const TimeTodo = styled.div`
   position: absolute;
   top: 2px;
   left: 2px;
-  font-size: .5em;
+  font-size: 0.12em;
   color: var(--text-color);
   @media ${device.desktopL} {
-    font-size: .13em;
+    font-size: 0.13em;
   }
   @media ${device.desktopXL} {
-    font-size: .11em;
+    font-size: 0.11em;
   }
 `;
 export const Todo = styled.div<ITodo>`
   text-decoration: ${({ complited }) => (complited ? "line-through red" : "")};
   @media ${device.desktopL} {
     width: 80%;
-    padding: .2em;
+    padding: 0.2em;
   }
   @media ${device.desktopXL} {
     width: 80%;
-    padding: .2em;
+    padding: 0.2em;
   }
 `;
 export const BtnsWrapper = styled.div`
   width: 1em;
-  height: .4em;
-  padding-bottom: .15em;
+  height: 0.4em;
+  padding-bottom: 0.15em;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -72,8 +72,8 @@ export const TodoBtn = styled.button`
     border-radius: 50%;
   }
   @media ${device.desktopL} {
-    width: .1em;
-    height: .1em;
+    width: 0.1em;
+    height: 0.1em;
   }
   @media ${device.desktopXL} {
     width: 5.5em;
@@ -85,21 +85,23 @@ export const TodoText = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
+  font-size: 0.2em;
   color: var(--text-color);
   line-height: auto; /* fallback */
   max-height: auto; /* fallback */
   -webkit-line-clamp: 10; /* number of lines to show */
   -webkit-box-orient: vertical;
   @media ${device.desktopL} {
-    font-size: .2em;
+    font-size: 0.2em;
   }
   @media ${device.desktopXL} {
     font-size: 5rem;
   }
 `;
 export const TrashImg = styled.img`
+  width: 20px;
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
-  brightness(102%) contrast(100%);
+    brightness(102%) contrast(100%);
   @media ${device.desktopL} {
     width: 1.5em;
   }
@@ -108,10 +110,10 @@ export const TrashImg = styled.img`
   }
 `;
 export const EditImg = styled.img`
-  width: 1.5em;
+  width: 20px;
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
     brightness(102%) contrast(100%);
-    @media ${device.desktopL} {
+  @media ${device.desktopL} {
     width: 1.5em;
   }
   @media ${device.desktopXL} {

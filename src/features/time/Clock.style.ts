@@ -1,61 +1,40 @@
 import styled from "styled-components";
-import {
-  device,
-  deviceFontSize,
-} from "../utils/mediaUtils";
+import { device, deviceFontSize } from "../utils/mediaUtils";
 
 export const ClockWrapper = styled.div`
   position: absolute;
-  width: auto;
-  height: auto;
+  top: 20%;
+  right: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 30%;
+  height: 50%;
   gap: 30px;
+  @media ${device.desktop} {
+    font-size: ${deviceFontSize.desktop};
+  }
   @media ${device.desktopL} {
-    top: 250px;
-    right: 500px;
     font-size: ${deviceFontSize.desktopL};
   }
   @media ${device.desktopXL} {
-    top: 3%;
-    left: 45%;
     font-size: ${deviceFontSize.desktopXL};
   }
 `;
 export const Greeting = styled.div`
-  font-size: .7em;
+  font-size: 0.7em;
   text-align: center;
   color: var(--text-color);
   @media ${device.desktopXL} {
-    font-size: .5em;
-  }
-`;
-export const GreetingNameWrapper = styled.div`
-  width: 70px;
-  height: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  @media ${device.desktopL} {
-    width: 900px;
-    height: 140px;
-  }
-  @media ${device.desktopXL} {
-    width: 1000px;
-    height: 270px;
+    font-size: 0.5em;
   }
 `;
 export const GreetingName = styled.div`
-  font-size: 30px;
+  text-align: center;
+  font-size: 0.5em;
   color: var(--text-color);
   cursor: default;
-  @media ${device.desktopL} {
-    text-align: center;
-    font-size: .5em;
-  }
-  @media ${device.desktopXL} {
-    text-align: center;
-    font-size: .5em;
-  }
 `;
 export const InputGreetingNameWrapper = styled.div`
   position: relative;
@@ -70,7 +49,7 @@ export const InputNameByDefault = styled.input`
   position: absolute;
   top: 0;
   width: 40%;
-  font-size: .2em;
+  font-size: 0.2em;
   color: var(--text-color);
   background-color: transparent;
   border: none;
@@ -88,7 +67,7 @@ export const InputCityByDefault = styled.input`
   position: absolute;
   top: 30%;
   width: 40%;
-  font-size: .2em;
+  font-size: 0.2em;
   color: var(--text-color);
   background-color: transparent;
   border: none;
@@ -114,63 +93,46 @@ export const SubmitBtn = styled.button`
     border: 1px solid var(--border-color-grey);
   }
   @media ${device.desktopL} {
-    font-size: .2em;
+    font-size: 0.2em;
   }
   @media ${device.desktopXL} {
-    font-size: .2em;
+    font-size: 0.2em;
   }
 `;
 export const HoverMessage = styled.div`
   color: transparent;
-  width: 900px;
+  width: 100%;
   cursor: pointer;
   &:hover {
     color: var(--text-color);
     transition-delay: 0.3s;
     transition: 0.3s ease all;
   }
-  @media ${ device.desktopL} {
-    font-size: .5em;
+  @media ${device.desktopL} {
+    font-size: 0.5em;
   }
-  @media ${ device.desktopXL} {
-    font-size: .5em;
+  @media ${device.desktopXL} {
+    font-size: 0.5em;
   }
 `;
 export const Time = styled.div`
   width: 500px;
   font-weight: 600;
-  font-size: 65px;
+  text-align: center;
+  font-size: 1em;
   letter-spacing: 5px;
   color: var(--text-color);
-  @media ${device.desktopL} {
-    text-align: center;
-    font-size: 1em;
-  }
-  @media ${device.desktopXL} {
-    text-align: center;
-    font-size: 1em;
-  }
 `;
 export const Seconds = styled.span`
-  font-size: 30px;
+  font-size: 0.5em;
   color: rgba(250, 250, 250, 0.7);
-  @media ${device.desktopL} {
-    font-size: .5em;
-  }
-  @media ${device.desktopXL} {
-    font-size: .5em;
-  }
 `;
 export const Date = styled.div`
-  color: var(--text-color);
+  text-align: center;
   font-weight: 400;
-  font-size: 20px;
-  @media ${device.desktopL} {
-    text-align: center;
-    font-size: .3em;
-  }
+  font-size: 0.3em;
+  color: var(--text-color);
   @media ${device.desktopXL} {
-    text-align: center;
-    font-size: .5em;
+    font-size: 0.5em;
   }
 `;

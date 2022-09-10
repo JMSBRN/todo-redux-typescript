@@ -40,16 +40,21 @@ export const TodoList = styled.div`
     background-color: green;
   }
   @media ${device.desktop} {
-    background-color: blue;
-  }
-  @media ${device.desktopL} {
     background-color: #546545;
   }
 `;
 export const FormAndTodosWrapper = styled.div`
   position: absolute;
+  top: 49%;
+  left: 2%;
   width: 30%;
   height: 100%;
+  @media ${device.desktop} {
+    top: 50%;
+    left: 2%;
+    width: 30%;
+    height: 100%;
+  }
   @media ${device.desktopL} {
     top: 45%;
     left: 2%;

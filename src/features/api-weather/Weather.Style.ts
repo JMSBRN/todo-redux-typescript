@@ -10,6 +10,10 @@ export const WeatherWrapper = styled.div`
   border: 1px solid var(--border-color);
   border-radius: 3px;
   cursor: grab;
+  @media ${device.desktop} {
+    width: 2.2em;
+    font-size: ${deviceFontSize.desktop};
+  }
   @media ${device.desktopL} {
     width: 2.2em;
     font-size: ${deviceFontSize.desktopL};

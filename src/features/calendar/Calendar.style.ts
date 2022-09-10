@@ -22,9 +22,14 @@ export const Calendar = styled.div`
   height: 300px;
   font-size: 10px;
   color: var(--text-color);
-  @media ${device.desktopL} {
-    top: 1%;
-    left: 15%;
+  @media ${device.desktop} {
+    width: 550px;
+    height: 550px;
+    top: 0px;
+    left: 50px;
+    .fc {
+      font-size: .9rem;
+    }
   }
   @media ${device.desktopL} {
     width: 600px;
