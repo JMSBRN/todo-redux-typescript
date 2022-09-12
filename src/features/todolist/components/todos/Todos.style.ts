@@ -7,6 +7,5 @@ export const Todos = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 30px;
   list-style: none;
 `;

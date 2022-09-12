@@ -28,13 +28,11 @@ const WeatherCities = () => {
         values={weatherCities}
       >
         <Styled.WeatherCityes>
-          <Styled.AddCityBtnWrapper>
-            <Styled.AddCityBtn
-              onClick={() => dispatch(setNewWeatherCity(weatherCities))}
-            >
-              add weather city (max four)
-            </Styled.AddCityBtn>
-          </Styled.AddCityBtnWrapper>
+          <Styled.AddCityBtn
+            onClick={() => dispatch(setNewWeatherCity(weatherCities))}
+          >
+            add weather city (max four)
+          </Styled.AddCityBtn>
           {weatherCities.map((el) => (
             <Reorder.Item
               initial={{ opacity: 0 }}

@@ -3,6 +3,11 @@ import { device, deviceFontSize } from "../utils/mediaUtils";
 
 export const Calendar = styled.div`
   position: absolute;
+  top: 1%;
+  left: 1%;
+  width: 28%;
+  height: 28%;
+  color: var(--text-color);
   & .fc-button.fc-today-button,
   .fc-button.fc-prev-button,
   .fc-button.fc-next-button {
@@ -17,36 +22,40 @@ export const Calendar = styled.div`
       transition-delay: 0.1s;
     }
   }
-  margin-top: 20px;
-  width: 300px;
-  height: 300px;
-  font-size: 10px;
-  color: var(--text-color);
-  @media ${device.desktop} {
-    width: 550px;
-    height: 550px;
-    top: 0px;
-    left: 50px;
+  @media ${device.tablet} {
+    font-size: ${deviceFontSize.tablet};
     .fc {
-      font-size: .9rem;
+      font-size: 0.141em;
+    }
+  }
+  @media ${device.laptop} {
+    font-size: ${deviceFontSize.laptop};
+    .fc {
+      font-size: 0.141em;
+    }
+  }
+  @media ${device.laptopL} {
+    font-size: ${deviceFontSize.laptopL};
+    .fc {
+      font-size: 0.141em;
+    }
+  }
+  @media ${device.desktop} {
+    font-size: ${deviceFontSize.desktop};
+    .fc {
+      font-size: 0.141em;
     }
   }
   @media ${device.desktopL} {
-    width: 600px;
-    height: 600px;
-    top: 0px;
-    left: 50px;
+    font-size: ${deviceFontSize.desktopL};
     .fc {
-      font-size: 1rem;
+      font-size: 0.141em;
     }
   }
   @media ${device.desktopXL} {
-    width: 1200px;
-    height: 600px;
-    top: 0px;
-    left: 100px;
+    font-size: ${deviceFontSize.desktopXL};
     .fc {
-      font-size: 2rem;
+      font-size: 0.141em;
     }
   }
 `;

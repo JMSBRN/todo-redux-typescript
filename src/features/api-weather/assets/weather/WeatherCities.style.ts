@@ -3,40 +3,62 @@ import { device, deviceFontSize } from "../../../utils/mediaUtils";
 
 export const DefaultWeather = styled.div`
   position: absolute;
+  top: 5%;
+  left: 35%;
+  width: 8%;
   height: auto;
-  top: 5%;
-  left: 30%;
-`;
-export const WeatherCityes = styled.div`
-  position: absolute;
-  top: 5%;
-  right: 2%;
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  height: 1000px;
-  list-style: none;
+  
+  @media ${device.tablet} {
+    font-size: ${deviceFontSize.tablet};
+  }
+  @media ${device.laptop} {
+    font-size: ${deviceFontSize.laptop};
+  }
+  @media ${device.laptopL} {
+    font-size: ${deviceFontSize.laptopL};
+  }
   @media ${device.desktop} {
-    top: 5%;
-    right: 2%;
     font-size: ${deviceFontSize.desktop};
   }
   @media ${device.desktopL} {
-    top: 80px;
-    right: 100px;
     font-size: ${deviceFontSize.desktopL};
   }
+  @media ${device.desktopXL} {
+    font-size: ${deviceFontSize.desktopXL};
+  }
 `;
-export const AddCityBtnWrapper = styled.div`
-  height: 30px;
-  margin-bottom: 40px;
+export const WeatherCityes = styled.div`
+  position: absolute;
+  width: 10%;
+  top: 5%;
+  right: 4%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  @media ${device.tablet} {
+    font-size: ${deviceFontSize.tablet};
+  }
+  @media ${device.laptop} {
+    font-size: ${deviceFontSize.laptop};
+  }
+  @media ${device.laptopL} {
+    font-size: ${deviceFontSize.laptopL};
+  }
+  @media ${device.desktop} {
+    font-size: ${deviceFontSize.desktop};
+  }
+  @media ${device.desktopL} {
+    font-size: ${deviceFontSize.desktopL};
+  }
+  @media ${device.desktopXL} {
+    font-size: ${deviceFontSize.desktopXL};
+  }
 `;
 export const AddCityBtn = styled.button`
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 5px;
-  font-size: 0.18em;
+  width: 85%;
+  height: 4em;
+  font-size: 0.16em;
+  margin-bottom: 20px;
   color: var(--text-color);
   background-color: transparent;
   border: 1px solid var(--border-color);
@@ -48,9 +70,11 @@ export const AddCityBtn = styled.button`
     display: none;
   }
 `;
+export const WeatherWrapper = styled.div`
+`;
 export const NoCityMessage = styled.div`
   width: 200px;
   padding: 3px;
-  font-size: 14px;
+  font-size: 1rem;
   color: var(--text-color);
 `;

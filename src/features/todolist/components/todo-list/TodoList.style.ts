@@ -31,38 +31,15 @@ export const TodoList = styled.div`
     background-color: forestgreen;
   }
   @media ${device.tablet} {
-    background-color: black;
-  }
-  @media ${device.laptop} {
-    background-color: yellow;
-  }
-  @media ${device.laptopL} {
-    background-color: green;
-  }
-  @media ${device.desktop} {
-    background-color: #546545;
+    background-color: #546545; 
   }
 `;
 export const FormAndTodosWrapper = styled.div`
   position: absolute;
-  top: 49%;
-  left: 2%;
+  top: 50%;
+  left: 1%;
   width: 30%;
   height: 100%;
-  @media ${device.desktop} {
-    top: 50%;
-    left: 2%;
-    width: 30%;
-    height: 100%;
-  }
-  @media ${device.desktopL} {
-    top: 45%;
-    left: 2%;
-  }
-  @media ${device.desktopXL} {
-    top: 40%;
-    left: 2%;
-  }
 `;
 export const ToDoListWrapper = styled.div`
   margin: 10px auto;

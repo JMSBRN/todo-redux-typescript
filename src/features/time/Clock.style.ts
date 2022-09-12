@@ -3,15 +3,23 @@ import { device, deviceFontSize } from "../utils/mediaUtils";
 
 export const ClockWrapper = styled.div`
   position: absolute;
+  width: 30%;
+  height: 50%;
   top: 20%;
   right: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 30%;
-  height: 50%;
-  gap: 30px;
+  @media ${device.tablet} {
+    font-size: ${deviceFontSize.tablet};
+  }
+  @media ${device.laptop} {
+    font-size: ${deviceFontSize.laptop};
+  }
+  @media ${device.laptopL} {
+    font-size: ${deviceFontSize.laptopL};
+  }
   @media ${device.desktop} {
     font-size: ${deviceFontSize.desktop};
   }
@@ -38,6 +46,8 @@ export const GreetingName = styled.div`
 `;
 export const InputGreetingNameWrapper = styled.div`
   position: relative;
+  width: 30%;
+  height: auto;
   @media ${device.desktopL} {
     font-size: ${deviceFontSize.desktopL};
   }
@@ -48,7 +58,7 @@ export const InputGreetingNameWrapper = styled.div`
 export const InputNameByDefault = styled.input`
   position: absolute;
   top: 0;
-  width: 40%;
+  width: 100%;
   font-size: 0.2em;
   color: var(--text-color);
   background-color: transparent;
@@ -66,7 +76,7 @@ export const InputNameByDefault = styled.input`
 export const InputCityByDefault = styled.input`
   position: absolute;
   top: 30%;
-  width: 40%;
+  width: 100%;
   font-size: 0.2em;
   color: var(--text-color);
   background-color: transparent;
@@ -82,9 +92,10 @@ export const InputCityByDefault = styled.input`
   }
 `;
 export const SubmitBtn = styled.button`
-  width: 20%;
-  padding: 5px;
-  font-size: 20px;
+  width: 40%;
+  height: auto;
+  padding: 0 .05em ;
+  font-size: .2em;
   color: var(--text-color);
   border: 1px solid var(--border-color);
   background-color: transparent;
@@ -116,7 +127,7 @@ export const HoverMessage = styled.div`
   }
 `;
 export const Time = styled.div`
-  width: 500px;
+  width: 35%;
   font-weight: 600;
   text-align: center;
   font-size: 1em;
