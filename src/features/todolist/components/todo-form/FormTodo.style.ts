@@ -11,6 +11,9 @@ export const Form = styled.div`
   margin:0;
   padding:0;
   margin-bottom: 30px;
+  @media ${device.tablet} {
+    font-size: ${deviceFontSize.tablet};
+  }
   @media ${device.desktop} {
     font-size: ${deviceFontSize.desktop};
   }

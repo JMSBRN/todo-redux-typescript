@@ -30,9 +30,6 @@ export const TodoList = styled.div`
   @media ${device.mobileL} {
     background-color: forestgreen;
   }
-  @media ${device.tablet} {
-    background-color: #546545; 
-  }
 `;
 export const FormAndTodosWrapper = styled.div`
   position: absolute;
@@ -40,6 +37,9 @@ export const FormAndTodosWrapper = styled.div`
   left: 1%;
   width: 30%;
   height: 100%;
+  @media ${device.tabletPortrait} {
+    top: 35%;
+  }
 `;
 export const ToDoListWrapper = styled.div`
   margin: 10px auto;

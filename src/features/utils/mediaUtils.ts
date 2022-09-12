@@ -26,6 +26,7 @@ export const device = {
     size.tablet - 1
   }px)`,
   tablet: `(min-width: ${size.tablet}px) and (max-width: ${size.laptop - 1}px)`,
+  tabletPortrait: `(min-width: ${size.tablet}px) and (orientation: portrait)`,
   laptop: `(min-width: ${size.laptop}px) and (max-width: ${
     size.laptopL - 1
   }px)`,
