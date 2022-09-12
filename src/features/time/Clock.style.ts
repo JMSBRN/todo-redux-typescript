@@ -62,12 +62,23 @@ export const GreetingName = styled.div`
     top: 15%;
     right: 1%;
     font-size: 0.4em;
+    z-index: 1;
   }
 `;
 export const InputGreetingNameWrapper = styled.div`
   position: relative;
   width: 30%;
   height: auto;
+  @media ${device.mobileM} {
+    position: absolute;
+    width:33%;
+    top: 3%;
+    right: 2%;
+    font-size: ${deviceFontSize.mobileM};
+    background-color: rgba(100,100,100,0.8);
+    z-index: 1;
+
+  }
   @media ${device.desktopL} {
     font-size: ${deviceFontSize.desktopL};
   }
@@ -78,7 +89,7 @@ export const InputGreetingNameWrapper = styled.div`
 export const InputNameByDefault = styled.input`
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 95%;
   font-size: 0.2em;
   color: var(--text-color);
   background-color: transparent;
@@ -96,7 +107,7 @@ export const InputNameByDefault = styled.input`
 export const InputCityByDefault = styled.input`
   position: absolute;
   top: 30%;
-  width: 100%;
+  width: 95%;
   font-size: 0.2em;
   color: var(--text-color);
   background-color: transparent;
