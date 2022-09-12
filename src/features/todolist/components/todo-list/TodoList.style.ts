@@ -10,22 +10,29 @@ export const TodoListLayout = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-`;
+  @media ${device.mobileM} {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+  }
+  `;
 export const TodoList = styled.div`
   position: relative;
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   display: flex;
   background-color: rgba(50, 50, 50, 0.4);
   background-blend-mode: color;
+  @media ${device.mobileM} {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+  }
   @media ${device.mobileExtraS} {
     background-color: rgba(50, 50, 50, 0.9);
   }
   @media ${device.mobileS} {
     background-color: grey;
-  }
-  @media ${device.mobileM} {
-    background-color: hotpink;
   }
   @media ${device.mobileL} {
     background-color: forestgreen;
@@ -37,6 +44,11 @@ export const FormAndTodosWrapper = styled.div`
   left: 1%;
   width: 30%;
   height: 100%;
+  @media ${device.mobileM} {
+    top: 35%;
+    width: 82%;
+    margin: 0 9%;
+  }
   @media ${device.tabletPortrait} {
     top: 35%;
   }

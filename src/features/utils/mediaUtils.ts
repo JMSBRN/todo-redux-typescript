@@ -44,8 +44,8 @@ export const device = {
 export const deviceFontSize = {
   mobileExtraS: ".1rem",
   mobileS: ".5rem",
-  mobileM: "1rem",
-  mobileL: "2rem",
+  mobileM: "4rem",
+  mobileL: "1rem",
   tablet: "1.8rem",
   laptop: "2rem",
   laptopL: "5rem",
