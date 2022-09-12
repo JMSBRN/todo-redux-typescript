@@ -47,8 +47,8 @@ export const deviceFontSize = {
   mobileL: "2rem",
   tablet: "1.8rem",
   laptop: "2rem",
-  laptopL: "3rem",
-  desktop: "5rem",
+  laptopL: "5rem",
+  desktop: "6rem",
   desktopL: "8rem",
   desktopXL: "17rem"
 };

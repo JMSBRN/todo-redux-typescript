@@ -5,12 +5,12 @@ export const ClockWrapper = styled.div`
   position: absolute;
   width: 30%;
   height: 50%;
-  top: 20%;
+  top: 10%;
   right: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   @media ${device.tablet} {
     font-size: ${deviceFontSize.tablet};
   }
