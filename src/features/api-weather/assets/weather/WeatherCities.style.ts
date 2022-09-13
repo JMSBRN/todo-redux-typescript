@@ -29,6 +29,9 @@ export const DefaultWeather = styled.div`
     height: 110px;
     font-size: ${deviceFontSize.mobileM};
   }
+  @media ${device.mobileLandscape} {
+    display: none;
+  }
   @media ${device.tablet} {
     font-size: ${deviceFontSize.tablet};
   }
@@ -87,13 +90,7 @@ export const AddCityBtn = styled.button`
   &:active {
     border: 1px solid var(--border-color-grey);
   }
-  @media ${device.mobileExtraS} {
-    display: none;
-  }
-  @media ${device.mobileS} {
-    display: none;
-  }
-  @media ${device.mobileM} {
+  @media ${device.mobileExtraS}, ${device.mobileS},  ${device.mobileM}, ${device.mobileLandscape} {
     display: none;
   }
 `;

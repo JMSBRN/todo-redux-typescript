@@ -13,6 +13,7 @@ const size = {
 };
 
 export const device = {
+  mobileLandscape: `(orientation: landscape) and (max-height: 480px)`,
   mobileExtraS: `(min-width: ${size.mobileExtraS}px) and (max-width: ${
     size.mobileS - 1
   }px)`,

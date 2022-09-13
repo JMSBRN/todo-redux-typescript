@@ -35,6 +35,13 @@ export const ClockWrapper = styled.div`
     height: 10% ;
     font-size: ${deviceFontSize.mobileM};
   }
+  @media ${device.mobileLandscape} {
+    position: relative;
+    top: 1%;
+    right: 2%;
+    width: 50%;
+    height: auto;
+  }
   @media ${device.tablet} {
     font-size: ${deviceFontSize.tablet};
   }
@@ -73,6 +80,9 @@ export const Greeting = styled.div`
     right: 9%;
     font-size: 0.3em;
   }
+  @media ${device.mobileLandscape} {
+    font-size: 2em;
+  }
   @media ${device.desktopXL} {
     font-size: 0.5em;
   }
@@ -87,7 +97,7 @@ export const GreetingName = styled.div`
     width: 33%;
     height: 30%;
     top: 22%;
-    right: 30px;
+    right: 9%;
     font-size: 0.4em;
     z-index: 1;
   }
@@ -96,16 +106,21 @@ export const GreetingName = styled.div`
     width: 33%;
     height: 30%;
     top: 22%;
-    right: 50px;
+    right: 9%;
     font-size: 0.4em;
     z-index: 1;
   }
   @media ${device.mobileM} {
     position: absolute;
+    width: 33%;
+    height: 30%;
     top: 15%;
-    right: 50px;
+    right: 9%;
     font-size: 0.4em;
     z-index: 1;
+  }
+  @media ${device.mobileLandscape} {
+    font-size: 2em;
   }
 `;
 export const InputGreetingNameWrapper = styled.div`
@@ -138,6 +153,9 @@ export const InputGreetingNameWrapper = styled.div`
     font-size: ${deviceFontSize.mobileM};
     background-color: rgba(100,100,100,0.8);
     z-index: 1;
+  }
+  @media ${device.mobileLandscape} {
+    font-size: 8vw;
   }
   @media ${device.desktopL} {
     font-size: ${deviceFontSize.desktopL};
@@ -216,6 +234,9 @@ export const HoverMessage = styled.div`
   @media ${device.desktopXL} {
     font-size: 0.5em;
   }
+  @media ${device.mobileLandscape} {
+    font-size: 2vw;
+  }
 `;
 export const Time = styled.div`
   width: 35%;
@@ -242,12 +263,18 @@ export const Time = styled.div`
     right: 9%;
     font-size: .6em;
   }
+  @media ${device.mobileLandscape} {
+    font-size: 9vw;
+  }
  `;
 export const Seconds = styled.span`
   font-size: 0.5em;
   color: rgba(250, 250, 250, 0.7);
   @media ${device.mobileM},${device.mobileS}, ${device.mobileExtraS} {
       display: none;
+  }
+  @media ${device.mobileLandscape} {
+    font-size: 2vw;
   }
 `;
 export const Date = styled.div`
@@ -257,5 +284,8 @@ export const Date = styled.div`
   color: var(--text-color);
   @media ${device.mobileM},${device.mobileS}, ${device.mobileExtraS} {
       display: none;
+  }
+  @media ${device.mobileLandscape} {
+    font-size: 3vw;
   }
 `;

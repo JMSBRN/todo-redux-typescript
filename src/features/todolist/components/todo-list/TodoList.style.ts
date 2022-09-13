@@ -26,9 +26,6 @@ export const TodoList = styled.div`
     height: 100%;
     overflow-y: auto;
   }
-  @media ${device.mobileL} {
-    background-color: forestgreen;
-  }
 `;
 export const FormAndTodosWrapper = styled.div`
   position: absolute;
@@ -50,6 +47,9 @@ export const FormAndTodosWrapper = styled.div`
     top: 500px;
     width: 82%;
     margin: 0 9%;
+  }
+  @media ${device.mobileLandscape} {
+    display: none;
   }
   @media ${device.tabletPortrait} {
     top: 35%;

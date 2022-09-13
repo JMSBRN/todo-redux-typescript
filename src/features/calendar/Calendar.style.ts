@@ -91,4 +91,7 @@ export const Calendar = styled.div`
       font-size: 0.141em;
     }
   }
+  @media ${device.mobileLandscape} {
+    display: none;
+  }
 `;
