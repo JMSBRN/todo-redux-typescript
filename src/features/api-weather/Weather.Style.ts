@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const WeatherWrapper = styled.div`
-  width: 2.5em;
-  padding: .1em;
+  width: 100%;
+  height:100%;
+  padding: 5px;
   margin-bottom: 5px;
   color: var(--text-color);
   border: 1px solid var(--border-color);

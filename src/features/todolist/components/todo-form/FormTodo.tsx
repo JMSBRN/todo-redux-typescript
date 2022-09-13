@@ -18,10 +18,15 @@ const FormTodo = () => {
         type="text"
         placeholder="new task"
       />
+
       {isEdit ? (
-        <Styled.FormBtn onClick={() => dispatch(setEditedTsk(id))}>submit edit</Styled.FormBtn>
-        ) : (
-          <Styled.FormBtn onClick={() => dispatch(addTodo())} >submit</Styled.FormBtn>
+        <Styled.FormBtn onClick={() => dispatch(setEditedTsk(id))}>
+          <Styled.BtnNameWrapper>submit edit</Styled.BtnNameWrapper>
+        </Styled.FormBtn>
+      ) : (
+        <Styled.FormBtn onClick={() => dispatch(addTodo())} >
+          <Styled.BtnNameWrapper>submit</Styled.BtnNameWrapper>
+        </Styled.FormBtn>
       )}
     </Styled.Form>
   );

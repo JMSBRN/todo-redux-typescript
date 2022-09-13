@@ -12,12 +12,24 @@ export const Form = styled.div`
   padding:0;
   margin-bottom: 30px;
   @media ${device.mobileExtraS} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     font-size: ${deviceFontSize.mobileExtraS};
   }
   @media ${device.mobileS} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     font-size: ${deviceFontSize.mobileS};
   }
   @media ${device.mobileM} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     font-size: ${deviceFontSize.mobileM};
   }
   @media ${device.tablet} {
@@ -40,7 +52,7 @@ export const Form = styled.div`
   }
 `;
 export const Inputform = styled.input<IForm>`
-  width: 71%;
+  width: 98%;
   font-size: 0.7em;
   text-align: center;
   padding-bottom: 7px;
@@ -62,6 +74,9 @@ export const Inputform = styled.input<IForm>`
 export const FormBtn = styled.button`
   width: 30%;
   height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 20px;
   font-size: .3em;
   color: var(--text-color);
@@ -71,4 +86,10 @@ export const FormBtn = styled.button`
   &:active {
     border: 1px solid var(--border-color-grey);
   }
+  @media ${device.mobileS} {
+    margin-left: 0;
+  }
+`;
+export const BtnNameWrapper = styled.div`
+  padding-bottom: 4%;
 `;

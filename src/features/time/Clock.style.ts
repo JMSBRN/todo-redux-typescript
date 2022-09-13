@@ -60,17 +60,17 @@ export const Greeting = styled.div`
   color: var(--text-color);
   @media ${device.mobileExtraS} {
     position: absolute;
-    right: 1%;
+    right: 9%;
     font-size: 0.3em;
   }
   @media ${device.mobileS} {
     position: absolute;
-    right: 1%;
+    right: 9%;
     font-size: 0.3em;
   }
   @media ${device.mobileM} {
     position: absolute;
-    right: 8%;
+    right: 9%;
     font-size: 0.3em;
   }
   @media ${device.desktopXL} {
@@ -87,7 +87,7 @@ export const GreetingName = styled.div`
     width: 33%;
     height: 30%;
     top: 22%;
-    right: 1%;
+    right: 30px;
     font-size: 0.4em;
     z-index: 1;
   }
@@ -96,14 +96,14 @@ export const GreetingName = styled.div`
     width: 33%;
     height: 30%;
     top: 22%;
-    right: 1%;
+    right: 50px;
     font-size: 0.4em;
     z-index: 1;
   }
   @media ${device.mobileM} {
     position: absolute;
     top: 15%;
-    right: 1%;
+    right: 50px;
     font-size: 0.4em;
     z-index: 1;
   }
@@ -112,11 +112,20 @@ export const InputGreetingNameWrapper = styled.div`
   position: relative;
   width: 30%;
   height: auto;
+  @media ${device.mobileExtraS} {
+    position: absolute;
+    width:33%;
+    top: 3%;
+    right: 30px;
+    font-size: ${deviceFontSize.mobileExtraS};
+    background-color: rgba(100,100,100,0.8);
+    z-index: 1;
+  }
   @media ${device.mobileS} {
     position: absolute;
     width:33%;
     top: 3%;
-    right: 2%;
+    right: 50px;
     font-size: ${deviceFontSize.mobileS};
     background-color: rgba(100,100,100,0.8);
     z-index: 1;
@@ -125,7 +134,7 @@ export const InputGreetingNameWrapper = styled.div`
     position: absolute;
     width:33%;
     top: 3%;
-    right: 2%;
+    right: 50px;
     font-size: ${deviceFontSize.mobileM};
     background-color: rgba(100,100,100,0.8);
     z-index: 1;
@@ -218,38 +227,35 @@ export const Time = styled.div`
   @media ${device.mobileExtraS} {
     position: absolute;
     top: 51%;
-    right: 3%;
+    right: 9%;
     font-size: .5em;
   }
   @media ${device.mobileS} {
     position: absolute;
     top: 60%;
-    right: 3%;
+    right: 9%;
     font-size: .5em;
   }
   @media ${device.mobileM} {
     position: absolute;
     top: 45%;
-    right: 7.5%;
+    right: 9%;
     font-size: .6em;
   }
  `;
 export const Seconds = styled.span`
   font-size: 0.5em;
   color: rgba(250, 250, 250, 0.7);
+  @media ${device.mobileM},${device.mobileS}, ${device.mobileExtraS} {
+      display: none;
+  }
 `;
 export const Date = styled.div`
   text-align: center;
   font-weight: 400;
   font-size: 0.3em;
   color: var(--text-color);
-  @media ${device.mobileExtraS} {
-      display: none;
-  }
-  @media ${device.mobileS} {
-      display: none;
-  }
-  @media ${device.mobileM} {
+  @media ${device.mobileM},${device.mobileS}, ${device.mobileExtraS} {
       display: none;
   }
 `;

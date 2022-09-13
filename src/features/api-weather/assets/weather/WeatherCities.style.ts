@@ -9,20 +9,24 @@ export const DefaultWeather = styled.div`
   height: auto;
   
   @media ${device.mobileExtraS} {
-    top: 1%;
+    top: 3%;
     left: 5%;
-    width: 5%;
+    width: 100px;
+    height: 80px;
     font-size: ${deviceFontSize.mobileExtraS};
   }
   @media ${device.mobileS} {
-    top: 1%;
+    top: 3%;
     left: 5%;
-    width: 5%;
+    width: 100px;
+    height: 110px;
     font-size: ${deviceFontSize.mobileS};
   }
   @media ${device.mobileM} {
-    top: 1%;
+    top: 3%;
     left: 5%;
+    width: 100px;
+    height: 110px;
     font-size: ${deviceFontSize.mobileM};
   }
   @media ${device.tablet} {
@@ -96,8 +100,12 @@ export const AddCityBtn = styled.button`
 export const WeatherWrapper = styled.div`
 `;
 export const NoCityMessage = styled.div`
-  width: 200px;
+  width: 70%;
+  height: 70%;
   padding: 3px;
   font-size: 1rem;
   color: var(--text-color);
+  @media ${device.mobileM}, ${device.mobileS}, ${device.mobileExtraS} {
+    font-size: .7rem;
+  }
 `;
