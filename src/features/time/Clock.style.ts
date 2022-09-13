@@ -11,13 +11,20 @@ export const ClockWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  @media ${device.mobileS} {
+    position: relative;
+    top: 1%;
+    right: 2%;
+    width: 100%;
+    height: 8%;
+    font-size: ${deviceFontSize.mobileS};
+  }
   @media ${device.mobileM} {
     position: relative;
     top: 1%;
     right: 2%;
     width: 100%;
     height: 10% ;
-    top: 1%;
     font-size: ${deviceFontSize.mobileM};
   }
   @media ${device.tablet} {
@@ -43,6 +50,11 @@ export const Greeting = styled.div`
   font-size: 0.7em;
   text-align: center;
   color: var(--text-color);
+  @media ${device.mobileS} {
+    position: absolute;
+    right: 1%;
+    font-size: 0.3em;
+  }
   @media ${device.mobileM} {
     position: absolute;
     right: 8%;
@@ -57,6 +69,15 @@ export const GreetingName = styled.div`
   font-size: 0.5em;
   color: var(--text-color);
   cursor: default;
+  @media ${device.mobileS} {
+    position: absolute;
+    width: 33%;
+    height: 30%;
+    top: 22%;
+    right: 1%;
+    font-size: 0.4em;
+    z-index: 1;
+  }
   @media ${device.mobileM} {
     position: absolute;
     top: 15%;
@@ -69,6 +90,15 @@ export const InputGreetingNameWrapper = styled.div`
   position: relative;
   width: 30%;
   height: auto;
+  @media ${device.mobileS} {
+    position: absolute;
+    width:33%;
+    top: 3%;
+    right: 2%;
+    font-size: ${deviceFontSize.mobileS};
+    background-color: rgba(100,100,100,0.8);
+    z-index: 1;
+  }
   @media ${device.mobileM} {
     position: absolute;
     width:33%;
@@ -77,7 +107,6 @@ export const InputGreetingNameWrapper = styled.div`
     font-size: ${deviceFontSize.mobileM};
     background-color: rgba(100,100,100,0.8);
     z-index: 1;
-
   }
   @media ${device.desktopL} {
     font-size: ${deviceFontSize.desktopL};
@@ -164,25 +193,31 @@ export const Time = styled.div`
   font-size: 1em;
   letter-spacing: 5px;
   color: var(--text-color);
+  @media ${device.mobileS} {
+    position: absolute;
+    top: 60%;
+    right: 3%;
+    font-size: .5em;
+  }
   @media ${device.mobileM} {
     position: absolute;
-    top: 33%;
+    top: 45%;
     right: 7.5%;
-    font-size: .8em;
+    font-size: .6em;
   }
  `;
 export const Seconds = styled.span`
   font-size: 0.5em;
   color: rgba(250, 250, 250, 0.7);
-  @media ${device.mobileM} {
-      display: none;
-  }
 `;
 export const Date = styled.div`
   text-align: center;
   font-weight: 400;
   font-size: 0.3em;
   color: var(--text-color);
+  @media ${device.mobileS} {
+      display: none;
+  }
   @media ${device.mobileM} {
       display: none;
   }

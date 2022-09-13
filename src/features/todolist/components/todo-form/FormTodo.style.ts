@@ -11,6 +11,9 @@ export const Form = styled.div`
   margin:0;
   padding:0;
   margin-bottom: 30px;
+  @media ${device.mobileS} {
+    font-size: ${deviceFontSize.mobileS};
+  }
   @media ${device.mobileM} {
     font-size: ${deviceFontSize.mobileM};
   }
@@ -34,7 +37,7 @@ export const Form = styled.div`
   }
 `;
 export const Inputform = styled.input<IForm>`
-  width: 78%;
+  width: 71%;
   font-size: 0.7em;
   text-align: center;
   padding-bottom: 7px;
@@ -54,7 +57,7 @@ export const Inputform = styled.input<IForm>`
   }
 `;
 export const FormBtn = styled.button`
-  width: 20%;
+  width: 30%;
   height: auto;
   margin-left: 20px;
   font-size: .3em;

@@ -29,9 +29,6 @@ export const TodoList = styled.div`
     overflow: auto;
   }
   @media ${device.mobileExtraS} {
-    background-color: rgba(50, 50, 50, 0.9);
-  }
-  @media ${device.mobileS} {
     background-color: grey;
   }
   @media ${device.mobileL} {
@@ -44,6 +41,11 @@ export const FormAndTodosWrapper = styled.div`
   left: 1%;
   width: 30%;
   height: 100%;
+  @media ${device.mobileS} {
+    top: 60%;
+    width: 82%;
+    margin: 0 9%;
+  }
   @media ${device.mobileM} {
     top: 35%;
     width: 82%;

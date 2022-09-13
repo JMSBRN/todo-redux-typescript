@@ -22,6 +22,17 @@ export const Calendar = styled.div`
       transition-delay: 0.1s;
     }
   }
+  @media ${device.mobileS} {
+    position: absolute;
+    margin: 0 9%;
+    top: 22%;
+    width: 82%;
+    height: 82%;
+    font-size: ${deviceFontSize.mobileS};
+    .fc {
+      font-size: 0.141em;
+    }
+  }
   @media ${device.mobileM} {
     position: absolute;
     margin: 0 9%;

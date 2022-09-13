@@ -42,10 +42,10 @@ export const device = {
   desktopXL: `(min-width: ${size.desktopXL}px) and (max-width: ${size.desktopXXL}px)`,
 };
 export const deviceFontSize = {
-  mobileExtraS: ".1rem",
-  mobileS: ".5rem",
+  mobileExtraS: "4rem",
+  mobileS: "4rem",
   mobileM: "4rem",
-  mobileL: "1rem",
+  mobileL: "4rem",
   tablet: "1.8rem",
   laptop: "2rem",
   laptopL: "5rem",
