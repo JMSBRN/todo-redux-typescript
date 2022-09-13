@@ -22,10 +22,21 @@ export const Calendar = styled.div`
       transition-delay: 0.1s;
     }
   }
+  @media ${device.mobileExtraS} {
+    position: absolute;
+    margin: 0 9%;
+    top: 150px;
+    width: 82%;
+    height: 82%;
+    font-size: ${deviceFontSize.mobileExtraS};
+    .fc {
+      font-size: 0.141em;
+    }
+  }
   @media ${device.mobileS} {
     position: absolute;
     margin: 0 9%;
-    top: 22%;
+    top: 180px;
     width: 82%;
     height: 82%;
     font-size: ${deviceFontSize.mobileS};
@@ -36,7 +47,7 @@ export const Calendar = styled.div`
   @media ${device.mobileM} {
     position: absolute;
     margin: 0 9%;
-    top: 15%;
+    top: 170px;
     width: 82%;
     height: 82%;
     font-size: ${deviceFontSize.mobileM};

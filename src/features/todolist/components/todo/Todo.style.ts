@@ -13,6 +13,9 @@ export const TodoWrapper = styled.div`
   justify-content: space-between;
   border: 1px solid var(--border-color);
   border-radius: 3px;
+  @media ${device.mobileExtraS} {
+    font-size: ${deviceFontSize.mobileExtraS};
+  }
   @media ${device.mobileS} {
     font-size: ${deviceFontSize.mobileS};
   }

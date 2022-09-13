@@ -11,6 +11,14 @@ export const ClockWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  @media ${device.mobileExtraS} {
+    position: relative;
+    top: 1%;
+    right: 2%;
+    width: 100%;
+    height: 8%;
+    font-size: ${deviceFontSize.mobileExtraS};
+  }
   @media ${device.mobileS} {
     position: relative;
     top: 1%;
@@ -50,6 +58,11 @@ export const Greeting = styled.div`
   font-size: 0.7em;
   text-align: center;
   color: var(--text-color);
+  @media ${device.mobileExtraS} {
+    position: absolute;
+    right: 1%;
+    font-size: 0.3em;
+  }
   @media ${device.mobileS} {
     position: absolute;
     right: 1%;
@@ -69,6 +82,15 @@ export const GreetingName = styled.div`
   font-size: 0.5em;
   color: var(--text-color);
   cursor: default;
+  @media ${device.mobileExtraS} {
+    position: absolute;
+    width: 33%;
+    height: 30%;
+    top: 22%;
+    right: 1%;
+    font-size: 0.4em;
+    z-index: 1;
+  }
   @media ${device.mobileS} {
     position: absolute;
     width: 33%;
@@ -193,6 +215,12 @@ export const Time = styled.div`
   font-size: 1em;
   letter-spacing: 5px;
   color: var(--text-color);
+  @media ${device.mobileExtraS} {
+    position: absolute;
+    top: 51%;
+    right: 3%;
+    font-size: .5em;
+  }
   @media ${device.mobileS} {
     position: absolute;
     top: 60%;
@@ -215,6 +243,9 @@ export const Date = styled.div`
   font-weight: 400;
   font-size: 0.3em;
   color: var(--text-color);
+  @media ${device.mobileExtraS} {
+      display: none;
+  }
   @media ${device.mobileS} {
       display: none;
   }

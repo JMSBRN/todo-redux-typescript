@@ -10,6 +10,16 @@ export const TodoListLayout = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  @media ${device.mobileExtraS} {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+  }
+  @media ${device.mobileS} {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+  }
   @media ${device.mobileM} {
     position: relative;
     height: 100%;
@@ -23,13 +33,20 @@ export const TodoList = styled.div`
   display: flex;
   background-color: rgba(50, 50, 50, 0.4);
   background-blend-mode: color;
-  @media ${device.mobileM} {
+  @media ${device.mobileExtraS} {
     position: relative;
     height: 100%;
     overflow: auto;
   }
-  @media ${device.mobileExtraS} {
-    background-color: grey;
+  @media ${device.mobileS} {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+  }
+  @media ${device.mobileM} {
+    position: relative;
+    height: 100%;
+    overflow: auto;
   }
   @media ${device.mobileL} {
     background-color: forestgreen;
@@ -41,13 +58,18 @@ export const FormAndTodosWrapper = styled.div`
   left: 1%;
   width: 30%;
   height: 100%;
+  @media ${device.mobileExtraS} {
+    top: 380px;
+    width: 82%;
+    margin: 0 9%;
+  }
   @media ${device.mobileS} {
-    top: 60%;
+    top: 480px;
     width: 82%;
     margin: 0 9%;
   }
   @media ${device.mobileM} {
-    top: 35%;
+    top: 500px;
     width: 82%;
     margin: 0 9%;
   }

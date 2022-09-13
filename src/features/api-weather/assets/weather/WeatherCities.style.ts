@@ -8,6 +8,12 @@ export const DefaultWeather = styled.div`
   width: 8%;
   height: auto;
   
+  @media ${device.mobileExtraS} {
+    top: 1%;
+    left: 5%;
+    width: 5%;
+    font-size: ${deviceFontSize.mobileExtraS};
+  }
   @media ${device.mobileS} {
     top: 1%;
     left: 5%;
@@ -76,6 +82,9 @@ export const AddCityBtn = styled.button`
   cursor: pointer;
   &:active {
     border: 1px solid var(--border-color-grey);
+  }
+  @media ${device.mobileExtraS} {
+    display: none;
   }
   @media ${device.mobileS} {
     display: none;
