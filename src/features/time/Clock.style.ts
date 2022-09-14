@@ -11,6 +11,7 @@ export const ClockWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  font-size: 5vw;
   @media ${device.mobileExtraS} {
     position: relative;
     top: 1%;
@@ -42,24 +43,6 @@ export const ClockWrapper = styled.div`
     width: 50%;
     height: auto;
   }
-  @media ${device.tablet} {
-    font-size: ${deviceFontSize.tablet};
-  }
-  @media ${device.laptop} {
-    font-size: ${deviceFontSize.laptop};
-  }
-  @media ${device.laptopL} {
-    font-size: ${deviceFontSize.laptopL};
-  }
-  @media ${device.desktop} {
-    font-size: ${deviceFontSize.desktop};
-  }
-  @media ${device.desktopL} {
-    font-size: ${deviceFontSize.desktopL};
-  }
-  @media ${device.desktopXL} {
-    font-size: ${deviceFontSize.desktopXL};
-  }
 `;
 export const Greeting = styled.div`
   font-size: 0.7em;
@@ -83,13 +66,9 @@ export const Greeting = styled.div`
   @media ${device.mobileLandscape} {
     font-size: 2em;
   }
-  @media ${device.desktopXL} {
-    font-size: 0.5em;
-  }
 `;
 export const GreetingName = styled.div`
   text-align: center;
-  font-size: 0.5em;
   color: var(--text-color);
   cursor: default;
   @media ${device.mobileExtraS} {
@@ -222,28 +201,18 @@ export const SubmitBtn = styled.button`
 export const HoverMessage = styled.div`
   color: transparent;
   width: 100%;
+  font-size: 2vw;
   cursor: pointer;
   &:hover {
     color: var(--text-color);
     transition-delay: 0.3s;
     transition: 0.3s ease all;
   }
-  @media ${device.desktopL} {
-    font-size: 0.5em;
-  }
-  @media ${device.desktopXL} {
-    font-size: 0.5em;
-  }
-  @media ${device.mobileLandscape} {
-    font-size: 2vw;
-  }
 `;
 export const Time = styled.div`
   width: 35%;
   font-weight: 600;
   text-align: center;
-  font-size: 1em;
-  letter-spacing: 5px;
   color: var(--text-color);
   @media ${device.mobileExtraS} {
     position: absolute;
@@ -280,12 +249,9 @@ export const Seconds = styled.span`
 export const Date = styled.div`
   text-align: center;
   font-weight: 400;
-  font-size: 0.3em;
+  font-size: 2vw;
   color: var(--text-color);
   @media ${device.mobileM},${device.mobileS}, ${device.mobileExtraS} {
       display: none;
-  }
-  @media ${device.mobileLandscape} {
-    font-size: 3vw;
   }
 `;
