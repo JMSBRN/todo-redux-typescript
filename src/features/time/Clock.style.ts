@@ -106,6 +106,7 @@ export const InputGreetingNameWrapper = styled.div`
   position: relative;
   width: 30%;
   height: auto;
+  font-size: 4vw;
   @media ${device.mobileExtraS} {
     position: absolute;
     width:33%;
@@ -135,12 +136,6 @@ export const InputGreetingNameWrapper = styled.div`
   }
   @media ${device.mobileLandscape} {
     font-size: 8vw;
-  }
-  @media ${device.desktopL} {
-    font-size: ${deviceFontSize.desktopL};
-  }
-  @media ${device.desktopXL} {
-    font-size: ${deviceFontSize.desktopXL};
   }
 `;
 export const InputNameByDefault = styled.input`
