@@ -7,6 +7,7 @@ export const DefaultWeather = styled.div`
   left: 35%;
   width: 8%;
   height: auto;
+  font-size: 4vw;
   
   @media ${device.mobileExtraS} {
     top: 3%;
@@ -32,57 +33,26 @@ export const DefaultWeather = styled.div`
   @media ${device.mobileLandscape} {
     display: none;
   }
-  @media ${device.tablet} {
-    font-size: ${deviceFontSize.tablet};
-  }
-  @media ${device.laptop} {
-    font-size: ${deviceFontSize.laptop};
-  }
-  @media ${device.laptopL} {
-    font-size: ${deviceFontSize.laptopL};
-  }
-  @media ${device.desktop} {
-    font-size: ${deviceFontSize.desktop};
-  }
-  @media ${device.desktopL} {
-    font-size: ${deviceFontSize.desktopL};
-  }
-  @media ${device.desktopXL} {
-    font-size: ${deviceFontSize.desktopXL};
-  }
 `;
 export const WeatherCityes = styled.div`
   position: absolute;
   width: 10%;
+  height: 70%;
   top: 5%;
   right: 4%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2%;
+  font-size: 4vw;
   list-style: none;
-  @media ${device.tablet} {
-    font-size: ${deviceFontSize.tablet};
-  }
-  @media ${device.laptop} {
-    font-size: ${deviceFontSize.laptop};
-  }
-  @media ${device.laptopL} {
-    font-size: ${deviceFontSize.laptopL};
-  }
-  @media ${device.desktop} {
-    font-size: ${deviceFontSize.desktop};
-  }
-  @media ${device.desktopL} {
-    font-size: ${deviceFontSize.desktopL};
-  }
-  @media ${device.desktopXL} {
-    font-size: ${deviceFontSize.desktopXL};
-  }
 `;
 export const AddCityBtn = styled.button`
-  width: 85%;
-  height: 4em;
+  width: 100%;
+  height: 5%;
   font-size: 0.16em;
-  margin-bottom: 20px;
+  margin-bottom: 2%;
   color: var(--text-color);
   background-color: transparent;
   border: 1px solid var(--border-color);
@@ -94,12 +64,10 @@ export const AddCityBtn = styled.button`
     display: none;
   }
 `;
-export const WeatherWrapper = styled.div`
-`;
 export const NoCityMessage = styled.div`
   width: 70%;
   height: 70%;
-  padding: 3px;
+  padding: 1%;
   font-size: 1rem;
   color: var(--text-color);
   @media ${device.mobileM}, ${device.mobileS}, ${device.mobileExtraS} {
