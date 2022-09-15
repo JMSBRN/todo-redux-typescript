@@ -12,29 +12,15 @@ export const ClockWrapper = styled.div`
   align-items: center;
   justify-content: flex-start;
   font-size: 5vw;
-  @media ${device.mobileExtraS} {
-    position: relative;
-    top: 1%;
-    right: 2%;
-    width: 100%;
-    height: 8%;
-    font-size: ${deviceFontSize.mobileExtraS};
-  }
-  @media ${device.mobileS} {
-    position: relative;
-    top: 1%;
-    right: 2%;
-    width: 100%;
-    height: 8%;
-    font-size: ${deviceFontSize.mobileS};
-  }
-  @media ${device.mobileM} {
-    position: relative;
-    top: 1%;
-    right: 2%;
-    width: 100%;
-    height: 10% ;
-    font-size: ${deviceFontSize.mobileM};
+  @media ${device.mobileExtraS},
+    ${device.mobileS},
+    ${device.mobileM},
+    ${device.mobileL} {
+    top: 3%;
+    right: 9%;
+    width: 40%;
+    height: 40vw;
+    font-size: 16vw;
   }
   @media ${device.mobileLandscape} {
     position: relative;
@@ -72,32 +58,13 @@ export const GreetingName = styled.div`
   text-align: center;
   color: var(--text-color);
   cursor: default;
-  @media ${device.mobileExtraS} {
-    position: absolute;
-    width: 33%;
-    height: 30%;
-    top: 22%;
-    right: 9%;
-    font-size: 0.4em;
-    z-index: 1;
-  }
-  @media ${device.mobileS} {
-    position: absolute;
-    width: 33%;
-    height: 30%;
-    top: 22%;
-    right: 9%;
-    font-size: 0.4em;
-    z-index: 1;
-  }
-  @media ${device.mobileM} {
-    position: absolute;
-    width: 33%;
-    height: 30%;
-    top: 15%;
-    right: 9%;
-    font-size: 0.4em;
-    z-index: 1;
+  @media ${device.mobileExtraS},
+    ${device.mobileS},
+    ${device.mobileM},
+    ${device.mobileL} {
+    text-align: right;
+    margin-top: 13%;
+    font-size: 7vw;
   }
   @media ${device.mobileLandscape} {
     font-size: 2em;
@@ -108,31 +75,13 @@ export const InputGreetingNameWrapper = styled.div`
   width: 30%;
   height: auto;
   font-size: 4vw;
-  @media ${device.mobileExtraS} {
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
     position: absolute;
-    width:33%;
+    width: 100%;
     top: 3%;
-    right: 30px;
-    font-size: ${deviceFontSize.mobileExtraS};
-    background-color: rgba(100,100,100,0.8);
-    z-index: 1;
-  }
-  @media ${device.mobileS} {
-    position: absolute;
-    width:33%;
-    top: 3%;
-    right: 50px;
-    font-size: ${deviceFontSize.mobileS};
-    background-color: rgba(100,100,100,0.8);
-    z-index: 1;
-  }
-  @media ${device.mobileM} {
-    position: absolute;
-    width:33%;
-    top: 3%;
-    right: 50px;
-    font-size: ${deviceFontSize.mobileM};
-    background-color: rgba(100,100,100,0.8);
+    right: 3%;
+    font-size: 23vw;
+    background-color: rgba(100, 100, 100, 0.8);
     z-index: 1;
   }
   @media ${device.mobileLandscape} {
@@ -178,8 +127,8 @@ export const InputCityByDefault = styled.input`
 export const SubmitBtn = styled.button`
   width: 40%;
   height: auto;
-  padding: 0 .05em ;
-  font-size: .2em;
+  padding: 0 0.05em;
+  font-size: 0.2em;
   color: var(--text-color);
   border: 1px solid var(--border-color);
   background-color: transparent;
@@ -210,33 +159,21 @@ export const Time = styled.div`
   font-weight: 600;
   text-align: center;
   color: var(--text-color);
-  @media ${device.mobileExtraS} {
-    position: absolute;
-    top: 51%;
-    right: 9%;
-    font-size: .5em;
-  }
-  @media ${device.mobileS} {
-    position: absolute;
-    top: 60%;
-    right: 9%;
-    font-size: .5em;
-  }
-  @media ${device.mobileM} {
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
     position: absolute;
     top: 45%;
-    right: 9%;
-    font-size: .6em;
+    width: 100%;
+    font-size: 12vw;
   }
   @media ${device.mobileLandscape} {
     font-size: 9vw;
   }
- `;
+`;
 export const Seconds = styled.span`
   font-size: 0.5em;
   color: rgba(250, 250, 250, 0.7);
-  @media ${device.mobileM},${device.mobileS}, ${device.mobileExtraS} {
-      display: none;
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
+    display: none;
   }
   @media ${device.mobileLandscape} {
     font-size: 2vw;
@@ -247,7 +184,7 @@ export const Date = styled.div`
   font-weight: 400;
   font-size: 2vw;
   color: var(--text-color);
-  @media ${device.mobileM},${device.mobileS}, ${device.mobileExtraS} {
-      display: none;
+  @media ${device.mobileM}, ${device.mobileS}, ${device.mobileExtraS} {
+    display: none;
   }
 `;

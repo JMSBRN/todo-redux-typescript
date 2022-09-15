@@ -25,9 +25,8 @@ export const DefaultWeather = styled.div`
   @media ${device.mobileM} {
     top: 3%;
     left: 5%;
-    width: 100px;
-    height: 110px;
-    font-size: ${deviceFontSize.mobileM};
+    width: 30%;
+    height: 30vw;
   }
   @media ${device.mobileLandscape} {
     top: 5%;
