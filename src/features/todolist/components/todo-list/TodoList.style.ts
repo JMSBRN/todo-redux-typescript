@@ -55,13 +55,3 @@ export const FormAndTodosWrapper = styled.div`
     top: 35%;
   }
 `;
-export const ToDoListWrapper = styled.div`
-  margin: 10px auto;
-  width: 100%;
-  height: 1500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 20px;
-`;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../utils/mediaUtils";
 
 export const WeatherWrapper = styled.div`
   width: 100%;
@@ -9,6 +10,10 @@ export const WeatherWrapper = styled.div`
   border: 1px solid var(--border-color);
   border-radius: 3px;
   cursor: grab;
+  @media ${device.mobileLandscape} {
+    font-size: 11vw;
+    border: none;
+  }
 `;
 export const InputAndBtnWrapper = styled.div`
   width: 100%;

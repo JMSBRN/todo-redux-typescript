@@ -8,7 +8,6 @@ export const DefaultWeather = styled.div`
   width: 8%;
   height: auto;
   font-size: 4vw;
-  
   @media ${device.mobileExtraS} {
     top: 3%;
     left: 5%;
@@ -31,7 +30,10 @@ export const DefaultWeather = styled.div`
     font-size: ${deviceFontSize.mobileM};
   }
   @media ${device.mobileLandscape} {
-    display: none;
+    top: 5%;
+    left: 5%;
+    width: 20%;
+    height: 20%;
   }
 `;
 export const WeatherCityes = styled.div`
