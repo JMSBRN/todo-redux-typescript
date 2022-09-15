@@ -34,12 +34,12 @@ export const FormAndTodosWrapper = styled.div`
   width: 30%;
   height: 100%;
   @media ${device.mobileExtraS} {
-    top: 57%;
+    top: 63%;
     width: 82%;
     margin: 0 9%;
   }
-  @media ${device.mobileS}, ${device.mobileM} {
-    top: 67%;
+  @media  ${device.mobileS}, ${device.mobileM} {
+    top: 70%;
     width: 82%;
     margin: 0 9%;
   }

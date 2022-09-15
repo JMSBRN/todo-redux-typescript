@@ -26,7 +26,7 @@ export const Calendar = styled.div`
   @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
     position: absolute;
     margin: 0 9%;
-    top: 23%;
+    top: 26%;
     width: 82%;
     height: 82%;
     font-size: ${deviceFontSize.mobileExtraS};
