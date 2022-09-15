@@ -39,9 +39,10 @@ export const ClockWrapper = styled.div`
   @media ${device.mobileLandscape} {
     position: relative;
     top: 1%;
-    right: 2%;
+    right: 1.5%;
     width: 50%;
     height: auto;
+    font-size: 2vw;
   }
 `;
 export const Greeting = styled.div`

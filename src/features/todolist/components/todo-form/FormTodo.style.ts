@@ -10,6 +10,7 @@ export const Form = styled.div`
   justify-content: space-between;
   margin:0;
   padding:0;
+  font-size: 2vw;
   margin-bottom: 30px;
   @media ${device.mobileExtraS} {
     display: flex;
@@ -31,24 +32,6 @@ export const Form = styled.div`
     align-items: center;
     gap: 10px;
     font-size: ${deviceFontSize.mobileM};
-  }
-  @media ${device.tablet} {
-    font-size: ${deviceFontSize.tablet};
-  }
-  @media ${device.desktop} {
-    font-size: ${deviceFontSize.desktop};
-  }
-  @media ${device.laptop} {
-    font-size: ${deviceFontSize.laptop};
-  }
-  @media ${device.laptopL} {
-    font-size: ${deviceFontSize.laptopL};
-  }
-  @media ${device.desktopL} {
-    font-size: ${deviceFontSize.desktopL};
-  }
-  @media ${device.desktopXL} {
-    font-size: ${deviceFontSize.desktopXL};
   }
 `;
 export const Inputform = styled.input<IForm>`

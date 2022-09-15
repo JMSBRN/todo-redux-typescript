@@ -7,6 +7,7 @@ export const Calendar = styled.div`
   left: 1%;
   width: 28%;
   height: 28%;
+  font-size: .6vw;
   color: var(--text-color);
   & .fc-button.fc-today-button,
   .fc-button.fc-prev-button,
@@ -51,42 +52,6 @@ export const Calendar = styled.div`
     width: 82%;
     height: 82%;
     font-size: ${deviceFontSize.mobileM};
-    .fc {
-      font-size: 0.141em;
-    }
-  }
-  @media ${device.tablet} {
-    font-size: ${deviceFontSize.tablet};
-    .fc {
-      font-size: 0.141em;
-    }
-  }
-  @media ${device.laptop} {
-    font-size: ${deviceFontSize.laptop};
-    .fc {
-      font-size: 0.141em;
-    }
-  }
-  @media ${device.laptopL} {
-    font-size: ${deviceFontSize.laptopL};
-    .fc {
-      font-size: 0.141em;
-    }
-  }
-  @media ${device.desktop} {
-    font-size: ${deviceFontSize.desktop};
-    .fc {
-      font-size: 0.141em;
-    }
-  }
-  @media ${device.desktopL} {
-    font-size: ${deviceFontSize.desktopL};
-    .fc {
-      font-size: 0.141em;
-    }
-  }
-  @media ${device.desktopXL} {
-    font-size: ${deviceFontSize.desktopXL};
     .fc {
       font-size: 0.141em;
     }
