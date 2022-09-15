@@ -67,6 +67,7 @@ export const GreetingName = styled.div`
     font-size: 7vw;
   }
   @media ${device.mobileLandscape} {
+    margin-top: 0;
     font-size: 2em;
   }
 `;
