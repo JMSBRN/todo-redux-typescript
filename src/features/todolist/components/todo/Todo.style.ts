@@ -64,13 +64,11 @@ export const BtnsWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  @media ${device.desktopXL} {
-    width: 1.1em;
-  }
+  margin-right: .1em ;
 `;
 export const TodoBtn = styled.button`
-  width: 2.5vh;
-  height: 2.5vh; 
+  width: 2em;
+  height: 2em; 
   background-color: transparent;
   background-position: center;
   border: none;
@@ -82,12 +80,12 @@ export const TodoBtn = styled.button`
   }
 `;
 export const TrashImg = styled.img`
-  width: 1.5vh;
+  width: 1em;
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
     brightness(102%) contrast(100%);
 `;
 export const EditImg = styled.img`
-  width: 1.5vh;
+  width: 1em;
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
     brightness(102%) contrast(100%);
 `;

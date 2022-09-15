@@ -34,7 +34,7 @@ export const ClockWrapper = styled.div`
     top: 10%;
     left: 40%;
     width: 50%;
-    height: auto;
+    height:  70%;
     font-size: 2vw;
   }
 `;
@@ -82,7 +82,13 @@ export const InputGreetingNameWrapper = styled.div`
     z-index: 1;
   }
   @media ${device.mobileLandscape} {
+    position: absolute;
+    width: 60%;
+    top: 3%;
+    right: 8%;
     font-size: 8vw;
+    background-color: rgba(100, 100, 100, 0.8);
+    z-index: 1;
   }
 `;
 export const InputNameByDefault = styled.input`
@@ -164,9 +170,6 @@ export const Time = styled.div`
     font-size: 12vw;
   }
   @media ${device.mobileLandscape} {
-    position: absolute;
-    top: 75%;
-    width: 100%;
     font-size: 9vw;
   }
 `;
@@ -185,12 +188,7 @@ export const Date = styled.div`
   font-weight: 400;
   font-size: 2vw;
   color: var(--text-color);
-  @media ${device.mobileLandscape} {
-    position: absolute;
-    top: 180%;
-    font-size: 2vw;
-  }
-  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM},  ${device.mobileL} {
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
     display: none;
   }
 `;

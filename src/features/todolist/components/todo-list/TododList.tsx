@@ -11,11 +11,11 @@ const TododList = () => {
       <Styled.TodoList>
         <WeatherCities />
         <Calendar />
-          <Clock />
-          <Styled.FormAndTodosWrapper>
-            <FormTodo />
-            <Todos />
-          </Styled.FormAndTodosWrapper>  
+        <Clock />
+        <Styled.FormAndTodosWrapper>
+          <FormTodo />
+          <Todos />
+        </Styled.FormAndTodosWrapper>
       </Styled.TodoList>
     </Styled.TodoListLayout>
   );
