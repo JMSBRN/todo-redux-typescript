@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device, deviceFontSize } from "../../../utils/mediaUtils";
+import { device } from "../../../utils/mediaUtils";
 interface ITodo {
   complited: boolean;
 }
@@ -11,31 +11,11 @@ export const TodoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 7vw;
   border: 1px solid var(--border-color);
   border-radius: 3px;
-  @media ${device.mobileExtraS} {
-    font-size: ${deviceFontSize.mobileExtraS};
-  }
-  @media ${device.mobileS} {
-    font-size: ${deviceFontSize.mobileS};
-  }
-  @media ${device.mobileM} {
-    font-size: ${deviceFontSize.mobileM};
-  }
-  @media ${device.tablet} {
-    font-size: ${deviceFontSize.tablet};
-  }
-  @media ${device.laptopL} {
-    font-size: ${deviceFontSize.laptopL};
-  }
-  @media ${device.desktop} {
-    font-size: ${deviceFontSize.desktop};
-  }
-  @media ${device.desktopL} {
-    font-size: ${deviceFontSize.desktopL};
-  }
-  @media ${device.desktopXL} {
-    font-size: ${deviceFontSize.desktopXL};
+  @media ${device.mobileExtraS},  ${device.mobileS},  ${device.mobileM} {
+    font-size: 18vw;
   }
 `;
 export const TimeTodo = styled.div`

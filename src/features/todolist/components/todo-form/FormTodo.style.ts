@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device, deviceFontSize } from "../../../utils/mediaUtils";
+import { device } from "../../../utils/mediaUtils";
 
 interface IForm {
   isEdit: boolean;
@@ -10,28 +10,14 @@ export const Form = styled.div`
   justify-content: space-between;
   margin:0;
   padding:0;
-  font-size: 2vw;
+  font-size: 5vw;
   margin-bottom: 30px;
-  @media ${device.mobileExtraS} {
+  @media ${device.mobileExtraS},${device.mobileS}, ${device.mobileM} {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    font-size: ${deviceFontSize.mobileExtraS};
-  }
-  @media ${device.mobileS} {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    font-size: ${deviceFontSize.mobileS};
-  }
-  @media ${device.mobileM} {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    font-size: ${deviceFontSize.mobileM};
+    font-size: 17vw;
   }
 `;
 export const Inputform = styled.input<IForm>`
@@ -68,9 +54,6 @@ export const FormBtn = styled.button`
   cursor: pointer;
   &:active {
     border: 1px solid var(--border-color-grey);
-  }
-  @media ${device.mobileS} {
-    margin-left: 0;
   }
 `;
 export const BtnNameWrapper = styled.div`
