@@ -3,8 +3,10 @@ import * as Styled from "./Clock.style";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { greetingsChange, selectTime, setName, timeChange } from "./TimeSlice";
 import { setLocalCityName } from "../api-weather/apiWeatherSlice";
+import { useTranslation } from 'react-i18next';
 
 const Clock = () => {
+  const { t } = useTranslation();
   const { date, greeting, name } = useAppSelector(selectTime);
   const dispatch = useAppDispatch();
   const [isEdit, setIsEdit] = useState(true);
@@ -51,7 +53,7 @@ const Clock = () => {
   };
   return (
     <Styled.ClockWrapper>
-      <Styled.Greeting>{greetingFromLocal}</Styled.Greeting>
+      <Styled.Greeting>{t('Clock.greeting')}</Styled.Greeting>
       {isEdit ? (
         <>
           <Styled.GreetingName onClick={() => setIsEdit(false)}>
