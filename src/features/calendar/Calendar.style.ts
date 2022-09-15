@@ -23,7 +23,7 @@ export const Calendar = styled.div`
       transition-delay: 0.1s;
     }
   }
-  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM}, ${device.mobileL} {
     position: absolute;
     margin: 0 9%;
     top: 26%;

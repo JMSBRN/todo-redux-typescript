@@ -14,7 +14,7 @@ export const TodoWrapper = styled.div`
   font-size: 7vw;
   border: 1px solid var(--border-color);
   border-radius: 3px;
-  @media ${device.mobileExtraS},  ${device.mobileS},  ${device.mobileM} {
+  @media ${device.mobileExtraS},  ${device.mobileS},  ${device.mobileM}, ${device.mobileL} {
     font-size: 18vw;
   }
 `;
@@ -69,8 +69,8 @@ export const BtnsWrapper = styled.div`
   }
 `;
 export const TodoBtn = styled.button`
-  width: 1.8em;
-  height: 1.8em; 
+  width: 2.5vh;
+  height: 2.5vh; 
   background-color: transparent;
   background-position: center;
   border: none;
@@ -80,56 +80,14 @@ export const TodoBtn = styled.button`
     border: 1px solid var(--border-color);
     border-radius: 50%;
   }
-  @media ${device.laptopL} {
-    width: 1.8em;
-    height: 1.8em;
-  }
-  @media ${device.desktopL} {
-    width: 0.1em;
-    height: 0.1em;
-  }
-  @media ${device.desktopXL} {
-    width: 5.5em;
-    height: 5.5em;
-  }
 `;
 export const TrashImg = styled.img`
-  width: 1em;
+  width: 1.5vh;
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
     brightness(102%) contrast(100%);
-    @media ${device.tablet} {
-      width: .5em;
-  }
-    @media ${device.laptop} {
-    width: 1em;
-  }
-    @media ${device.laptopL} {
-    width: 1em;
-  }
-    @media ${device.desktopL} {
-    width: 1.5em;
-  }
-  @media ${device.desktopXL} {
-    width: 3.5em;
-  }
 `;
 export const EditImg = styled.img`
-  width: 1em;
+  width: 1.5vh;
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
     brightness(102%) contrast(100%);
-  @media ${device.tablet} {
-    width: .5em;
-  }
-  @media ${device.laptop} {
-    width: 1em;
-  }
-  @media ${device.laptopL} {
-    width: 1em;
-  }
-  @media ${device.desktopL} {
-    width: 1.5em;
-  }
-  @media ${device.desktopXL} {
-    width: 3.5em;
-  }
 `;

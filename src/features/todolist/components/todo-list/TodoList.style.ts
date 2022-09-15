@@ -10,7 +10,7 @@ export const TodoListLayout = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM}, ${device.mobileL} {
     height: 100%;
     overflow-y: auto;
   }
@@ -22,7 +22,7 @@ export const TodoList = styled.div`
   padding: 10px 0;
   background-color: rgba(50, 50, 50, 0.4);
   background-blend-mode: color;
-  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM}, ${device.mobileL} {
     height: 100%;
     overflow-y: auto;
   }
@@ -35,6 +35,11 @@ export const FormAndTodosWrapper = styled.div`
   height: 100%;
   @media ${device.mobileExtraS} {
     top: 63%;
+    width: 82%;
+    margin: 0 9%;
+  }
+  @media ${device.mobileL} {
+    top: 82%;
     width: 82%;
     margin: 0 9%;
   }

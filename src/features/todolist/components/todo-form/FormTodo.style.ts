@@ -12,7 +12,7 @@ export const Form = styled.div`
   padding:0;
   font-size: 5vw;
   margin-bottom: 30px;
-  @media ${device.mobileExtraS},${device.mobileS}, ${device.mobileM} {
+  @media ${device.mobileExtraS},${device.mobileS}, ${device.mobileM}, ${device.mobileL} {
     display: flex;
     flex-direction: column;
     align-items: center;

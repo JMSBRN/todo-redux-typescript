@@ -14,13 +14,20 @@ export const ClockWrapper = styled.div`
   font-size: 5vw;
   @media ${device.mobileExtraS},
     ${device.mobileS},
-    ${device.mobileM}
+    ${device.mobileM}, ${device.mobileL}
      {
     top: 3%;
     right: 9%;
     width: 40%;
     height: 40vw;
     font-size: 16vw;
+  }
+  @media ${device.mobileL} {
+    top: 3%;
+    right: 9%;
+    width: 40%;
+    height: 40vw;
+    font-size: 12vw;
   }
   @media ${device.mobileLandscape} {
     position: relative;
@@ -32,10 +39,10 @@ export const ClockWrapper = styled.div`
   }
 `;
 export const Greeting = styled.div`
-  font-size: 0.7em;
+  font-size: 2vw;
   text-align: center;
   color: var(--text-color);
-  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM}, ${device.mobileL} {
     position: absolute;
     right: 9%;
     font-size: 0.3em;
@@ -66,7 +73,7 @@ export const InputGreetingNameWrapper = styled.div`
   width: 30%;
   height: auto;
   font-size: 4vw;
-  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM}, ${device.mobileL} {
     position: absolute;
     width: 100%;
     top: 3%;
@@ -150,6 +157,7 @@ export const Time = styled.div`
   font-weight: 600;
   text-align: center;
   color: var(--text-color);
+  font-size: 9vw;
   @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
     position: absolute;
     top: 45%;
@@ -163,7 +171,7 @@ export const Time = styled.div`
 export const Seconds = styled.span`
   font-size: 0.5em;
   color: rgba(250, 250, 250, 0.7);
-  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM}, ${device.mobileL} {
     display: none;
   }
   @media ${device.mobileLandscape} {
@@ -175,7 +183,7 @@ export const Date = styled.div`
   font-weight: 400;
   font-size: 2vw;
   color: var(--text-color);
-  @media ${device.mobileM}, ${device.mobileS}, ${device.mobileExtraS} {
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM},  ${device.mobileL} {
     display: none;
   }
 `;
