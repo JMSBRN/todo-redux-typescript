@@ -64,7 +64,6 @@ export const GreetingName = styled.div`
     font-size: 7vw;
   }
   @media ${device.mobileLandscape} {
-    margin-top: 0;
     font-size: 2em;
   }
 `;
@@ -165,6 +164,9 @@ export const Time = styled.div`
     font-size: 12vw;
   }
   @media ${device.mobileLandscape} {
+    position: absolute;
+    top: 75%;
+    width: 100%;
     font-size: 9vw;
   }
 `;
@@ -183,6 +185,11 @@ export const Date = styled.div`
   font-weight: 400;
   font-size: 2vw;
   color: var(--text-color);
+  @media ${device.mobileLandscape} {
+    position: absolute;
+    top: 180%;
+    font-size: 2vw;
+  }
   @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM},  ${device.mobileL} {
     display: none;
   }
