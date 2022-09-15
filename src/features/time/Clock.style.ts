@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device, deviceFontSize } from "../utils/mediaUtils";
+import { device } from "../utils/mediaUtils";
 
 export const ClockWrapper = styled.div`
   position: absolute;
@@ -14,8 +14,8 @@ export const ClockWrapper = styled.div`
   font-size: 5vw;
   @media ${device.mobileExtraS},
     ${device.mobileS},
-    ${device.mobileM},
-    ${device.mobileL} {
+    ${device.mobileM}
+     {
     top: 3%;
     right: 9%;
     width: 40%;
@@ -35,17 +35,7 @@ export const Greeting = styled.div`
   font-size: 0.7em;
   text-align: center;
   color: var(--text-color);
-  @media ${device.mobileExtraS} {
-    position: absolute;
-    right: 9%;
-    font-size: 0.3em;
-  }
-  @media ${device.mobileS} {
-    position: absolute;
-    right: 9%;
-    font-size: 0.3em;
-  }
-  @media ${device.mobileM} {
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
     position: absolute;
     right: 9%;
     font-size: 0.3em;

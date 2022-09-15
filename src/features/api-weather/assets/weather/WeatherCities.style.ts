@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device, deviceFontSize } from "../../../utils/mediaUtils";
+import { device } from "../../../utils/mediaUtils";
 
 export const DefaultWeather = styled.div`
   position: absolute;
@@ -8,25 +8,12 @@ export const DefaultWeather = styled.div`
   width: 8%;
   height: auto;
   font-size: 4vw;
-  @media ${device.mobileExtraS} {
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM} {
     top: 3%;
     left: 5%;
-    width: 100px;
-    height: 80px;
-    font-size: ${deviceFontSize.mobileExtraS};
-  }
-  @media ${device.mobileS} {
-    top: 3%;
-    left: 5%;
-    width: 100px;
-    height: 110px;
-    font-size: ${deviceFontSize.mobileS};
-  }
-  @media ${device.mobileM} {
-    top: 3%;
-    left: 5%;
-    width: 30%;
-    height: 30vw;
+    width: 32%;
+    height: auto;
+    font-size: 2vw;
   }
   @media ${device.mobileLandscape} {
     top: 5%;

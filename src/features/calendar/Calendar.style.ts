@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device, deviceFontSize } from "../utils/mediaUtils";
+import { device } from "../utils/mediaUtils";
 
 export const Calendar = styled.div`
   position: absolute;
@@ -29,7 +29,6 @@ export const Calendar = styled.div`
     top: 26%;
     width: 82%;
     height: 82%;
-    font-size: ${deviceFontSize.mobileExtraS};
     .fc {
       font-size: 3vw;
     }
