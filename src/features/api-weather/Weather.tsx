@@ -6,11 +6,13 @@ import cloudSunImg from "../api-weather/assets/weather/sun_clouds.png";
 import sunImg from "../api-weather/assets/weather/sun.png";
 import { getWeather } from "./api";
 import { useAppSelector } from "../../app/hooks";
+import { useTranslation } from "react-i18next";
 interface IWeather {
   cityFromPorps?: string;
   IsInputWithBtn?: boolean;
 }
 const Weather = ({ cityFromPorps, IsInputWithBtn = true }: IWeather) => {
+  const { t } = useTranslation();
 const { localCityName } = useAppSelector(selectWeather);
   const [cityFromInput, setCityFromInput] = useState("");
   const [weatherValues, setWeatherValues] = useState({} as IWeatherValues);
@@ -65,7 +67,7 @@ const { localCityName } = useAppSelector(selectWeather);
                 onChange={(e) => setCityFromInput(e.target.value)}
               />
               <>
-                <Styled.SetCityBtn onClick={(e) => handlerSetCity(e)}>set city</Styled.SetCityBtn >
+                <Styled.SetCityBtn onClick={(e) => handlerSetCity(e)}>{t('Weather.textSetCityBtn')}</Styled.SetCityBtn >
               </>
             </Styled.InputAndBtnWrapper>
           }
@@ -76,11 +78,11 @@ const { localCityName } = useAppSelector(selectWeather);
         <Styled.Temp>{temp} °C</Styled.Temp>
         <Styled.Clouds src={img} alt={clouds} width="20" />
       </Styled.TempWrapper>
-      <Styled.Pressure>⬇️ {pressure} <Styled.HmHg>mmHg</Styled.HmHg></Styled.Pressure>
+      <Styled.Pressure>⬇️ {pressure} <Styled.HmHg>{t('Weather.mmHg')}</Styled.HmHg></Styled.Pressure>
       <Styled.Humidity>💧 {humidity}%</Styled.Humidity>
       <Styled.Wind>
         <Styled.WindDirection>{windDeg}</Styled.WindDirection>
-        <Styled.WindSpeed>{windSpeed} km/h</Styled.WindSpeed>
+        <Styled.WindSpeed>{windSpeed} {t('Weather.kmPerHour')}</Styled.WindSpeed>
       </Styled.Wind>
     </Styled.WeatherWrapper>
   );

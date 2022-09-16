@@ -11,6 +11,11 @@
     "textBtn": "submit",
     "textEditBtn": "confirm the change"
   },
+  "Weather": {
+    "textSetCityBtn":"set city",
+    "kmPerHour":"km/h",
+    "mmHg":"mmHg"
+  },
   "WeatherCities": {
     "textAddCityBtn":"add weather city (max four)"
   }

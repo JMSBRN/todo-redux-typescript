@@ -11,6 +11,11 @@
     "textBtn": "разместить",
     "textEditBtn": "подвтердить изминене"
   },
+  "Weather": {
+    "textSetCityBtn":"установить город",
+    "kmPerHour":"км/ч",
+    "mmHg":"мм.рт.ст."
+  },
   "WeatherCities": {
     "textAddCityBtn":"добавить город с погодой (максимум четыре)"
   }
