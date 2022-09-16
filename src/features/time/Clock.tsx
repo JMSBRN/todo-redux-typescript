@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { greetingsChange, selectTime, setName, timeChange } from "./TimeSlice";
 import { setLocalCityName } from "../api-weather/apiWeatherSlice";
 import { useTranslation } from 'react-i18next';
+import settingsImg from './assets/settings.png'
 
 const Clock = () => {
   const { t } = useTranslation();
@@ -78,6 +79,9 @@ const Clock = () => {
               placeholder="enter weather" />
           </div>
           <Styled.SubmitBtn onClick={() => handlDisableInputs()} >submit</Styled.SubmitBtn>
+          <Styled.SettingsBtn>
+            <Styled.SettingsImg src={settingsImg} alt="setting img button" />
+          </Styled.SettingsBtn>
         </Styled.InputGreetingNameWrapper>
       )}
         <Styled.Time>{time.hours}:{time.minutes}

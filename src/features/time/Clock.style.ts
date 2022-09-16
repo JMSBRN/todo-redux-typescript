@@ -146,6 +146,29 @@ export const SubmitBtn = styled.button`
     font-size: 0.2em;
   }
 `;
+export const SettingsBtn = styled.button`
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  &:active {
+    border: 1px solid var(--border-color);
+    border-color: var(--border-color);
+  }
+`;
+export const SettingsImg = styled.img`
+  width: 2em;
+  filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
+  brightness(102%) contrast(100%);
+`;
 export const HoverMessage = styled.div`
   color: transparent;
   width: 100%;
