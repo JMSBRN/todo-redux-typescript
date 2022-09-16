@@ -5,5 +5,13 @@
       "goodAfternoon": "Good Afternoon",
       "goodEvening": "Good Evening"
     }
+  },
+  "FormTodo": {
+    "inputPlaceholder": "new task",
+    "textBtn": "submit",
+    "textEditBtn": "confirm the change"
+  },
+  "WeatherCities": {
+    "textAddCityBtn":"add weather city (max four)"
   }
 }

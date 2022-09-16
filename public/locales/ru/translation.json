@@ -5,5 +5,13 @@
       "goodAfternoon": "Добрый День",
       "goodEvening": "Добрый Вечер"
     }
-	}
+	},
+  "FormTodo": {
+    "inputPlaceholder": "новое задание",
+    "textBtn": "разместить",
+    "textEditBtn": "подвтердить изминене"
+  },
+  "WeatherCities": {
+    "textAddCityBtn":"добавить город с погодой (максимум четыре)"
+  }
 }

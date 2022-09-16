@@ -8,7 +8,9 @@ import {
 } from "../../apiWeatherSlice";
 import Weather from "../../Weather";
 import * as Styled from "./WeatherCities.style";
+import { useTranslation } from "react-i18next";
 const WeatherCities = () => {
+  const { t } = useTranslation();
   const { weatherCities } = useAppSelector(selectWeather);
   const dispatch = useAppDispatch();
   const cityFromLocal = JSON.parse(localStorage.getItem('cityByDefault') || '""');
@@ -31,7 +33,7 @@ const WeatherCities = () => {
           <Styled.AddCityBtn
             onClick={() => dispatch(setNewWeatherCity(weatherCities))}
           >
-            add weather city (max four)
+            {t('WeatherCities.textAddCityBtn')}
           </Styled.AddCityBtn>
           {weatherCities.map((el) => (
             <Reorder.Item
