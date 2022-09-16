@@ -5,6 +5,7 @@ import { greetingsChange, selectTime, setName, timeChange } from "./TimeSlice";
 import { setLocalCityName } from "../api-weather/apiWeatherSlice";
 import { useTranslation } from 'react-i18next';
 import settingsImg from './assets/settings.png'
+import { setIsModal } from "../settings/settingsSlice";
 
 const Clock = () => {
   const { t } = useTranslation();
@@ -79,7 +80,7 @@ const Clock = () => {
               placeholder="enter weather" />
           </div>
           <Styled.SubmitBtn onClick={() => handlDisableInputs()} >submit</Styled.SubmitBtn>
-          <Styled.SettingsBtn>
+          <Styled.SettingsBtn onClick={() => dispatch(setIsModal())}>
             <Styled.SettingsImg src={settingsImg} alt="setting img button" />
           </Styled.SettingsBtn>
         </Styled.InputGreetingNameWrapper>
