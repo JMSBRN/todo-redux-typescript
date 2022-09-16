@@ -4,6 +4,7 @@ import * as Styled from './Settings.style';
 
 const Settings = () => {
 	const { i18n, t } = useTranslation();
+
 	const setLanguage = (e:React.ChangeEvent<HTMLSelectElement>) => {
 		localStorage.setItem('language', JSON.stringify(e.target.value))
 		i18n.changeLanguage(e.target.value);

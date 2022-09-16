@@ -1,4 +1,5 @@
 import { IWeatherValues } from "./apiWeatherSlice";
+import i18n from '../../i118n';
 
 const temperatureConverter = (valNum: string) => {
 	let val = parseFloat(valNum);
@@ -42,22 +43,21 @@ export const getWeather = async (cityData: string) => {
 		const windSpeed = Math.round(parseInt(wind.speed) * 3.257918552036199);
 		const speedIndexDirection = Math.floor((parseInt(windDeg) / 360) * 15.99);
 		const windDirections = [
-			"N",
-			"NNE",
-			"NE",
-			"NEE",
-			"E",
-			"EES",
-			"ES",
-			"ESS",
-			"S",
-			"SSW",
-			"SW",
-			"SWW",
-			"W",
-			"WWN",
-			"WN",
-			"WNN",
+			i18n.t("WindDirections.N"),
+			i18n.t("WindDirections.NNE"),
+			i18n.t("WindDirections.NE"),
+			i18n.t("WindDirections.NEE"),
+			i18n.t("WindDirections.E"),
+			i18n.t("WindDirections.EES"),
+			i18n.t("WindDirections.ES"),
+			i18n.t("WindDirections.ESS"),
+			i18n.t("WindDirections.SSW"),
+			i18n.t("WindDirections.SW"),
+			i18n.t("WindDirections.SWW"),
+			i18n.t("WindDirections.W"),
+			i18n.t("WindDirections.WWN"),
+			i18n.t("WindDirections.WN"),
+			i18n.t("WindDirections.WNN"),
 		];
 		const winDir = windDirections[speedIndexDirection];
 		const id = JSON.stringify(Math.floor(Math.random() * 100));

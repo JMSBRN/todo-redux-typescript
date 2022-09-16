@@ -25,5 +25,23 @@
   },
   "Settings": {
     "selectLanguage": "select language"
+  },
+  "WindDirections": {
+    "N":"N",
+    "NNE": "NNE",
+    "NE": "NE",
+    "NEE": "NEE",
+    "E": "E",
+    "EES": "EES",
+    "ES": "ES",
+    "ESS":"ESS",
+    "S": "S",
+    "SSW": "SSW",
+    "SW":"SW",
+    "SWW": "SWW",
+    "W": "W",
+    "WWN": "WWN",
+    "WN": "WN",
+    "WNN": "WNN"
   }
 }
