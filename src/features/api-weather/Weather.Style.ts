@@ -37,8 +37,8 @@ export const Input = styled.input`
   border-bottom: 1px solid var(--border-color);
 `;
 export const SetCityBtn = styled.button`
-  width: 38%;
-  font-size: 0.18em;
+  width: 41%;
+  font-size: 0.17em;
   color: var(--text-color);
   background-color: transparent;
   border: 1px solid var(--border-color);
