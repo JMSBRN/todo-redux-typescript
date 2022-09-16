@@ -83,9 +83,15 @@ export const TrashImg = styled.img`
   width: 1vw;
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
     brightness(102%) contrast(100%);
+    @media ${device.mobileExtraS},  ${device.mobileS},  ${device.mobileM}, ${device.mobileL} {
+    width: 3vw;
+  }
 `;
 export const EditImg = styled.img`
   width: 1vw;
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
     brightness(102%) contrast(100%);
+    @media ${device.mobileExtraS},  ${device.mobileS},  ${device.mobileM}, ${device.mobileL} {
+    width: 3vw;
+  }
 `;

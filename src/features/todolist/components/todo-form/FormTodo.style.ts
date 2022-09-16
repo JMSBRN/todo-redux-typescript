@@ -41,7 +41,7 @@ export const Inputform = styled.input<IForm>`
   }
 `;
 export const FormBtn = styled.button`
-  width: 30%;
+  width: 35%;
   height: auto;
   display: flex;
   justify-content: center;
