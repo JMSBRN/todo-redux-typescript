@@ -79,10 +79,12 @@ const Clock = () => {
               onChange={(e) => handleSetCityToLocal(e)}
               placeholder="enter weather" />
           </div>
-          <Styled.SubmitBtn onClick={() => handlDisableInputs()} >submit</Styled.SubmitBtn>
-          <Styled.SettingsBtn onClick={() => dispatch(setIsModal())}>
-            <Styled.SettingsImg src={settingsImg} alt="setting img button" />
-          </Styled.SettingsBtn>
+          <Styled.SubmitAndSettingsBtnWrapper>
+            <Styled.SubmitBtn onClick={() => handlDisableInputs()} >submit</Styled.SubmitBtn>
+            <Styled.SettingsBtn onClick={() => dispatch(setIsModal())}>
+              <Styled.SettingsImg src={settingsImg} alt="setting img button" />
+            </Styled.SettingsBtn>
+          </Styled.SubmitAndSettingsBtnWrapper>
         </Styled.InputGreetingNameWrapper>
       )}
         <Styled.Time>{time.hours}:{time.minutes}

@@ -67,8 +67,8 @@ export const BtnsWrapper = styled.div`
   margin-right: .1em ;
 `;
 export const TodoBtn = styled.button`
-  width: 2em;
-  height: 2em; 
+  width: 2vw;
+  height: 2vw; 
   background-color: transparent;
   background-position: center;
   border: none;
@@ -80,12 +80,12 @@ export const TodoBtn = styled.button`
   }
 `;
 export const TrashImg = styled.img`
-  width: 1em;
+  width: 1vw;
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
     brightness(102%) contrast(100%);
 `;
 export const EditImg = styled.img`
-  width: 1em;
+  width: 1vw;
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
     brightness(102%) contrast(100%);
 `;

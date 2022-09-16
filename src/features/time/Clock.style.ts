@@ -146,12 +146,15 @@ export const SubmitBtn = styled.button`
     font-size: 0.2em;
   }
 `;
+export const SubmitAndSettingsBtnWrapper = styled.div`
+ width: 100%;
+`;
 export const SettingsBtn = styled.button`
   position: absolute;
   right: 10%;
   bottom: 10%;
-  width: 2em;
-  height: 2em;
+  width: 16%;
+  height: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,11 +166,19 @@ export const SettingsBtn = styled.button`
     border: 1px solid var(--border-color);
     border-color: var(--border-color);
   }
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM}, ${device.mobileL} {
+    bottom: 10%;
+    width: 25%;
+    height: 30%;
+  }
 `;
 export const SettingsImg = styled.img`
-  width: 2em;
+  width: 1.6vw;
   filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(253deg)
   brightness(102%) contrast(100%);
+  @media ${device.mobileExtraS}, ${device.mobileS}, ${device.mobileM}, ${device.mobileL} {
+    width: 8vw;
+  }
 `;
 export const HoverMessage = styled.div`
   color: transparent;
