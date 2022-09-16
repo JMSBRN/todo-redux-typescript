@@ -1,5 +1,9 @@
 {
-	"Clock": {
-		"greeting": "Good Morning"
-	}
+  "Clock": {
+    "greeting": {
+      "goodMorning": "Good Morning",
+      "goodAfternoon": "Good Afternoon",
+      "goodEvening": "Good Evening"
+    }
+  }
 }

@@ -1,5 +1,9 @@
 {
 	"Clock": {
-		"greeting": "Доброе Утро"
+		"greeting": {
+      "goodMorning": "Доброе Утро",
+      "goodAfternoon": "Добрый День",
+      "goodEvening": "Добрый Вечер"
+    }
 	}
 }

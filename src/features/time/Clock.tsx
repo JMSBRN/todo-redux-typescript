@@ -33,9 +33,10 @@ const Clock = () => {
     setInterval(() => {
       const greet = [
         "What are you doing that early?",
-        "Good Morning",
-        "Good Afternoon",
-        "Good Evening",
+        t('Clock.greeting.goodMorning'),
+        t('Clock.greeting.goodAfternoon'),
+        t('Clock.greeting.goodEvening'),
+    
       ][curHrs];
       dispatch(greetingsChange(greet));
       localStorage.setItem("greeting", JSON.stringify(greet));
@@ -53,7 +54,7 @@ const Clock = () => {
   };
   return (
     <Styled.ClockWrapper>
-      <Styled.Greeting>{t('Clock.greeting')}</Styled.Greeting>
+      <Styled.Greeting>{greetingFromLocal}</Styled.Greeting>
       {isEdit ? (
         <>
           <Styled.GreetingName onClick={() => setIsEdit(false)}>
