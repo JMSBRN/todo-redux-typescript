@@ -5,7 +5,7 @@ import { addTodo, selectTodo, setEditedTsk, setTask } from "../../todoSlice";
 import * as Styled from "./FormTodo.style";
 
 const FormTodo = () => {
-  const { t} = useTranslation();
+  const {t} = useTranslation();
   const { task, isEdit, id } = useAppSelector(selectTodo);
   const dispatch = useAppDispatch();
   const refInput = React.useRef<HTMLInputElement>(null);

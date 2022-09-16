@@ -128,7 +128,7 @@ export const InputCityByDefault = styled.input`
   }
 `;
 export const SubmitBtn = styled.button`
-  width: 40%;
+  width: 53%;
   height: auto;
   padding: 0 0.05em;
   font-size: 0.2em;

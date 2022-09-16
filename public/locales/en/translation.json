@@ -4,7 +4,11 @@
       "goodMorning": "Good Morning",
       "goodAfternoon": "Good Afternoon",
       "goodEvening": "Good Evening"
-    }
+    },
+    "hoverMessage": "try click for edit",
+    "inputNamePlaceholder": "enter the name",
+    "inputCityPlaceholder": "enter the city ",
+    "textSubmitBtn": "submit"
   },
   "FormTodo": {
     "inputPlaceholder": "new task",
@@ -12,11 +16,14 @@
     "textEditBtn": "confirm the change"
   },
   "Weather": {
-    "textSetCityBtn":"set city",
-    "kmPerHour":"km/h",
-    "mmHg":"mmHg"
+    "textSetCityBtn": "set city",
+    "kmPerHour": "km/h",
+    "mmHg": "mmHg"
   },
   "WeatherCities": {
-    "textAddCityBtn":"add weather city (max four)"
+    "textAddCityBtn": "add weather city (max four)"
+  },
+  "Settings": {
+    "selectLanguage": "select language"
   }
 }

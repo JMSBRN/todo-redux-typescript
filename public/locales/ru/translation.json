@@ -1,22 +1,29 @@
 {
-	"Clock": {
-		"greeting": {
+  "Clock": {
+    "greeting": {
       "goodMorning": "Доброе Утро",
       "goodAfternoon": "Добрый День",
       "goodEvening": "Добрый Вечер"
-    }
-	},
+    },
+    "hoverMessage": "Нажмите для ввода имени и города",
+    "inputNamePlaceholder": "введите имя",
+    "inputCityPlaceholder": "введите город",
+    "textSubmitBtn": "подвердить"
+  },
   "FormTodo": {
     "inputPlaceholder": "новое задание",
     "textBtn": "разместить",
     "textEditBtn": "подвтердить изминене"
   },
   "Weather": {
-    "textSetCityBtn":"установить город",
-    "kmPerHour":"км/ч",
-    "mmHg":"мм.рт.ст."
+    "textSetCityBtn": "установить город",
+    "kmPerHour": "км/ч",
+    "mmHg": "мм.рт.ст."
   },
   "WeatherCities": {
-    "textAddCityBtn":"добавить город с погодой (максимум четыре)"
+    "textAddCityBtn": "добавить город с погодой (максимум четыре)"
+  },
+  "Settings": {
+    "selectLanguage": "Выберите язык"
   }
 }

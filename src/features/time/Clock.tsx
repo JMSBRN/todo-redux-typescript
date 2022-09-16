@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as Styled from "./Clock.style";
+import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { greetingsChange, selectTime, setName, timeChange } from "./TimeSlice";
 import { setLocalCityName } from "../api-weather/apiWeatherSlice";
-import { useTranslation } from 'react-i18next';
 import settingsImg from './assets/settings.png'
 import { setIsModal } from "../settings/settingsSlice";
 
@@ -61,7 +61,7 @@ const Clock = () => {
         <>
           <Styled.GreetingName onClick={() => setIsEdit(false)}>
             {nameFromLocal}
-            <Styled.HoverMessage> try click for edit</Styled.HoverMessage>
+            <Styled.HoverMessage>{t("Clock.hoverMessage")}</Styled.HoverMessage>
           </Styled.GreetingName>
         </>
       ) : (
@@ -69,7 +69,7 @@ const Clock = () => {
           <Styled.InputNameByDefault
             type="text"
             value={name}
-            placeholder="enter name"
+            placeholder={t("Clock.inputNamePlaceholder")}
             onChange={(e) => dispatch(setName(e.target.value))}
             title="try click for confirm"
           />
@@ -77,10 +77,11 @@ const Clock = () => {
             <Styled.InputCityByDefault
               type="text"
               onChange={(e) => handleSetCityToLocal(e)}
-              placeholder="enter weather" />
+              placeholder={t("Clock.inputCityPlaceholder")}
+              />
           </div>
           <Styled.SubmitAndSettingsBtnWrapper>
-            <Styled.SubmitBtn onClick={() => handlDisableInputs()} >submit</Styled.SubmitBtn>
+            <Styled.SubmitBtn onClick={() => handlDisableInputs()} >{t('Clock.textSubmitBtn')}</Styled.SubmitBtn>
             <Styled.SettingsBtn onClick={() => dispatch(setIsModal())}>
               <Styled.SettingsImg src={settingsImg} alt="setting img button" />
             </Styled.SettingsBtn>
