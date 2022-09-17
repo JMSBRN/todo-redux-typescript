@@ -1,18 +1,22 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useAppDispatch } from '../../app/hooks';
 import * as Styled from './Settings.style';
+import { setLanguage } from './settingsSlice';
 
 const Settings = () => {
 	const { i18n, t } = useTranslation();
+	const dispatch = useAppDispatch();
 
-	const setLanguage = (e:React.ChangeEvent<HTMLSelectElement>) => {
+	const handlSetLanguage = (e:React.ChangeEvent<HTMLSelectElement>) => {
 		localStorage.setItem('language', JSON.stringify(e.target.value))
 		i18n.changeLanguage(e.target.value);
+		dispatch(setLanguage(e.target.value))
 	}
 	return (
 		<Styled.SettingsWrapper>
 			<Styled.Settings>
-				<Styled.Language onChange={(e) => setLanguage(e)}>
+				<Styled.Language onChange={(e) => handlSetLanguage(e)}>
 					<option value={'en'} >{t('Settings.selectLanguage')}</option>
 					<option value={'en'}>en</option>
 					<option value={'ru'}>ru</option>

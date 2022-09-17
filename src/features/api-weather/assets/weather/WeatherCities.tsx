@@ -43,7 +43,7 @@ const WeatherCities = () => {
               key={el.id}
               value={el}
             >
-              <Weather />
+              <Weather isCursor={true}/>
             </Reorder.Item>
           ))}
         </Styled.WeatherCityes>

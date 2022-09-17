@@ -4,9 +4,11 @@ import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import * as Styled from "./Calendar.style";
 import ruLocale from '@fullcalendar/core/locales/ru';
 import enLocale from '@fullcalendar/core/locales/en-gb';
+import { useAppSelector } from "../../app/hooks";
+import { selectSettings } from "../settings/settingsSlice";
 
 const Calendar = () => {
-  const languageFromLocal = (JSON.parse(localStorage.getItem('language')|| '"en"'));
+  const { language } = useAppSelector(selectSettings);
   return (
     <div>
       <Styled.Calendar>
@@ -15,7 +17,7 @@ const Calendar = () => {
         initialView="dayGridMonth"
         weekends={true}
         firstDay={1}
-        locale={languageFromLocal ==='ru' ? ruLocale : enLocale}
+        locale={language ==='ru' ? ruLocale : enLocale}
         />
       </Styled.Calendar>
     </div>

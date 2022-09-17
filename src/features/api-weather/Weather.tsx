@@ -7,11 +7,12 @@ import sunImg from "../api-weather/assets/weather/sun.png";
 import { getWeather } from "./api";
 import { useAppSelector } from "../../app/hooks";
 import { useTranslation } from "react-i18next";
-interface IWeather {
+export interface IWeather {
   cityFromPorps?: string;
   IsInputWithBtn?: boolean;
+  isCursor?: boolean;
 }
-const Weather = ({ cityFromPorps, IsInputWithBtn = true }: IWeather) => {
+const Weather = ({ isCursor, cityFromPorps, IsInputWithBtn = true }: IWeather) => {
   const { t } = useTranslation();
 const { localCityName } = useAppSelector(selectWeather);
   const [cityFromInput, setCityFromInput] = useState("");
@@ -55,7 +56,7 @@ const { localCityName } = useAppSelector(selectWeather);
     weatherValues;
   setCloudImg(clouds);
   return (
-    <Styled.WeatherWrapper>
+    <Styled.WeatherWrapper isCursor={isCursor}>
       {
         IsInputWithBtn && <>
           {isEntered &&

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { device } from "../utils/mediaUtils";
+import { IWeather } from "./Weather";
 
-export const WeatherWrapper = styled.div`
+export const WeatherWrapper = styled.div<IWeather>`
   width: 100%;
   height:100%;
   padding: 2%;
@@ -9,7 +10,7 @@ export const WeatherWrapper = styled.div`
   color: var(--text-color);
   border: 1px solid var(--border-color);
   border-radius: 3px;
-  cursor: grab;
+  cursor: ${({ isCursor }) => (isCursor ? "grab" : "")};
   @media ${device.mobileExtraS}, ${device.mobileS},${device.mobileM}, ${device.mobileL}  {
     font-size: 14vw;
     border: none;

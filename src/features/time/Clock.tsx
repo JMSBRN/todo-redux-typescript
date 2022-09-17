@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as Styled from "./Clock.style";
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { greetingsChange, selectTime, setName, timeChange } from "./TimeSlice";
+import { greetingsChange, IOption, selectTime, setDate, setName, timeChange } from "./TimeSlice";
 import { setLocalCityName } from "../api-weather/apiWeatherSlice";
 import settingsImg from './assets/settings.png'
 import { setIsModal } from "../settings/settingsSlice";
@@ -54,6 +54,16 @@ const Clock = () => {
   const handleSetCityToLocal = (e: React.ChangeEvent<HTMLInputElement>) => {
     localStorage.setItem('cityByDefault', JSON.stringify(e.target.value));
   };
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  
+  const languageFromLocal = 	JSON.parse(localStorage.getItem('language') || 	'"en"');
+  const dateFromLocal = new Date().toLocaleDateString(languageFromLocal, options as IOption);
+  dispatch(setDate(dateFromLocal));
   return (
     <Styled.ClockWrapper>
       <Styled.Greeting>{greetingFromLocal}</Styled.Greeting>
