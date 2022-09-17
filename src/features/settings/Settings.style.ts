@@ -28,3 +28,18 @@ export const Language = styled.select`
 		color: var( --text-color-grey);
 	}
 `;
+export const ThemeBtnsWrapper = styled.div`
+  width: 40%;
+  background-color: red;
+	display: flex;
+	justify-content: space-around;
+`;
+export const Theme = styled.div`
+	 li {
+		 list-style: none;
+	 }
+	 input {
+		width: 2.8em;
+		height: 2.8em;
+	 }
+`;

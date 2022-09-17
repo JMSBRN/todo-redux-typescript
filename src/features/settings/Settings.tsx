@@ -8,7 +8,7 @@ const Settings = () => {
 	const { i18n, t } = useTranslation();
 	const dispatch = useAppDispatch();
 
-	const handlSetLanguage = (e:React.ChangeEvent<HTMLSelectElement>) => {
+	const handlSetLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		localStorage.setItem('language', JSON.stringify(e.target.value))
 		i18n.changeLanguage(e.target.value);
 		dispatch(setLanguage(e.target.value))
@@ -21,6 +21,13 @@ const Settings = () => {
 					<option value={'en'}>en</option>
 					<option value={'ru'}>ru</option>
 				</Styled.Language>
+				<Styled.Theme>
+					<Styled.ThemeBtnsWrapper>
+						<li><input type="radio" name="1" id="" /></li>
+						<li><input type="radio" name="1" id="" /></li>
+						<li><input type="radio" name="1" id="" /></li>
+					</Styled.ThemeBtnsWrapper>
+				</Styled.Theme>
 			</Styled.Settings>
 		</Styled.SettingsWrapper>
 	)
