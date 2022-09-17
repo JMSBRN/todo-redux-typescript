@@ -7,6 +7,7 @@ import sunImg from "../api-weather/assets/weather/sun.png";
 import { getWeather } from "./api";
 import { useAppSelector } from "../../app/hooks";
 import { useTranslation } from "react-i18next";
+import i18n from '../../i118n';
 export interface IWeather {
   cityFromPorps?: string;
   IsInputWithBtn?: boolean;
@@ -55,6 +56,25 @@ const { localCityName } = useAppSelector(selectWeather);
   const { city, temp, pressure, humidity, clouds, windDeg, windSpeed } =
     weatherValues;
   setCloudImg(clouds);
+  const speedIndexDirection = Math.floor((parseInt(windDeg) / 360) * 15.99);
+		const windDirections = [
+			i18n.t("WindDirections.N"),
+			i18n.t("WindDirections.NNE"),
+			i18n.t("WindDirections.NE"),
+			i18n.t("WindDirections.NEE"),
+			i18n.t("WindDirections.E"),
+			i18n.t("WindDirections.EES"),
+			i18n.t("WindDirections.ES"),
+			i18n.t("WindDirections.ESS"),
+			i18n.t("WindDirections.SSW"),
+			i18n.t("WindDirections.SW"),
+			i18n.t("WindDirections.SWW"),
+			i18n.t("WindDirections.W"),
+			i18n.t("WindDirections.WWN"),
+			i18n.t("WindDirections.WN"),
+			i18n.t("WindDirections.WNN"),
+		];
+		const winDir = windDirections[speedIndexDirection];
   return (
     <Styled.WeatherWrapper isCursor={isCursor}>
       {
@@ -82,7 +102,7 @@ const { localCityName } = useAppSelector(selectWeather);
       <Styled.Pressure>⬇️ {pressure} <Styled.HmHg>{t('Weather.mmHg')}</Styled.HmHg></Styled.Pressure>
       <Styled.Humidity>💧 {humidity}%</Styled.Humidity>
       <Styled.Wind>
-        <Styled.WindDirection>{windDeg}</Styled.WindDirection>
+        <Styled.WindDirection>{winDir}</Styled.WindDirection>
         <Styled.WindSpeed>{windSpeed} {t('Weather.kmPerHour')}</Styled.WindSpeed>
       </Styled.Wind>
     </Styled.WeatherWrapper>
