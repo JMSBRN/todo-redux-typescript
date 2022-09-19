@@ -65,7 +65,10 @@ const Clock = () => {
   
   const languageFromLocal = 	JSON.parse(localStorage.getItem('language') || 	'"en"');
   const dateFromLocal = new Date().toLocaleDateString(languageFromLocal, options as IOption);
-  dispatch(setDate(dateFromLocal));
+  useEffect(() => {
+    dispatch(setDate(dateFromLocal));
+  }, [dateFromLocal, dispatch])
+  
   return (
     <Styled.ClockWrapper>
       <Styled.Greeting>{greetingFromLocal}</Styled.Greeting>
