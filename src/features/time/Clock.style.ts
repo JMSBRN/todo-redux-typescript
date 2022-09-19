@@ -3,7 +3,7 @@ import { device } from "../utils/mediaUtils";
 
 export const ClockWrapper = styled.div`
   position: absolute;
-  width: 30%;
+  width: 36%;
   height: 50%;
   top: 10%;
   right: 20%;

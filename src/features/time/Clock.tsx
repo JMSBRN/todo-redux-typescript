@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import * as Styled from "./Clock.style";
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
@@ -20,16 +20,18 @@ const Clock = () => {
   const hours = new Date().getHours() < 10 ? '0' + new Date().getHours() : new Date().getHours();
   const minutes = new Date().getMinutes() < 10 ? '0' + new Date().getMinutes() : new Date().getMinutes();
   const seconds = new Date().getSeconds() < 10 ? '0' + new Date().getSeconds() : new Date().getSeconds();
-  const time: ITime = {
-    hours: hours,
-    minutes: minutes,
-    seconds: seconds,
-  };
+  const time: ITime = useMemo(() => {
+    return  {
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds,
+    };
+  }, [hours, minutes, seconds])
   useEffect(() => {
     setInterval(() => {
       dispatch(timeChange(time));
     }, 1000);
-  }, [time]);
+  }, [time, dispatch]);
   useEffect(() => {
     const curHrs = parseInt(JSON.stringify((new Date().getHours() / 24) * 4));
     setInterval(() => {
@@ -43,7 +45,7 @@ const Clock = () => {
       dispatch(greetingsChange(greet));
       localStorage.setItem("greeting", JSON.stringify(greet));
     }, 1000);
-  }, [dispatch, greeting]);
+  }, [dispatch, greeting, t]);
   const handlDisableInputs = () => {
     setIsEdit(true);
     const cityFromLocal = JSON.parse(localStorage.getItem('cityByDefault') || '""');
@@ -63,7 +65,10 @@ const Clock = () => {
   
   const languageFromLocal = 	JSON.parse(localStorage.getItem('language') || 	'"en"');
   const dateFromLocal = new Date().toLocaleDateString(languageFromLocal, options as IOption);
-  dispatch(setDate(dateFromLocal));
+  useEffect(() => {
+    dispatch(setDate(dateFromLocal));
+  }, [dateFromLocal, dispatch])
+  
   return (
     <Styled.ClockWrapper>
       <Styled.Greeting>{greetingFromLocal}</Styled.Greeting>
