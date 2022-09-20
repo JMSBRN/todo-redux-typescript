@@ -21,7 +21,8 @@
     "mmHg": "mmHg"
   },
   "WeatherCities": {
-    "textAddCityBtn": "add weather city (max four)"
+    "textAddCityBtn": "add weather city (max four)",
+    "nowWeatherCityMessage":"Please enter your city under greeting after click"
   },
   "Settings": {
     "selectLanguage": "select language"

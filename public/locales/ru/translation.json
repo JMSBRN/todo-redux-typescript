@@ -21,7 +21,8 @@
     "mmHg": "мм.рт.ст."
   },
   "WeatherCities": {
-    "textAddCityBtn": "добавить город с погодой (максимум четыре)"
+    "textAddCityBtn": "добавить город с погодой (максимум четыре)",
+    "nowWeatherCityMessage":"Пожалуйста, введите свой город под приветствием после нажатия"
   },
   "Settings": {
     "selectLanguage": "Выберите язык"
