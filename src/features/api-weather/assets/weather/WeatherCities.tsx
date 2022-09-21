@@ -19,7 +19,7 @@ const WeatherCities = () => {
       <Styled.DefaultWeather>
         {cityFromLocal ?
           <Weather cityFromPorps={cityFromLocal} IsInputWithBtn={false} />
-          : <Styled.NoCityMessage> Please enter your city under greeting after click </Styled.NoCityMessage>}
+          : <Styled.NoCityMessage> {t("WeatherCities.nowWeatherCityMessage")} </Styled.NoCityMessage>}
       </Styled.DefaultWeather>
       <Reorder.Group
         as="div"
