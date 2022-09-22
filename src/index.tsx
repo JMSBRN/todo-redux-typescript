@@ -6,7 +6,7 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import './main.css';
-import './i118n';
+import './i18n';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);

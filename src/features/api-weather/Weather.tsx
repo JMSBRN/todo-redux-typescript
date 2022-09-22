@@ -7,7 +7,7 @@ import sunImg from "../api-weather/assets/weather/sun.png";
 import { getWeather } from "./api";
 import { useAppSelector } from "../../app/hooks";
 import { useTranslation } from "react-i18next";
-import i18n from '../../i118n';
+import i18n from '../../i18n';
 export interface IWeather {
   cityFromPorps?: string;
   IsInputWithBtn?: boolean;

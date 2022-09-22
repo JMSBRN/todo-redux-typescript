@@ -50,7 +50,6 @@ const Clock = () => {
     setIsEdit(true);
     const cityFromLocal = JSON.parse(localStorage.getItem('cityByDefault') || '""');
     dispatch(setLocalCityName(cityFromLocal));
-    window.location.reload();
   };
   const greetingFromLocal = JSON.parse(localStorage.getItem("greeting") || '""');
   const nameFromLocal = JSON.parse(localStorage.getItem("name") || '""');
