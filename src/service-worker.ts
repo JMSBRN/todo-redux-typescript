@@ -12,7 +12,7 @@ import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
-import { StaleWhileRevalidate, NetworkFirst } from 'workbox-strategies';
+import { StaleWhileRevalidate, NetworkFirst, CacheFirst } from 'workbox-strategies';
 
 declare const self: ServiceWorkerGlobalScope;
 
@@ -70,12 +70,11 @@ registerRoute(
 );
 registerRoute(
   /locales/,  
-  new NetworkFirst({
+  new StaleWhileRevalidate({
     cacheName: 'locales'
   })
-);
-
-registerRoute(
+  );
+  registerRoute(
   ({url}) => url.origin === 'https://api.openweathermap.org',  
   new NetworkFirst({
     cacheName: 'api'
