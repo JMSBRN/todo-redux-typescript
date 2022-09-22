@@ -74,6 +74,7 @@ registerRoute(
     cacheName: 'locales'
   })
 );
+
 registerRoute(
   ({url}) => url.origin === 'https://api.openweathermap.org',  
   new NetworkFirst({
