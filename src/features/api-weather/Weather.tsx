@@ -54,7 +54,7 @@ const { localCityName } = useAppSelector(selectWeather);
     return img;
   };
   const { city, temp, pressure, humidity, clouds, windDeg, windSpeed } =
-    weatherValues;
+    weatherValues;    
   setCloudImg(clouds);
   const speedIndexDirection = Math.floor((parseInt(windDeg) / 360) * 15.99);
 		const windDirections = [
@@ -66,6 +66,7 @@ const { localCityName } = useAppSelector(selectWeather);
 			i18n.t("WindDirections.EES"),
 			i18n.t("WindDirections.ES"),
 			i18n.t("WindDirections.ESS"),
+			i18n.t("WindDirections.S"),
 			i18n.t("WindDirections.SSW"),
 			i18n.t("WindDirections.SW"),
 			i18n.t("WindDirections.SWW"),
@@ -74,7 +75,7 @@ const { localCityName } = useAppSelector(selectWeather);
 			i18n.t("WindDirections.WN"),
 			i18n.t("WindDirections.WNN"),
 		];
-		const winDir = windDirections[speedIndexDirection];
+		const winDir = windDirections[speedIndexDirection];    
   return (
     <Styled.WeatherWrapper isCursor={isCursor}>
       {
