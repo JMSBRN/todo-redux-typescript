@@ -21,6 +21,7 @@ interface IState {
   weatherCities: IWeatherValues[];
   id: string;
   isEntered: boolean;
+  translateCityName: string;
 }
 const initialState: IState = {
   apiData: "",
@@ -32,6 +33,7 @@ const initialState: IState = {
   localCityName: "",
   id: "",
   isEntered: true,
+  translateCityName: JSON.parse(localStorage.getItem('cityFromApibyDeafault') || '""'),
 };
 export const apiWeatherSlice = createSlice({
   name: "weather",
@@ -70,9 +72,12 @@ export const apiWeatherSlice = createSlice({
     setLocalCityName: (state, action) => {
       state.localCityName = action.payload;
     },
+    setTranslateCityName: (state, action) => {
+      state.translateCityName = action.payload;
+    },
   },
 });
-export const { setWeatherValues, setNewWeatherCity, getId, setWeatherCities, setLocalCityName } =
+export const { setWeatherValues, setNewWeatherCity, getId, setWeatherCities, setLocalCityName, setTranslateCityName } =
   apiWeatherSlice.actions;
 export const selectWeather = (state: RootState) => state.weather;
 export default apiWeatherSlice.reducer;

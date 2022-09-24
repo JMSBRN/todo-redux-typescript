@@ -15,7 +15,7 @@ export interface IWeather {
 }
 const Weather = ({ isCursor, cityFromPorps, IsInputWithBtn = true }: IWeather) => {
   const { t } = useTranslation();
-const { localCityName } = useAppSelector(selectWeather);
+const { localCityName, translateCityName } = useAppSelector(selectWeather);
   const [cityFromInput, setCityFromInput] = useState("");
   const [weatherValues, setWeatherValues] = useState({} as IWeatherValues);
   const [isEntered, setIsEntered] = useState(true)
@@ -94,7 +94,7 @@ const { localCityName } = useAppSelector(selectWeather);
           }
         </>
       }
-      <Styled.City>{city}</Styled.City>
+      <Styled.City>{translateCityName || city}</Styled.City>
       <Styled.TempWrapper>
         <Styled.Temp>{temp} °C</Styled.Temp>
         <Styled.Clouds src={img} alt={clouds} width="20" />
