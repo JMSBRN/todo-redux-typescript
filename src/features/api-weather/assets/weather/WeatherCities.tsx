@@ -18,7 +18,7 @@ const WeatherCities = () => {
     <>
       <Styled.DefaultWeather>
         {cityFromLocal ?
-          <Weather cityFromPorps={cityFromLocal} IsInputWithBtn={false} />
+          <Weather cityFromProps={cityFromLocal} IsInputWithBtn={false} />
           : <Styled.NoCityMessage> {t("WeatherCities.nowWeatherCityMessage")} </Styled.NoCityMessage>}
       </Styled.DefaultWeather>
       <Reorder.Group

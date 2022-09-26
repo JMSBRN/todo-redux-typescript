@@ -9,22 +9,23 @@ import { useAppSelector } from "../../app/hooks";
 import { useTranslation } from "react-i18next";
 import i18n from '../../i18n';
 export interface IWeather {
-  cityFromPorps?: string;
+  cityFromProps?: string;
   IsInputWithBtn?: boolean;
   isCursor?: boolean;
 }
-const Weather = ({ isCursor, cityFromPorps, IsInputWithBtn = true }: IWeather) => {
+const Weather = ({ isCursor, cityFromProps, IsInputWithBtn = true }: IWeather) => {
   const { t } = useTranslation();
 const { localCityName, translateCityName } = useAppSelector(selectWeather);
   const [cityFromInput, setCityFromInput] = useState("");
   const [weatherValues, setWeatherValues] = useState({} as IWeatherValues);
   const [isEntered, setIsEntered] = useState(true)
   const getAsyncWeather = async () => {
-    const curWeatheValues = await getWeather(cityFromInput || cityFromPorps!) as IWeatherValues;
+    const languageFromLocal = JSON.parse(localStorage.getItem('language') || '"en"');
+    const curWeatheValues = await getWeather(cityFromInput || cityFromProps!, languageFromLocal ) as IWeatherValues;
     setWeatherValues(curWeatheValues);
   };
   useEffect(() => {
-    if (cityFromPorps) {
+    if (cityFromProps) {
       getAsyncWeather();
     }
   }, [localCityName])
