@@ -11,14 +11,14 @@ import * as Styled from "./WeatherCities.style";
 import { useTranslation } from "react-i18next";
 const WeatherCities = () => {
   const { t } = useTranslation();
-  const { weatherCities } = useAppSelector(selectWeather);
+  const { weatherCities, translateCityName } = useAppSelector(selectWeather);
   const dispatch = useAppDispatch();
   const cityFromLocal = JSON.parse(localStorage.getItem('cityByDefault') || '""');
   return (
     <>
       <Styled.DefaultWeather>
         {cityFromLocal ?
-          <Weather cityFromProps={cityFromLocal} IsInputWithBtn={false} />
+          <Weather translateCityName={translateCityName} cityFromProps={cityFromLocal} IsInputWithBtn={false} />
           : <Styled.NoCityMessage> {t("WeatherCities.nowWeatherCityMessage")} </Styled.NoCityMessage>}
       </Styled.DefaultWeather>
       <Reorder.Group

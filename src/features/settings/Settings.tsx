@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../../app/hooks';
 import { getWeather } from '../api-weather/api';
-import { IWeatherValues, setTranslateCityName } from '../api-weather/apiWeatherSlice';
+import { IWeatherValues, setTranslateCityName, setWeatherCities } from '../api-weather/apiWeatherSlice';
 import * as Styled from './Settings.style';
 import { setLanguage } from './settingsSlice';
 
@@ -14,6 +14,7 @@ const Settings = () => {
 		const cityNameFromLocal = JSON.parse(localStorage.getItem('cityByDefault') || '""');
 		const curWeatheValues = await getWeather(cityNameFromLocal, languageFromLocal) as IWeatherValues;
 		dispatch(setTranslateCityName(curWeatheValues.city));
+		dispatch(setWeatherCities([]));
 	};
 	const handlSetLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		localStorage.setItem('language', JSON.stringify(e.target.value))
