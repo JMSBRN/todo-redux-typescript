@@ -13,16 +13,17 @@ const pressureConverter = (valNum: number) => {
 const isEmptyOrSpaces = (str: string) => {
 	return str === null || str.match(/^ *$/) !== null;
 };
-export const getWeather = async (cityData: string) => {
+export const getWeather = async (cityData: string, language?: string) => {
 	const isNotEmtyOrSpaces = !isEmptyOrSpaces(cityData);
 	if (isNotEmtyOrSpaces) {
 		const API_KEY = "692558f436b41d827e09484ce4725e62";
 		const response = await fetch(
-			`https://api.openweathermap.org/data/2.5/weather?q=${cityData}&appid=${API_KEY}`
+			`https://api.openweathermap.org/data/2.5/weather?q=${cityData}&lang=${language}&appid=${API_KEY}`
 		);
 		const json = await response.json();
 		const weatherVal = Object.values(json.main);
 		const city = json.name;
+		localStorage.setItem('cityFromApibyDeafault', JSON.stringify(city));
 		const temp = temperatureConverter(weatherVal[0] as string);
 		const pressure = pressureConverter(Number(weatherVal[4]));
 		const humidity = Number(weatherVal[5]);
