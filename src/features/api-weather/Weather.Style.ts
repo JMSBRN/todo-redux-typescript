@@ -10,7 +10,7 @@ export const WeatherWrapper = styled.div<IWeather>`
   color: var(--text-color);
   border: 1px solid var(--border-color);
   border-radius: 3px;
-  cursor: ${({ isCursor }) => (isCursor ? "grab" : "")};
+  cursor: ${({ isCursor }) => (isCursor ? "grab" : "default")};
   @media ${device.mobileExtraS}, ${device.mobileS},${device.mobileM}, ${device.mobileL}  {
     font-size: 14vw;
     border: none;
