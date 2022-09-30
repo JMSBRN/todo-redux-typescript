@@ -33,7 +33,7 @@ const initialState: IState = {
   localCityName: "",
   id: "",
   isEntered: true,
-  translateCityName: JSON.parse(localStorage.getItem('cityFromApibyDeafault') || '""'),
+  translateCityName: JSON.parse(localStorage.getItem('cityFromApibyDefault') || '""'),
 };
 export const apiWeatherSlice = createSlice({
   name: "weather",

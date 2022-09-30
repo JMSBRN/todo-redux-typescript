@@ -23,7 +23,7 @@ export const getWeather = async (cityData: string, language?: string) => {
 		const json = await response.json();
 		const weatherVal = Object.values(json.main);
 		const city = json.name;
-		localStorage.setItem('cityFromApibyDeafault', JSON.stringify(city));
+		localStorage.setItem('cityFromApibyDefault', JSON.stringify(city));
 		const temp = temperatureConverter(weatherVal[0] as string);
 		const pressure = pressureConverter(Number(weatherVal[4]));
 		const humidity = Number(weatherVal[5]);
